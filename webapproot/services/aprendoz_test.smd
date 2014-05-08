@@ -1,0 +1,298 @@
+{
+	"methods": [{
+		"name": "a_getCursoProcesoSV",
+		"parameters": [{
+			"name": "ppersona",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.A_getCursoProcesoSVRtnType]"
+	}, {
+		"name": "actualizarClave",
+		"parameters": [{
+			"name": "usuario",
+			"type": "java.lang.String"
+		}, {
+			"name": "clave",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "crearPlan",
+		"parameters": [{
+			"name": "p1",
+			"type": "java.lang.String"
+		}, {
+			"name": "p2",
+			"type": "java.lang.String"
+		}, {
+			"name": "p3",
+			"type": "java.lang.String"
+		}, {
+			"name": "id",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "fecha_plan",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "dash_aprendizajes",
+		"parameters": [{
+			"name": "idasignatura",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Dash_aprendizajesRtnType]"
+	}, {
+		"name": "dash_getAsigByDocente",
+		"parameters": [{
+			"name": "usuario",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Dash_getAsigByDocenteRtnType]"
+	}, {
+		"name": "dash_logDocentes",
+		"parameters": [{
+			"name": "usuario",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Dash_logDocentesRtnType]"
+	}, {
+		"name": "dash_no_calificados",
+		"parameters": [{
+			"name": "idasignatura",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Dash_no_calificadosRtnType]"
+	}, {
+		"name": "deleteEventualidadPersona",
+		"parameters": [{
+			"name": "epid",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "enviarMailEventualidades",
+		"parameters": [{
+			"name": "ide",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.EnviarMailEventualidadesRtnType]"
+	}, {
+		"name": "eventualitiesByDate",
+		"parameters": [{
+			"name": "pfecha",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.EventualitiesByDateRtnType]"
+	}, {
+		"name": "getCurseByidGrade",
+		"parameters": [{
+			"name": "pgrado",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetCurseByidGradeRtnType]"
+	}, {
+		"name": "getInformacionValiosa",
+		"parameters": [{
+			"name": "usuario",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.aprendoz_test.data.output.GetInformacionValiosaRtnType"
+	}, {
+		"name": "getInscAlumActividadById",
+		"parameters": [{
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "com.aprendoz_test.data.InscAlumActividad"
+	}, {
+		"name": "getListStudentsByCurse",
+		"parameters": [{
+			"name": "pcurso",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetListStudentsByCurseRtnType]"
+	}, {
+		"name": "getScheduleByProfile",
+		"parameters": [{
+			"name": "pcurso",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "psy",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "pasignatura",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetScheduleByProfileRtnType]"
+	}, {
+		"name": "getSubjectsByProfile",
+		"parameters": [{
+			"name": "usuario",
+			"type": "java.lang.String"
+		}, {
+			"name": "sy",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetSubjectsByProfileRtnType]"
+	}, {
+		"name": "getSubjectsByProfileGrouped",
+		"parameters": [{
+			"name": "sy",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "usuario",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetSubjectsByProfileGroupedRtnType]"
+	}, {
+		"name": "getSyByCurDate",
+		"parameters": [{
+			"name": "f1",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetSyByCurDateRtnType]"
+	}, {
+		"name": "getSyByCurDate_",
+		"parameters": [{
+			"name": "f1",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetSyByCurDate_RtnType]"
+	}, {
+		"name": "getTipoEventualidadByIdSubTipo",
+		"parameters": [{
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetTipoEventualidadByIdSubTipoRtnType]"
+	}, {
+		"name": "hQLlsCursos",
+		"parameters": null,
+		"returnType": "[com.aprendoz_test.data.output.HQLlsCursosRtnType]"
+	}, {
+		"name": "hQLlsGrado",
+		"parameters": null,
+		"returnType": "[com.aprendoz_test.data.output.HQLlsGradoRtnType]"
+	}, {
+		"name": "hQLlsPeriodo",
+		"parameters": null,
+		"returnType": "[com.aprendoz_test.data.output.HQLlsPeriodoRtnType]"
+	}, {
+		"name": "hqlPersonaEventualidad",
+		"parameters": [{
+			"name": "ide",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.HqlPersonaEventualidadRtnType]"
+	}, {
+		"name": "hql_ls_cursos",
+		"parameters": [{
+			"name": "idg",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Hql_ls_cursosRtnType]"
+	}, {
+		"name": "hql_tipo_eventualidad",
+		"parameters": null,
+		"returnType": "[com.aprendoz_test.data.output.Hql_tipo_eventualidadRtnType]"
+	}, {
+		"name": "involucrados",
+		"parameters": [{
+			"name": "peventualidad",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.InvolucradosRtnType]"
+	}, {
+		"name": "last_accessHQL",
+		"parameters": [{
+			"name": "user",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Last_accessHQLRtnType]"
+	}, {
+		"name": "orientacionInvolucradosGrupoFamiliar",
+		"parameters": [{
+			"name": "pgrupo",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "ppersona",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.OrientacionInvolucradosGrupoFamiliarRtnType]"
+	}, {
+		"name": "seachEventualidadHQL",
+		"parameters": [{
+			"name": "search",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.SeachEventualidadHQLRtnType]"
+	}, {
+		"name": "searchReportesAlumnos",
+		"parameters": [{
+			"name": "search",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.SearchReportesAlumnosRtnType]"
+	}, {
+		"name": "searchStudentsByComplexName",
+		"parameters": [{
+			"name": "search",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.SearchStudentsByComplexNameRtnType]"
+	}, {
+		"name": "sendMailHQL",
+		"parameters": [{
+			"name": "ide",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.SendMailHQLRtnType]"
+	}, {
+		"name": "sendMailHQLOne",
+		"parameters": [{
+			"name": "ide",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "ppersona",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.SendMailHQLOneRtnType]"
+	}, {
+		"name": "showInformationUser",
+		"parameters": [{
+			"name": "user",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.aprendoz_test.data.output.ShowInformationUserRtnType"
+	}, {
+		"name": "showInformationUser2",
+		"parameters": [{
+			"name": "user",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.ShowInformationUser2RtnType]"
+	}, {
+		"name": "studentsByCurseBySubject",
+		"parameters": [{
+			"name": "pasignatura",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "pcurso",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.StudentsByCurseBySubjectRtnType]"
+	}, {
+		"name": "subjectsBySyAndStudent",
+		"parameters": [{
+			"name": "idpersona",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "idsyp",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.SubjectsBySyAndStudentRtnType]"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "aprendoz_test.json"
+}
