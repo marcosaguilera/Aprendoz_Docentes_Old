@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "orientacionInvolucradosGrupoFamiliar" on 04/21/2014 08:59:20
+ * Generated for query "orientacionInvolucradosGrupoFamiliar" on 05/09/2014 07:43:22
  * 
  */
 public class OrientacionInvolucradosGrupoFamiliarRtnType {

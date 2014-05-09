@@ -27,15 +27,10 @@ dojo.declare("Main", wm.Page, {
   },  
   
   cur_subt_datag_subtopicoDataGrid1Selected: function(inSender, inIndex) {
-    try {
       this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.update();
        this.l_cur_metas_metas_otrasmetasLiveVariable1.update();
        this.l_cur_act_actividades_actividadLiveVariable1.update();
        this.l_cur_rec_recursos_recursoLiveVariable1.update();
- 
-    } catch(e) {
-      console.error('ERROR IN subtopicoDataGrid1Selected: ' + e); 
-    } 
   },
   
    cur_encabezado_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
@@ -106,7 +101,6 @@ dojo.declare("Main", wm.Page, {
   },
   
   cur_encabezado_sel_gradoChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
      this.l_cur_asig_asignaturas_vista_docentes_asignaturas.update();
      this.l_cur_unid_unidades_unidadLiveVariable1.clearData();
      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.clearData();
@@ -114,14 +108,9 @@ dojo.declare("Main", wm.Page, {
      this.l_cur_metas_metas_otrasmetasLiveVariable1.clearData();
      this.l_cur_act_actividades_actividadLiveVariable1.clearData();
      this.l_cur_rec_recursos_recursoLiveVariable1.clearData();
-      
-    } catch(e) {
-      console.error('ERROR IN cur_encabezado_sel_gradoChange: ' + e); 
-    } 
   },
 
   cur_encabezado_butt_restaurarClick: function(inSender, inEvent) {
-    try {
      this.cur_encabezado_sel_grado.clear();
      this.cur_encabezado_sel_sy.clear();
      this.l_cur_asig_asignaturas_vista_docentes_asignaturas.clearData();
@@ -131,10 +120,6 @@ dojo.declare("Main", wm.Page, {
      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.clearData();
      this.l_cur_act_actividades_actividadLiveVariable1.clearData();
      this.l_cur_rec_recursos_recursoLiveVariable1.clearData();
-      
-    } catch(e) {
-      console.error('ERROR IN cur_encabezado_butt_restaurarClick: ' + e); 
-    } 
   },
   
   cur_asig_datag_asignaturasDataGrid1Selected: function(inSender, inIndex) {
@@ -475,9 +460,9 @@ dojo.declare("Main", wm.Page, {
        this.l_calif_contenedor_tablas_calificacion_final.clearData();  
        this.l_calif_alumnos_alumnos_asignaturas.clearData();         
        this.l_calif_alumnos_alumnosCursos.clearData();  
-  },
-  
+  },  
   inscalumaprendizajeLiveForm1BeginInsert: function(inSender) {
+      var username= this.a_getUserName.getData().dataValue;
       this.calif_alumnos_curso_datag_alumnosDataGrid1.setDisabled(true);
       this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(true);
       this.fechaIngresoEditor2.disable();
@@ -485,63 +470,50 @@ dojo.declare("Main", wm.Page, {
       this.calificacionNumEditor2.setValue("dataValue","0");
       this.aprendizajeLookup1.setValue("dataValue",this.calif_asig_datag_aprendizajesDataGrid1.selectedItem.getData().id.idAprendizaje);
       this.personaLookup1.setValue("dataValue",this.calif_alumnos_curso_datag_alumnosDataGrid1.selectedItem.getData().id.personaIdPersona);
-  },
-  
+      this.userNameIaa.setReadonly(true);
+      this.userNameIaa.setDataValue(username);
+  },  
   tipoActividadLookup1Change: function(inSender, inDisplayValue, inDataValue) {
-    try {
       if(this.tipoActividadLookup1.displayValue=="Retroalimentación"){
           this.tipoDesempenoLookup1.disable();
-           this.tipoValoracionLookup1.enable();
-            }
-            else{
-              this.tipoValoracionLookup1.disable();
-              this.tipoDesempenoLookup1.enable();
-            }
-      
-    } catch(e) {
-      console.error('ERROR IN tipoActividadLookup1Change: ' + e); 
-    } 
-  },
-  
+          this.tipoValoracionLookup1.enable();
+      }else{
+          this.tipoValoracionLookup1.disable();
+          this.tipoDesempenoLookup1.enable();
+      }
+  },  
   listaGRADOSChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
-        this.asignaturaLV1.update();
-        this.cursoslv1.update();      
-      
-    } catch(e) {
-      console.error('ERROR IN listaGRADOSChange: ' + e); 
-    } 
+      this.asignaturaLV1.update();
+      this.cursoslv1.update();      
   },
   
   asignaturas1Selected: function(inSender, inIndex) {
-    try {
-        this.asig1.setValue("dataValue",this.asignaturas1.selectedItem.getData().asignatura);      
-      
-    } catch(e) {
-      console.error('ERROR IN asignaturas1Selected: ' + e); 
-    } 
-  },
-  
+      this.asig1.setValue("dataValue",this.asignaturas1.selectedItem.getData().asignatura);       
+  },  
   curso1Selected: function(inSender, inIndex) {
-    try {
         this.cursost1.setValue("dataValue",this.curso1.selectedItem.getData().curso);        
-      
-    } catch(e) {
-      console.error('ERROR IN curso1Selected: ' + e); 
-    } 
-  },
-  
+  },  
   inscalumaprendizajeLiveForm2BeginInsert: function(inSender) {
+      var username= this.a_getUserName.getData().dataValue;
     /*acciones sobre la tabla de Calificacion por estudiante*/  
       this.calif_alumnos_datagrids_datag_alumnos_asignaturas.setDisabled(true);
       this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.setDisabled(true);
       this.calif_alumnos_datagrids_datag_alumnos_cursos.setDisabled(true);    
     /*fin de las acciones*/
+      this.registrante.setReadonly(true);
+      this.registrante.setDataValue(username);
       this.fechaIngresoEditor3.setDataValue(new Date());
       this.calificacionNumEditor3.setValue("dataValue","0");      this.aprendizajeLookup3.setValue("dataValue",this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.selectedItem.getData().id.idAprendizaje);
       this.personaLookup3.setValue("dataValue",this.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.idPersona);
-  },  
-    
+  }, 
+  inscalumaprendizajeLiveForm2BeginUpdate: function(inSender) {
+      var username= this.a_getUserName.getData().dataValue;
+      this.registrante.setReadonly(true);
+      this.registrante.setDataValue(username);
+      this.calif_alumnos_datagrids_datag_alumnos_cursos.setDisabled(true);
+      this.calif_alumnos_datagrids_datag_alumnos_asignaturas.setDisabled(true);
+      this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.setDisabled(true);
+  },     
   l_calif_alumnos_panel1_estudiantesClick: function(inSender, inEvent) {
       this.calif_alumnos_panel1_butt_hide.show();
       this.calif_alumnos_panel1_butt_show.show();
@@ -551,8 +523,7 @@ dojo.declare("Main", wm.Page, {
       this.actividades.hide();
       this.calif_panel_contenedor_aprendizaje.hide();
       this.calif_panel_contenedor_alumnos.show();
-  },
-  
+  },  
   l_calif_alumnos_panel1_butt_cambiarPanelClick: function(inSender, inEvent) {
       this.actividades.hide();
       this.calif_panel_contenedor_alumnos.hide();
@@ -563,9 +534,9 @@ dojo.declare("Main", wm.Page, {
       this.calif_alumnos_panel1_butt_show.hide();
       this.l_calif_alumnos_butt_ocultar.show();
       this.l_calif_alumnos_butt_mostrar.show();
-  },
-  
+  },  
   calif_alumnos_datagrids_datag_alumnos_cursosSelected: function(inSender, inIndex) {
+    this.calif_encabezado_opciones_butt_reporte_pendientes.enable();
     var idp= this.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.idPersona;
     var idsy= this.calif_encabezado_opciones_sel_sy.getDataValue();
     this.l_calif_alumnos_alumnos_asignaturas.input.setValue("idpersona", idp);
@@ -637,15 +608,14 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN inscalumaprendizajeDataGrid1RowDblClick: ' + e); 
     }},
   inscalumaprendizajeLiveForm1BeginUpdate: function(inSender) {
-    try {
+     var username= this.a_getUserName.getData().dataValue;
+     this.userNameIaa.setReadonly(true);
+     this.userNameIaa.setDataValue(username);
      this.personas.setDisabled(true);
      this.tablaAprendizajes.setDisabled(true);
      this.fechaIngresoEditor2.disable();
      this.fechaIngresoEditor2.setDataValue(new Date());
-      
-    } catch(e) {
-      console.error('ERROR IN inscalumaprendizajeLiveForm1BeginUpdate: ' + e); 
-    }},
+  },
   
   aprendizajeLiveForm1BeginUpdate: function(inSender) {
     try {
@@ -1244,64 +1214,32 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN inscalumaprendizajeLiveForm2Success: ' + e); 
     } 
-  },
-  
+  }, 
  liveForm2BeginInsert: function(inSender) {
-    try {
       this.asignaturaLookup4.setValue("dataValue", this.asignaturaDataGrid4.selectedItem.getData().idAsignatura);
-      
-    } catch(e) {
-      console.error('ERROR IN liveForm2BeginInsert: ' + e); 
-    } 
-  },
- 
+  }, 
   calif_alumnos_datagrids_datag_alumnos_cursosSelectionChanged: function(inSender) {   
       this.l_calif_alumnos_aprendizajes.clearData();
       this.l_calif_alumnos_datagrids_inscalumaprendizajeLiveVariable1.clearData();
       this.l_calif_alumnos_calificaciones_finales.clearData();
       this.editPanel10.cancelEdit();
-  },
-  
-  inscalumaprendizajeLiveForm2BeginUpdate: function(inSender) {
-    try {
-      
-       this.calif_alumnos_datagrids_datag_alumnos_cursos.setDisabled(true);
-        this.calif_alumnos_datagrids_datag_alumnos_asignaturas.setDisabled(true);
-         this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.setDisabled(true);
-            
-    } catch(e) {
-      console.error('ERROR IN inscalumaprendizajeLiveForm2BeginUpdate: ' + e); 
-    } 
-  },
+  },  
   apredizajesSelected: function(inSender, inIndex) {
-    try {
       this.inscalumaprendizajeLiveVariable1.update();
-       this.calif_finales.update();
-      
-    } catch(e) {
-      console.error('ERROR IN apredizajesSelected: ' + e); 
-    } 
-  },
- 
- calificacionesShow: function(inSender) {
-    try {
+      this.calif_finales.update();
+  }, 
+  calificacionesShow: function(inSender) {
      this.l_calif_encabezado_opciones_listaCursos.update();
-      
-    } catch(e) {
-      console.error('ERROR IN layer9Show: ' + e); 
-    } 
+     var json= main.a_cursy.getItem(0);
+     var sy= json.data.sy;
+     var idsy= json.data.idsy;
+     this.calif_encabezado_opciones_sel_sy.setDataValue(idsy);
   },
   button61Click: function(inSender, inEvent) {
-    try {
       url= "services/s317.download?method=getReport&num_asig="+this.textEditor1.getDataValue()+"&idp="+this.selectEditor2.getDataValue();
       window.open(url,"_BLANK");
-      
-    } catch(e) {
-      console.error('ERROR IN button61Click: ' + e); 
-    } 
   },
- 
- 
+
 /***********
  * Empieza implementaciones para loading popup
  ***********/
@@ -2922,28 +2860,18 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   reporteChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
      var _reporte= this.reporte.getDataValue();
      this.l_reportes_graficos_listado_reportes.filter.setValue("id.reporte", _reporte);
      this.l_reportes_graficos_listado_reportes.update(); 
-      
-    } catch(e) {
-      console.error('ERROR IN reporteChange: ' + e); 
-    } 
   },
-  calif_alumnos_datagrids_datag_alumnos_asignaturasSelected: function(inSender, inIndex) {
-    try {
+  calif_alumnos_datagrids_datag_alumnos_asignaturasSelected: function(inSender, inIndex) {     
      var idasignatura= this.calif_alumnos_datagrids_datag_alumnos_asignaturas.selectedItem.getData().idasignatura;
      this.l_calif_alumnos_aprendizajes.filter.setValue("id.asignaturaIdAsignatura", idasignatura); 
      this.l_calif_alumnos_aprendizajes.update(); 
-    } catch(e) {
-      console.error('ERROR IN calif_alumnos_datagrids_datag_alumnos_asignaturasSelected: ' + e); 
-    } 
   },
   cur_act_datag_actividadDataGrid1Selected: function(inSender, inIndex) {
      this.l_cur_formularios_actividad_listaTipoActividades.update(); 
-  },
-  
+  },  
   subjects_activitiesChange: function(inSender, inDisplayValue, inDataValue) {
      var idcurso= this.subjects_activities.getDataValue();
      var cadena=  this.subjects_activities.getDisplayValue();
@@ -2957,8 +2885,7 @@ dojo.declare("Main", wm.Page, {
      this.actividad_estudiantes.filter.setValue("sy.idSy", idsy);
      this.actividad_lv.update(); 
      this.actividad_estudiantes.update();
-  },
-  
+  },  
   activitiesDataGridSelected: function(inSender, inIndex) {
      var id=  this.activitiesDataGrid.selectedItem.getData().idActividad;
      this.inscalumactividadLiveVariable1.filter.setValue("actividad.idActividad",id);
@@ -2990,7 +2917,7 @@ dojo.declare("Main", wm.Page, {
   },
   inscalumaprendizajeLiveForm1InsertData: function(inSender) {
   console.log("-->");
-   /*   var docente= main.a_getUserName.getData().dataValue;
+      var docente= main.a_getUserName.getData().dataValue;
       var estudiante= this.calif_alumnos_curso_datag_alumnosDataGrid1.selectedItem.getData().id.personaIdPersona;
       var aprendizaje= this.calif_asig_datag_aprendizajesDataGrid1.selectedItem.getData().id.idAprendizaje;
       var now= new Date().getTime();                                  //fecha del sistema para fecha_creacion                                 
@@ -3008,10 +2935,10 @@ dojo.declare("Main", wm.Page, {
       this.global_log_acciones_docentes.setValue("tablaAfectada", entidad);
       this.global_log_acciones_docentes.setValue("fechaCreacion", now);
       this.log_acciones_docentesForm.setDataSet(this.global_log_acciones_docentes);          
-      this.log_acciones_docentesForm.insertData();  */
+      this.log_acciones_docentesForm.insertData(); 
   },
   inscalumaprendizajeLiveForm1UpdateData: function(inSender) {
-    /*  var docente= main.a_getUserName.getData().dataValue;
+      var docente= main.a_getUserName.getData().dataValue;
       var idkey= this.idInscAlumAprendizajeEditor2.getDataValue();
       var estudiante= this.calif_alumnos_curso_datag_alumnosDataGrid1.selectedItem.getData().id.personaIdPersona;
       var aprendizaje= this.calif_asig_datag_aprendizajesDataGrid1.selectedItem.getData().id.idAprendizaje;
@@ -3030,10 +2957,10 @@ dojo.declare("Main", wm.Page, {
       this.global_log_acciones_docentes.setValue("tablaAfectada", entidad);
       this.global_log_acciones_docentes.setValue("fechaCreacion", now);
       this.log_acciones_docentesForm.setDataSet(this.global_log_acciones_docentes);          
-      this.log_acciones_docentesForm.insertData();  */
+      this.log_acciones_docentesForm.insertData();  
   },
   inscalumaprendizajeLiveForm1DeleteData: function(inSender) {
-    /*  var docente= main.a_getUserName.getData().dataValue;
+      var docente= main.a_getUserName.getData().dataValue;
       var idkey= this.idInscAlumAprendizajeEditor2.getDataValue();
       var estudiante= this.calif_alumnos_curso_datag_alumnosDataGrid1.selectedItem.getData().id.personaIdPersona;
       var aprendizaje= this.calif_asig_datag_aprendizajesDataGrid1.selectedItem.getData().id.idAprendizaje;
@@ -3052,10 +2979,10 @@ dojo.declare("Main", wm.Page, {
       this.global_log_acciones_docentes.setValue("tablaAfectada", entidad);
       this.global_log_acciones_docentes.setValue("fechaCreacion", now);
       this.log_acciones_docentesForm.setDataSet(this.global_log_acciones_docentes);          
-      this.log_acciones_docentesForm.insertData();  */
+      this.log_acciones_docentesForm.insertData();  
   },  
   inscalumaprendizajeLiveForm2InsertData: function(inSender) {
-    /*  var docente= main.a_getUserName.getData().dataValue;
+      var docente= main.a_getUserName.getData().dataValue;
       var estudiante= this.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.idPersona;
       var aprendizaje= this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.selectedItem.getData().id.idAprendizaje;
       var now= new Date().getTime();                                  //fecha del sistema para fecha_creacion                                 
@@ -3073,11 +3000,11 @@ dojo.declare("Main", wm.Page, {
       this.global_log_acciones_docentes.setValue("tablaAfectada", entidad);
       this.global_log_acciones_docentes.setValue("fechaCreacion", now);
       this.log_acciones_docentesForm.setDataSet(this.global_log_acciones_docentes);          
-      this.log_acciones_docentesForm.insertData();   */     
+      this.log_acciones_docentesForm.insertData();        
   },
  
   inscalumaprendizajeLiveForm2UpdateData: function(inSender) {
-    /*  var docente= main.a_getUserName.getData().dataValue;
+      var docente= main.a_getUserName.getData().dataValue;
       var estudiante= this.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.idPersona;
       var idkey= this.idInscAlumAprendizajeEditor3.getDataValue();
       var aprendizaje= this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.selectedItem.getData().id.idAprendizaje;
@@ -3096,10 +3023,10 @@ dojo.declare("Main", wm.Page, {
       this.global_log_acciones_docentes.setValue("tablaAfectada", entidad);
       this.global_log_acciones_docentes.setValue("fechaCreacion", now);
       this.log_acciones_docentesForm.setDataSet(this.global_log_acciones_docentes);          
-      this.log_acciones_docentesForm.insertData();     */   
+      this.log_acciones_docentesForm.insertData();    
   },
   inscalumaprendizajeLiveForm2DeleteData: function(inSender) {
-     /* var docente= main.a_getUserName.getData().dataValue;
+      var docente= main.a_getUserName.getData().dataValue;
       var estudiante= this.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.IdPersona;
       var aprendizaje= this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.selectedItem.getData().id.idAprendizaje;
       var now= new Date().getTime();                                  //fecha del sistema para fecha_creacion                                 
@@ -3117,8 +3044,27 @@ dojo.declare("Main", wm.Page, {
       this.global_log_acciones_docentes.setValue("tablaAfectada", entidad);
       this.global_log_acciones_docentes.setValue("fechaCreacion", now);
       this.log_acciones_docentesForm.setDataSet(this.global_log_acciones_docentes);          
-      this.log_acciones_docentesForm.insertData();   */       
+      this.log_acciones_docentesForm.insertData();      
   },
 
+  calif_encabezado_opciones_butt_reporte_pendientesClick: function(inSender, inEvent) {
+      main.a_informacionUsuario.update();
+      var getter = main.a_informacionUsuario2.getItem(0);
+      var id= getter.data.idpersona;
+      var clave= getter.data.clave;
+      var idpersona_ = main.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.idPersona;
+      var formatType= "PDF";
+      $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
+        failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
+        httpMethod: "POST",
+        data:{ idp: id, 
+               pass: clave,
+               uri: "/aprendozreports/DOC008",
+               format: formatType,
+               params: { idpersona: idpersona_}
+         }
+       });
+       inEvent.preventDefault();
+  },
   _end: 0
 });

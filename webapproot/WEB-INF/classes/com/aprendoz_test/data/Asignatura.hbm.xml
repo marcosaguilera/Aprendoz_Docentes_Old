@@ -89,6 +89,12 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy"/>
         </set>
+        <set name="inscAlumAsigCopy3s" inverse="true">
+            <key>
+                <column name="Asignatura_Id_Asignatura" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy3"/>
+        </set>
         <set name="inscAlumAsigs" inverse="true">
             <key>
                 <column name="Asignatura_Id_Asignatura" not-null="true"/>
