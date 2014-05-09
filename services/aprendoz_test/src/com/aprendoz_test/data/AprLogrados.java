@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.AprLogrados
- *  04/21/2014 08:59:04
+ *  05/09/2014 07:43:02
  * 
  */
 public class AprLogrados {

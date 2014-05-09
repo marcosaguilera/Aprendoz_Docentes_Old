@@ -17,6 +17,12 @@
         <many-to-one name="nivel" class="com.aprendoz_test.data.Nivel" cascade="none">
             <column name="Nivel_Id_Nivel"/>
         </many-to-one>
+        <set name="costosAnualesCopies" inverse="true">
+            <key>
+                <column name="Grado_Id_Grado" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.CostosAnualesCopy"/>
+        </set>
         <set name="asignaturas" inverse="true">
             <key>
                 <column name="Grado_Id_Grado" not-null="true"/>
@@ -40,6 +46,12 @@
                 <column name="Grado_Id_Grado"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.Curso"/>
+        </set>
+        <set name="costosAnualeses" inverse="true">
+            <key>
+                <column name="Grado_Id_Grado" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.CostosAnuales"/>
         </set>
     </class>
 </hibernate-mapping>

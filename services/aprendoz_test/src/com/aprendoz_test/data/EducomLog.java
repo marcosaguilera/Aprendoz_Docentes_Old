@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.EducomLog
- *  04/21/2014 08:59:03
+ *  05/09/2014 07:43:03
  * 
  */
 public class EducomLog {

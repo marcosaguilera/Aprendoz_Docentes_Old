@@ -307,21 +307,6 @@ background-color: VeryLightGray;
  
 }
 
-.Main .Main-calif_encabezado_opciones_butt_reporte{
-  background: #FFCC00;
-  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
-  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
-  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
-  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
-  color: #FFFFFF;
-  border: #FFCC00;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 2px 2px 2px 2px;
- 
-}
-
 .Main .Main-button16{
   background: #4D90FE;
   background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
@@ -1108,8 +1093,8 @@ background-color: VeryLightGray;
 }
 
 .Main .Main-inscalumaprendizajeDetailsPanel1 {
-  background: #bf5e5e;
-    background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+    background: #3C9300;
+      background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
   background-image: -webkit-linear-gradient(center top , #bf5e5e, #bf5e5e);
   background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
   background-image: -o-linear-gradient(center top , #3366CC, #bf5e5e);
@@ -1408,9 +1393,7 @@ border-radius: 5px;
 }
 
 .Main .Main-logo_aprendoz {
-  background: white;
-    border-top-left-radius: 50px;
-border-bottom-right-radius: 50px;
+  
 }
 
 .Main .Main-label_bienvenida {
@@ -1715,6 +1698,29 @@ cursor: pointer;
 }
 
 .Main .Main-panelHeader {
-	height: 150px !important;
+  height: 150px !important;
 }
 
+.Main .Main-calif_encabezado_opciones_butt_reporte_pendientes {
+  background-color: #3654a1;
+  border-radius: 2px;
+}
+
+.Main .Main-calif_encabezado_opciones_butt_reporte {
+    background-color: #3654a1;
+    border-radius: 2px;
+}
+
+.Main .Main-calif_encabezado_opciones_butt_limpiar {
+    background-color: #3654a1;
+    border-radius: 2px;
+}
+
+.Main .Main-image_logo {
+    background: white;
+      border-radius: 20px 20px 0px 0px;
+}
+
+div#main_panel2 {
+    top: 38px !important;
+}
