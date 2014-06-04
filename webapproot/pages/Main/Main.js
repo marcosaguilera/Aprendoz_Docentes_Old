@@ -3066,5 +3066,6 @@ dojo.declare("Main", wm.Page, {
        });
        inEvent.preventDefault();
   },
+  
   _end: 0
 });
