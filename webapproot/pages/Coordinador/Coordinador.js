@@ -27,14 +27,14 @@ dojo.declare("Coordinador", wm.Page, {
      this.editPanel1.cancelEdit();   
   },
   insccomentariosalumnosLiveForm1BeginUpdate: function(inSender) {
-    try {
      var bim= this.insccomentariosalumnosDataGrid1.selectedItem.getData().numeroBimestre; 
+     var json= this.a_cursy.getItem(0);
+     var idsy= json.data.idsy;
+     var idpersona= this.alumnos_curso_listado.selectedItem.getData().idpersona;
      this.numeroBimestreEditor1.setDataValue(""+bim+""); 
+     this.syLookup1.setDataValue(idsy); 
+     this.personaLookup1.setDataValue(idpersona); 
      this.fechaActualEditor1.setReadonly(true);
-      
-    } catch(e) {
-      console.error('ERROR IN insccomentariosalumnosLiveForm1BeginUpdate: ' + e); 
-    } 
   },
   insccomentariosalumnosDataGrid1SelectionChanged: function(inSender) {
      this.editPanel1.cancelEdit();  

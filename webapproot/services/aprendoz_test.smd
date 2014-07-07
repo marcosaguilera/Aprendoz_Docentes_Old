@@ -92,19 +92,19 @@
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetCurseByidGradeRtnType]"
 	}, {
+		"name": "getDimensionCurricularById",
+		"parameters": [{
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "com.aprendoz_test.data.DimensionCurricular"
+	}, {
 		"name": "getInformacionValiosa",
 		"parameters": [{
 			"name": "usuario",
 			"type": "java.lang.String"
 		}],
 		"returnType": "com.aprendoz_test.data.output.GetInformacionValiosaRtnType"
-	}, {
-		"name": "getInscAlumActividadById",
-		"parameters": [{
-			"name": "id",
-			"type": "java.lang.Integer"
-		}],
-		"returnType": "com.aprendoz_test.data.InscAlumActividad"
 	}, {
 		"name": "getListStudentsByCurse",
 		"parameters": [{

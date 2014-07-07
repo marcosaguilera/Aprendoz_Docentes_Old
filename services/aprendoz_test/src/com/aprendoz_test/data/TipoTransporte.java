@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.TipoTransporte
- *  05/09/2014 07:43:03
+ *  06/13/2014 08:33:46
  * 
  */
 public class TipoTransporte {

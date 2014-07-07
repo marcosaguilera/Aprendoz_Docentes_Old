@@ -7,13 +7,14 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Inteligencia
- *  05/09/2014 07:43:02
+ *  06/13/2014 08:33:47
  * 
  */
 public class Inteligencia {
 
     private Integer idInteligencia;
     private String inteligencia;
+    private Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases = new HashSet<com.aprendoz_test.data.AprendizajesAsignaturas>();
     private Set<com.aprendoz_test.data.Aprendizaje> aprendizajes = new HashSet<com.aprendoz_test.data.Aprendizaje>();
 
     public Inteligencia() {
@@ -24,9 +25,10 @@ public class Inteligencia {
         this.inteligencia = inteligencia;
     }
 
-    public Inteligencia(Integer idInteligencia, String inteligencia, Set<com.aprendoz_test.data.Aprendizaje> aprendizajes) {
+    public Inteligencia(Integer idInteligencia, String inteligencia, Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases, Set<com.aprendoz_test.data.Aprendizaje> aprendizajes) {
         this.idInteligencia = idInteligencia;
         this.inteligencia = inteligencia;
+        this.aprendizajesAsignaturases = aprendizajesAsignaturases;
         this.aprendizajes = aprendizajes;
     }
 
@@ -44,6 +46,14 @@ public class Inteligencia {
 
     public void setInteligencia(String inteligencia) {
         this.inteligencia = inteligencia;
+    }
+
+    public Set<com.aprendoz_test.data.AprendizajesAsignaturas> getAprendizajesAsignaturases() {
+        return aprendizajesAsignaturases;
+    }
+
+    public void setAprendizajesAsignaturases(Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases) {
+        this.aprendizajesAsignaturases = aprendizajesAsignaturases;
     }
 
     public Set<com.aprendoz_test.data.Aprendizaje> getAprendizajes() {

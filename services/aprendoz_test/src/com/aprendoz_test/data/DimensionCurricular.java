@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.DimensionCurricular
- *  05/09/2014 07:43:03
+ *  06/13/2014 08:33:47
  * 
  */
 public class DimensionCurricular {
@@ -15,6 +15,7 @@ public class DimensionCurricular {
     private Integer idDimension;
     private String dimensionCurricular;
     private Set<com.aprendoz_test.data.Aprendizaje> aprendizajes = new HashSet<com.aprendoz_test.data.Aprendizaje>();
+    private Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases = new HashSet<com.aprendoz_test.data.AprendizajesAsignaturas>();
 
     public DimensionCurricular() {
     }
@@ -24,10 +25,11 @@ public class DimensionCurricular {
         this.dimensionCurricular = dimensionCurricular;
     }
 
-    public DimensionCurricular(Integer idDimension, String dimensionCurricular, Set<com.aprendoz_test.data.Aprendizaje> aprendizajes) {
+    public DimensionCurricular(Integer idDimension, String dimensionCurricular, Set<com.aprendoz_test.data.Aprendizaje> aprendizajes, Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases) {
         this.idDimension = idDimension;
         this.dimensionCurricular = dimensionCurricular;
         this.aprendizajes = aprendizajes;
+        this.aprendizajesAsignaturases = aprendizajesAsignaturases;
     }
 
     public Integer getIdDimension() {
@@ -52,6 +54,14 @@ public class DimensionCurricular {
 
     public void setAprendizajes(Set<com.aprendoz_test.data.Aprendizaje> aprendizajes) {
         this.aprendizajes = aprendizajes;
+    }
+
+    public Set<com.aprendoz_test.data.AprendizajesAsignaturas> getAprendizajesAsignaturases() {
+        return aprendizajesAsignaturases;
+    }
+
+    public void setAprendizajesAsignaturases(Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases) {
+        this.aprendizajesAsignaturases = aprendizajesAsignaturases;
     }
 
 }
