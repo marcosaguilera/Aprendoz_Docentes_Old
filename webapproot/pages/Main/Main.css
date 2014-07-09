@@ -774,9 +774,16 @@ background-color: VeryLightGray;
 }
 
 .Main .Main-button7 {
-    background-color: #f1f5fc;
-    cursor: pointer;
-    margin-top: 4px;
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
 }
 
 .Main .Main-cur_asig_panel_asignaturas{
@@ -1236,19 +1243,16 @@ cursor: pointer;
 }
 
 .Main .Main-button2 {
-     background: #B8B8B8;
-      background-image: -moz-linear-gradient(center top , #B8B8B8, #B8B8B8);
-  background-image: -webkit-linear-gradient(center top , #B8B8B8, #B8B8B8);
-  background-image: -moz-linear-gradient(center top , #B8B8B8, #B8B8B8);
-  background-image: -o-linear-gradient(center top , #B8B8B8, #B8B8B8);
-  color: #FFFFFF;
-  border: #FFCC00;
+	     background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
   cursor: pointer;
-  border-radius: 2px 2px 2px 2px;
-cursor: pointer;
-
+  border-radius: 3px 3px 3px 3px;
 }
 
 .Main .Main-unidadDetalles {
@@ -1723,4 +1727,137 @@ cursor: pointer;
 
 div#main_panel2 {
     top: 38px !important;
+}.Main .Main-button1 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
 }
+
+.Main .Main-button4 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-button5 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-button6 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-button8 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-button9 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-button11 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-button10 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-cur_subTablas_rec {
+	   
+}
+
+.Main .Main-button12 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-button13 {
+	      background: #F3F3F3;
+	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+

@@ -35,7 +35,8 @@ dojo.declare("Main", wm.Page, {
   
    cur_encabezado_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
     try {
-   if(this.cur_encabezado_sel_sy.dataValue==1 || this.cur_encabezado_sel_sy.dataValue==2 || this.cur_encabezado_sel_sy.dataValue==3 || this.cur_encabezado_sel_sy.dataValue==4){
+    var sy_value= this.cur_encabezado_sel_sy.dataValue;
+   if(sy_value==1 || sy_value==2 || sy_value==3 || sy_value==4){
         //formulario unidades
         this.newButton4.hide();
         this.updateButton4.hide();
@@ -61,7 +62,7 @@ dojo.declare("Main", wm.Page, {
         this.updateButton13.hide();
         this.deleteButton13.hide();    
      }     
-     else if(this.cur_encabezado_sel_sy!=1 || this.cur_encabezado_sel_sy!=2) {
+     else if(sy_value!=1 || sy_value!=2) {
         //formulario unidades
         this.newButton4.show();
         this.updateButton4.show();
@@ -93,8 +94,7 @@ dojo.declare("Main", wm.Page, {
         this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.clearData();
         this.l_cur_metas_metas_otrasmetasLiveVariable1.clearData();
         this.l_cur_act_actividades_actividadLiveVariable1.clearData();
-        this.l_cur_act_actividades_actividadLiveVariable1.clearData();
-               
+        this.l_cur_act_actividades_actividadLiveVariable1.clearData();               
     } catch(e) {
       console.error('ERROR IN cur_encabezado_sel_syChange: ' + e); 
     } 
@@ -158,8 +158,8 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN asignaturaDataGrid1RowDblClick: ' + e); 
     } 
   },
- 
-  cur_unid_datag_unidadesDataGrid1RowDblClick: function(inSender, inEvent) {
+   //para borrar
+  /*cur_unid_datag_unidadesDataGrid1RowDblClick: function(inSender, inEvent) {
     try {
      this.iraformularios.update();
      this.cur_formularios_panel_subtopico.hide();
@@ -172,7 +172,7 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN cur_unid_datag_unidadesDataGrid1RowDblClick ' + e); 
     } 
-  },
+  },*/
 
   cur_subt_datag_subtopicoDataGrid1RowDblClick: function(inSender, inEvent) {
     try {
@@ -188,8 +188,8 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN subtopicoDataGrid1RowDblClick: ' + e); 
     } 
   },
-
-  cur_apr_datag_aprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
+    //para borrar
+  /*cur_apr_datag_aprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
     try {
      this.iraformularios.update();     
      this.cur_formularios_panel_otrasmetas.hide();
@@ -202,7 +202,7 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN aprendizajeDataGrid1RowDblClick: ' + e); 
     } 
-  },
+  },*/
   //ok
   cur_metas_datag_otrasmetasDataGrid1RowDblClick: function(inSender, inEvent) {
     try {
@@ -248,7 +248,7 @@ dojo.declare("Main", wm.Page, {
     }},
   cur_encabezado2_butt_crea_unidadClick: function(inSender, inEvent) {
     try {
-     this.cur_unid_datag_unidadesDataGrid1RowDblClick(inSender, inEvent);
+    // this.cur_unid_datag_unidadesDataGrid1RowDblClick(inSender, inEvent); para borrar
      this.editPanel4.beginDataInsert();
   
     } catch(e) {
@@ -263,14 +263,10 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN cur_encabezado3_butt_crear_subtopicoClick: ' + e); 
     }},
   cur_apr_encabezado_butt_crear_aprendizajeClick: function(inSender, inEvent) {
-    try {
-     this.cur_apr_datag_aprendizajeDataGrid1RowDblClick(inSender, inEvent);
+     //this.cur_apr_datag_aprendizajeDataGrid1RowDblClick(inSender, inEvent); para borrar
      this.editPanel1.beginDataInsert();
-     this.l_cur_formularios_aprendizajes_listaEjes.update();
- 
-    } catch(e) {
-      console.error('ERROR IN cur_apr_encabezado_butt_crear_aprendizajeClick: ' + e); 
-    }},
+     this.l_cur_formularios_aprendizajes_listaEjes.update(); 
+  },
   cur_act_encabezado_butt_crear_actividadClick: function(inSender, inEvent) {
     try {
      this.cur_act_datag_actividadDataGrid1RowDblClick(inSender, inEvent);
