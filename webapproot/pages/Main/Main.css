@@ -1242,7 +1242,7 @@ background-color: VeryLightGray;
 cursor: pointer;
 }
 
-.Main .Main-button2 {
+.Main .Main-cur_unidad_view {
 	     background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1727,7 +1727,7 @@ cursor: pointer;
 
 div#main_panel2 {
     top: 38px !important;
-}.Main .Main-button1 {
+}.Main .Main-cur_unidad_edit {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1740,7 +1740,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
-.Main .Main-button4 {
+.Main .Main-cur_subt_edit {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1753,7 +1753,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
-.Main .Main-button5 {
+.Main .Main-cur_subt_view {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
