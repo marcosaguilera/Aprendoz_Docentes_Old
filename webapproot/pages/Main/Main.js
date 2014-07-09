@@ -28,15 +28,15 @@ dojo.declare("Main", wm.Page, {
   
   cur_subt_datag_subtopicoDataGrid1Selected: function(inSender, inIndex) {
       this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.update();
-       this.l_cur_metas_metas_otrasmetasLiveVariable1.update();
-       this.l_cur_act_actividades_actividadLiveVariable1.update();
-       this.l_cur_rec_recursos_recursoLiveVariable1.update();
+      this.l_cur_metas_metas_otrasmetasLiveVariable1.update();
+      this.l_cur_act_actividades_actividadLiveVariable1.update();
+      this.l_cur_rec_recursos_recursoLiveVariable1.update();
   },
   
-   cur_encabezado_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
+  cur_encabezado_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
     try {
     var sy_value= this.cur_encabezado_sel_sy.dataValue;
-   if(sy_value==1 || sy_value==2 || sy_value==3 || sy_value==4){
+    if(sy_value==1 || sy_value==2 || sy_value==3 || sy_value==4){
         //formulario unidades
         this.newButton4.hide();
         this.updateButton4.hide();
@@ -158,21 +158,7 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN asignaturaDataGrid1RowDblClick: ' + e); 
     } 
   },
-   //para borrar
-  /*cur_unid_datag_unidadesDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.hide();  
-     this.cur_formularios_panel_unidad.show();
-      
-    } catch(e) {
-      console.error('ERROR IN cur_unid_datag_unidadesDataGrid1RowDblClick ' + e); 
-    } 
-  },*/
+
 
   cur_subt_datag_subtopicoDataGrid1RowDblClick: function(inSender, inEvent) {
     try {
@@ -355,7 +341,6 @@ dojo.declare("Main", wm.Page, {
   },
   /*Tablas de Unidades*/
    cur_unid_datag_unidadesDataGrid1CellClick: function(inSender, inEvent) {
-    try {
      this.cur_encabezado3_butt_crear_subtopico.enable();
      this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.clearData();
      this.l_cur_metas_metas_otrasmetasLiveVariable1.clearData();
@@ -366,11 +351,7 @@ dojo.declare("Main", wm.Page, {
      this.cur_apr_encabezado_butt_crear_aprendizaje.disable();
      this.cur_metas_encabezado_butt_crear_meta.disable();
      this.cur_act_encabezado_butt_crear_actividad.disable();
-     this.cur_rec_encabezado_butt_crear_recurso.disable();
-      
-    } catch(e) {
-      console.error('ERROR IN unidadDataGrid1CellClick: ' + e); 
-    } 
+     this.cur_rec_encabezado_butt_crear_recurso.disable(); 
   },
   
   /*Tablas Subtopicos*/
@@ -3063,5 +3044,16 @@ dojo.declare("Main", wm.Page, {
        inEvent.preventDefault();
   },
   
+  cur_unid_datag_unidadesDataGrid1Selected: function(inSender, inIndex) {
+      this.cur_unidad_edit.enable();
+      this.cur_unidad_view.enable();
+  },
+  cur_unidad_editClick: function(inSender, inEvent) {
+      this.editPanel4.beginDataUpdate();
+      this.cur_unidad_form_panel.show();
+  },
+  cur_unidad_viewClick: function(inSender, inEvent) {
+      this.cur_unidad_form_panel.show(); 
+  },
   _end: 0
 });
