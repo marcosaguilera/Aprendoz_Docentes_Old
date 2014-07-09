@@ -24,15 +24,16 @@ dojo.declare("Main", wm.Page, {
   mySessionExpiredMethod: function() {
       alert("Aviso importante: Sesión expirada \n\n"+"Su sesión ha excedido el tiempo de inactividad permitido en la aplicación. Por favor ingrese nuevamente.");
       window.location.reload();
-  },  
-  
+  },    
   cur_subt_datag_subtopicoDataGrid1Selected: function(inSender, inIndex) {
+      this.cur_subt_edit.enable();
+      this.cur_subt_view.enable();
+      
       this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.update();
       this.l_cur_metas_metas_otrasmetasLiveVariable1.update();
       this.l_cur_act_actividades_actividadLiveVariable1.update();
       this.l_cur_rec_recursos_recursoLiveVariable1.update();
-  },
-  
+  },  
   cur_encabezado_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
     try {
     var sy_value= this.cur_encabezado_sel_sy.dataValue;
@@ -159,21 +160,6 @@ dojo.declare("Main", wm.Page, {
     } 
   },
 
-
-  cur_subt_datag_subtopicoDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.hide();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.show();
-      
-    } catch(e) {
-      console.error('ERROR IN subtopicoDataGrid1RowDblClick: ' + e); 
-    } 
-  },
     //para borrar
   /*cur_apr_datag_aprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
     try {
@@ -233,23 +219,14 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN recursoDataGrid1RowDblClick: ' + e); 
     }},
   cur_encabezado2_butt_crea_unidadClick: function(inSender, inEvent) {
-    try {
-    // this.cur_unid_datag_unidadesDataGrid1RowDblClick(inSender, inEvent); para borrar
      this.editPanel4.beginDataInsert();
-  
-    } catch(e) {
-      console.error('ERROR IN button1Click: ' + e); 
-    }}, 
+     this.cur_unidad_form_panel.show();
+  }, 
   cur_encabezado3_butt_crear_subtopicoClick: function(inSender, inEvent) {
-    try {
-     this.cur_subt_datag_subtopicoDataGrid1RowDblClick(inSender, inEvent);
      this.editPanel5.beginDataInsert();
-      
-    } catch(e) {
-      console.error('ERROR IN cur_encabezado3_butt_crear_subtopicoClick: ' + e); 
-    }},
+     this.cur_subt_form_panel.show();
+  },
   cur_apr_encabezado_butt_crear_aprendizajeClick: function(inSender, inEvent) {
-     //this.cur_apr_datag_aprendizajeDataGrid1RowDblClick(inSender, inEvent); para borrar
      this.editPanel1.beginDataInsert();
      this.l_cur_formularios_aprendizajes_listaEjes.update(); 
   },
@@ -296,9 +273,9 @@ dojo.declare("Main", wm.Page, {
      this.cur_ls_inteligencias.update();
      //this.subtopicoLookup6.setValue("dataValue",_subtopico);
      this.subtopicoLookup6.setDataValue(_subtopico);
-     this.pesoEditor2.setDataValue("1");    
+     this.pesoEditor3.setDataValue("1");    
      this.pesoEditor3.hide();
-     this.pesoEditor2.show();
+     //this.pesoEditor2.show();
       
     } catch(e) {
       console.error('ERROR IN aprendizajeLiveForm1BeginInsert: ' + e); 
@@ -347,24 +324,18 @@ dojo.declare("Main", wm.Page, {
      this.l_cur_act_actividades_actividadLiveVariable1.clearData();
      this.l_cur_rec_recursos_recursoLiveVariable1.clearData();
      
-     //botones a desativar
+     //botones a desactivar
      this.cur_apr_encabezado_butt_crear_aprendizaje.disable();
      this.cur_metas_encabezado_butt_crear_meta.disable();
      this.cur_act_encabezado_butt_crear_actividad.disable();
      this.cur_rec_encabezado_butt_crear_recurso.disable(); 
-  },
-  
+  },  
   /*Tablas Subtopicos*/
-  cur_subt_datag_subtopicoDataGrid1CellClick: function(inSender, inEvent) {
-    try {
+  cur_subt_datag_subtopicoDataGrid1CellClick: function(inSender, inEvent) { 
      this.cur_apr_encabezado_butt_crear_aprendizaje.enable();
      this.cur_metas_encabezado_butt_crear_meta.enable();
      this.cur_act_encabezado_butt_crear_actividad.enable();
      this.cur_rec_encabezado_butt_crear_recurso.enable();
-      
-    } catch(e) {
-      console.error('ERROR IN subtopicoDataGrid1CellClick: ' + e); 
-    } 
   },
   
   recursosClick: function(inSender, inEvent) {
@@ -3042,11 +3013,11 @@ dojo.declare("Main", wm.Page, {
          }
        });
        inEvent.preventDefault();
-  },
-  
+  },  
   cur_unid_datag_unidadesDataGrid1Selected: function(inSender, inIndex) {
       this.cur_unidad_edit.enable();
       this.cur_unidad_view.enable();
+      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.update();
   },
   cur_unidad_editClick: function(inSender, inEvent) {
       this.editPanel4.beginDataUpdate();
@@ -3054,6 +3025,13 @@ dojo.declare("Main", wm.Page, {
   },
   cur_unidad_viewClick: function(inSender, inEvent) {
       this.cur_unidad_form_panel.show(); 
+  },
+  cur_subt_editClick: function(inSender, inEvent) {
+      this.cur_subt_form_panel.show();
+      this.editPanel5.beginDataUpdate();
+  },
+  cur_subt_viewClick: function(inSender, inEvent) {
+      this.cur_subt_form_panel.show();
   },
   _end: 0
 });
