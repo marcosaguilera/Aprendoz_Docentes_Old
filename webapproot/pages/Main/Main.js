@@ -122,8 +122,7 @@ dojo.declare("Main", wm.Page, {
      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.clearData();
      this.l_cur_act_actividades_actividadLiveVariable1.clearData();
      this.l_cur_rec_recursos_recursoLiveVariable1.clearData();
-  },
-  
+  },  
   cur_asig_datag_asignaturasDataGrid1Selected: function(inSender, inIndex) {
     try {
      this.l_cur_unid_unidades_unidadLiveVariable1.update();  
@@ -159,8 +158,7 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN asignaturaDataGrid1RowDblClick: ' + e); 
     } 
-  },
-  
+  },  
   cur_encabezado2_butt_crea_unidadClick: function(inSender, inEvent) {
      this.editPanel4.beginDataInsert();
      this.cur_unidad_form_panel.show();
@@ -182,6 +180,7 @@ dojo.declare("Main", wm.Page, {
   cur_rec_encabezado_butt_crear_recursoClick: function(inSender, inEvent) {
      this.editPanel13.beginDataInsert();
      this.l_cur_formularios_recursos_tipoRecurso.update();
+     this.cur_src_form_panel.show();
   },   
   unidadLiveForm1BeginInsert: function(inSender) {
     try {
@@ -206,12 +205,8 @@ dojo.declare("Main", wm.Page, {
      var _subtopico = this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico;
      this.a_nivel_esperado.update();
      this.cur_ls_inteligencias.update();
-     //this.subtopicoLookup6.setValue("dataValue",_subtopico);
      this.subtopicoLookup6.setDataValue(_subtopico);
-     this.pesoEditor3.setDataValue("1");    
-    // this.pesoEditor3.hide();
-     //this.pesoEditor2.show();
-      
+     this.pesoEditor3.setDataValue("1");       
     } catch(e) {
       console.error('ERROR IN aprendizajeLiveForm1BeginInsert: ' + e); 
     }},
@@ -1842,10 +1837,8 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN inicio_abrir_preferencias1Click: ' + e); 
     } 
-  },
-  
+  },  
   pestana_reportes_seguimientoShow: function(inSender) {
-    try {
       var jsonobject= main.a_informacionUsuario2.getItem(0);
       var rol = jsonobject.data.idtipo;
       var idpersona = jsonobject.data.idpersona;
@@ -1854,19 +1847,11 @@ dojo.declare("Main", wm.Page, {
       this.l_reportes_graficos_listado_reportes.filter.setValue("id.idTipoPersona", valueToFilter);
       this.l_reportes_graficos_listado_reportes.filter.setValue("id.idPersona", valuePersona);
       this.l_reportes_graficos_listado_reportes.update();
-        
-    } catch(e) {
-      console.error('ERROR IN pestana_reportes_seguimientoShow: ' + e); 
-    } 
   },
-
   pestana_curriculoShow: function(inSender) {
-    try {
-      this.cur_encabezado_sel_sy.setDataValue(3);
-      
-    } catch(e) {
-      console.error('ERROR IN pestana_curriculoShow: ' + e); 
-    } 
+      var _sy= main.a_cursy.getItem(0).data.idsy;
+      console.log(_sy);
+      this.cur_encabezado_sel_sy.setDataValue(_sy); 
   },
  
   reports_open_report_windowClick: function(inSender, inEvent) {
