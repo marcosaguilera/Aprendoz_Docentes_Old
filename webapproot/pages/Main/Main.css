@@ -773,7 +773,7 @@ background-color: VeryLightGray;
   border-radius: 2px 2px 2px 2px; button58
 }
 
-.Main .Main-button7 {
+.Main .Main-cur_apr_edit {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1766,7 +1766,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
-.Main .Main-button6 {
+.Main .Main-cur_apr_view {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1779,7 +1779,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
-.Main .Main-button8 {
+.Main .Main-cur_meta_edit {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1792,7 +1792,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
-.Main .Main-button9 {
+.Main .Main-cur_meta_view {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1805,7 +1805,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
-.Main .Main-button11 {
+.Main .Main-cur_activ_edit {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1818,7 +1818,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
-.Main .Main-button10 {
+.Main .Main-cur_activ_view {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1835,7 +1835,7 @@ div#main_panel2 {
 	   
 }
 
-.Main .Main-button12 {
+.Main .Main-cur_src_edit {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
@@ -1848,7 +1848,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
-.Main .Main-button13 {
+.Main .Main-cur_src_view {
 	      background: #F3F3F3;
 	      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
   background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
