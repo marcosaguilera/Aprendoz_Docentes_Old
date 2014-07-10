@@ -28,6 +28,7 @@ dojo.declare("Main", wm.Page, {
   cur_subt_datag_subtopicoDataGrid1Selected: function(inSender, inIndex) {
       this.cur_subt_edit.enable();
       this.cur_subt_view.enable();
+      this.button2.enable();
       
       this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.update();
       this.l_cur_metas_metas_otrasmetasLiveVariable1.update();
@@ -159,20 +160,7 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN asignaturaDataGrid1RowDblClick: ' + e); 
     } 
   },
-
-  cur_rec_datag_recursosDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.show();
-      
-    } catch(e) {
-      console.error('ERROR IN recursoDataGrid1RowDblClick: ' + e); 
-    }},
+  
   cur_encabezado2_butt_crea_unidadClick: function(inSender, inEvent) {
      this.editPanel4.beginDataInsert();
      this.cur_unidad_form_panel.show();
@@ -2763,6 +2751,7 @@ dojo.declare("Main", wm.Page, {
      this.l_cur_formularios_actividad_listaTipoActividades.update(); 
      this.cur_activ_edit.enable();
      this.cur_activ_view.enable();
+     this.button4.enable();
   },  
   subjects_activitiesChange: function(inSender, inDisplayValue, inDataValue) {
      var idcurso= this.subjects_activities.getDataValue();
@@ -2961,6 +2950,7 @@ dojo.declare("Main", wm.Page, {
   cur_unid_datag_unidadesDataGrid1Selected: function(inSender, inIndex) {
       this.cur_unidad_edit.enable();
       this.cur_unidad_view.enable();
+      this.button1.enable();
       this.l_cur_subt_subtopicos_subtopicoLiveVariable1.update();
   },
   cur_unidad_editClick: function(inSender, inEvent) {
@@ -2984,6 +2974,7 @@ dojo.declare("Main", wm.Page, {
   cur_apr_datag_aprendizajeDataGrid1Selected: function(inSender, inIndex) {
       this.cur_apr_edit.enable();
       this.cur_apr_view.enable();
+      this.button6.enable();
   },
   cur_apr_editClick: function(inSender, inEvent) {
       this.cur_apr_form_panel.show();
@@ -3001,7 +2992,8 @@ dojo.declare("Main", wm.Page, {
   },
   cur_metas_datag_otrasmetasDataGrid1Selected: function(inSender, inIndex) {
       this.cur_meta_edit.enable(); 
-      this.cur_meta_view.enable(); 
+      this.cur_meta_view.enable();
+      this.button5.enable(); 
   },
   newButton6Click: function(inSender, inEvent) {
       this.editPanel6.beginDataInsert(); 
@@ -3024,10 +3016,29 @@ dojo.declare("Main", wm.Page, {
   cur_rec_datag_recursosDataGrid1Selected: function(inSender, inIndex) {
       this.cur_src_edit.enable();
       this.cur_src_view.enable();
+      this.button7.enable();
   },
   newButton13Click: function(inSender, inEvent) {
       this.editPanel13.beginDataInsert(); 
       this.cur_rec_encabezado_butt_crear_recursoClick();
+  },
+  button1Click: function(inSender, inEvent) {
+      this.cur_unidad_form_panel.hide(); 
+  },
+  button2Click: function(inSender, inEvent) {
+      this.cur_subt_form_panel.hide(); 
+  },
+  button6Click: function(inSender, inEvent) {
+      this.cur_apr_form_panel.hide(); 
+  },
+  button5Click: function(inSender, inEvent) {
+      this.cur_metas_form_panel.hide(); 
+  },  
+  button7Click: function(inSender, inEvent) {
+      this.cur_src_form_panel.hide(); 
+  },
+  button4Click: function(inSender, inEvent) {
+      this.cur_actv_form_panel.hide(); 
   },
   _end: 0
 });
