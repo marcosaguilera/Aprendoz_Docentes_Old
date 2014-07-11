@@ -142,23 +142,7 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN cur_asig_datag_asignaturasDataGrid1Selected: ' + e); 
     } 
-  },
-
-  asignaturaDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.hide();
-     this.asignaturaDetailsPanel.show();
-      
-    } catch(e) {
-      console.error('ERROR IN asignaturaDataGrid1RowDblClick: ' + e); 
-    } 
-  },  
+  },   
   cur_encabezado2_butt_crea_unidadClick: function(inSender, inEvent) {
      this.editPanel4.beginDataInsert();
      this.cur_unidad_form_panel.show();

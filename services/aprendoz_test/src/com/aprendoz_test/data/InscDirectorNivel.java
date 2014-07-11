@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.InscDirectorNivel
- *  06/13/2014 08:33:47
+ *  07/11/2014 08:22:38
  * 
  */
 public class InscDirectorNivel {
