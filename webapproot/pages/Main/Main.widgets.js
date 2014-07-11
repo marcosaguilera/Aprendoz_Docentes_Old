@@ -484,6 +484,8 @@ Main.widgets = {
 	actividad_estudiantes: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"liveSource":"com.aprendoz_test.data.InscAlumCurso","orderBy":"asc: persona.apellido1, asc: persona.apellido2, asc: persona.nombre1, asc: persona.nombre2 "}, {}],
 	global_log_acciones_docentes: ["wm.Variable", {"type":"com.aprendoz_test.data.LogAccionesDocentes"}, {}],
 	variable1: ["wm.Variable", {"type":"wm.Variable"}, {}],
+	curriculo_aprendizaje_lista_aprendizajes_asig: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"liveSource":"app.AprendizajesAsignaturaLiveView"}, {}],
+	curriculo_set_aprendizaje_lista_aprendizajes_asig: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"liveSource":"com.aprendoz_test.data.AprendizajesAsignaturas"}, {"onSuccess":"curriculo_set_aprendizaje_lista_aprendizajes_asigSuccess"}],
 	mainLayout: ["wm.Layout", {"height":"100%","width":"802px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 		FancyCentered: ["wm.Template", {"height":"100%","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
 			templateMain: ["wm.Template", {"_classes":{"domNode":["template-main","wm_BackgroundColor_White"]},"height":"100%","horizontalAlign":"center","verticalAlign":"top","width":"100%","layoutKind":"left-to-right","autoScroll":true}, {}, {
@@ -1013,7 +1015,7 @@ Main.widgets = {
 																		format: ["wm.DataFormatter", {}, {}]
 																	}]
 																}],
-																cur_apr_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top","lock":true,"showing":false}, {}, {
+																cur_apr_form_panel: ["wm.Panel", {"height":"100%","width":"150%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 																	aprendizajeLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"padding":"3","validateBeforeSave":true}, {"onSuccess":"l_cur_apr_aprendizajes_aprendizajeLiveVariable1","onBeginInsert":"aprendizajeLiveForm1BeginInsert","onBeginUpdate":"aprendizajeLiveForm1BeginUpdate","onInsertData":"aprendizajeLiveForm1InsertData","onUpdateData":"aprendizajeLiveForm1UpdateData","onCancelEdit":"aprendizajeLiveForm1CancelEdit"}, {
 																		binding: ["wm.Binding", {}, {}, {
 																			wire: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_apr_datag_aprendizajeDataGrid1.selectedItem","expression":undefined}, {}],
@@ -1037,8 +1039,10 @@ Main.widgets = {
 																				}]
 																			}]
 																		}],
-																		selectEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Seleccione un aprendizaje"}, {}, {
-																			editor: ["wm._SelectEditor", {}, {}]
+																		aprAsigDojoGrid1: ["wm.DojoGrid", {"height":"94px","border":"0","structure":"[[{\"field\":\"idAprendizaje\",\"name\":\" \",\"width\":\"50px\",\"displayType\":\"Number\",\"type\":\"\",\"typeValue\":\"\",\"editable\":false},{\"field\":\"peso\",\"name\":\"Peso\",\"width\":\"30px\",\"displayType\":\"Number\"},{\"field\":\"aprendizaje\",\"name\":\"Aprendizaje\",\"width\":\"auto\",\"displayType\":\"Text\"},{\"field\":\"learning\",\"name\":\"Learning\",\"width\":\"auto\",\"displayType\":\"Text\"}]]","padding":"3","customFields":"[]","customFieldCounter":2,"borderColor":"#bbb"}, {"onClick":"aprAsigDojoGrid1Click"}, {
+																			binding: ["wm.Binding", {}, {}, {
+																				wire: ["wm.Wire", {"targetProperty":"dataSet","source":"curriculo_aprendizaje_lista_aprendizajes_asig"}, {}]
+																			}]
 																		}],
 																		panel17: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 																			aprendizajeEditor1: ["wm.Editor", {"caption":"Aprendizaje","width":"100%","height":"100%","display":"TextArea","readonly":true,"formField":"aprendizaje","singleLine":false}, {}, {
@@ -1094,7 +1098,7 @@ Main.widgets = {
 																						}]
 																					}]
 																				}],
-																				dimensionComprensionRelatedEditor1: ["wm.RelatedEditor", {"formField":"dimensionComprension","lock":true}, {}, {
+																				dimensionComprensionRelatedEditor1: ["wm.RelatedEditor", {"formField":"dimensionComprension"}, {}, {
 																					binding: ["wm.Binding", {}, {}, {
 																						wire1: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_apr_datag_aprendizajeDataGrid1.selectedItem.dimensionComprension","expression":undefined}, {}],
 																						wire: ["wm.Wire", {"targetProperty":"dataOutput","source":"dimensionComprensionLookup1.selectedItem","expression":undefined}, {}]
@@ -1107,7 +1111,7 @@ Main.widgets = {
 																						}]
 																					}]
 																				}],
-																				dimensionCurricularRelatedEditor1: ["wm.RelatedEditor", {"formField":"dimensionCurricular","lock":true}, {}, {
+																				dimensionCurricularRelatedEditor1: ["wm.RelatedEditor", {"formField":"dimensionCurricular"}, {}, {
 																					binding: ["wm.Binding", {}, {}, {
 																						wire1: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_apr_datag_aprendizajeDataGrid1.selectedItem.dimensionCurricular","expression":undefined}, {}],
 																						wire: ["wm.Wire", {"targetProperty":"dataOutput","source":"dimensionCurricularLookup1.selectedItem","expression":undefined}, {}]

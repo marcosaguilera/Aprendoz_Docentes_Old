@@ -125,7 +125,11 @@ dojo.declare("Main", wm.Page, {
   },  
   cur_asig_datag_asignaturasDataGrid1Selected: function(inSender, inIndex) {
     try {
-     this.l_cur_unid_unidades_unidadLiveVariable1.update();  
+     this.l_cur_unid_unidades_unidadLiveVariable1.update(); 
+     var ida = main.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;
+     this.curriculo_aprendizaje_lista_aprendizajes_asig.filter.setValue("asignatura.idAsignatura", ida);
+     this.curriculo_aprendizaje_lista_aprendizajes_asig.update();
+
      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.clearData();
      this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.clearData();
      this.l_cur_metas_metas_otrasmetasLiveVariable1.clearData();
@@ -3008,6 +3012,29 @@ dojo.declare("Main", wm.Page, {
   },
   button4Click: function(inSender, inEvent) {
       this.cur_actv_form_panel.hide(); 
+  },
+  aprAsigDojoGrid1Click: function(inSender, evt) {
+      var idaprSet= this.aprAsigDojoGrid1.selectedItem.data.idAprendizaje; 
+      this.curriculo_set_aprendizaje_lista_aprendizajes_asig.filter.setValue("idAprendizaje", idaprSet);
+      this.curriculo_set_aprendizaje_lista_aprendizajes_asig.update();
+  },
+  curriculo_set_aprendizaje_lista_aprendizajes_asigSuccess: function(inSender, inDeprecated) {
+    try {
+     var json= main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data;
+     main.aprendizajeEditor1.setDataValue(json.aprendizaje);
+     main.learningEditor1.setDataValue(json.learning);
+     main.pesoEditor3.setDataValue(""+json.peso+"");
+     main.ejeIdEjeEditor1.setDataValue(json.ejeIdEje);
+     main.eje2IdEjeEditor1.setDataValue(json.eje2IdEje);
+     main.eje3IdEjeEditor1.setDataValue(json.eje3IdEje);
+     var nivel= main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.nivelEsperado.data.nivelEsperado;
+     main.nivelEsperadoLookup1.setDisplayValue(nivel); 
+     var dcurricular = main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.dimensionCurricular.data.dimensionCurricular; 
+     main.dimensionCurricularLookup1.setDisplayValue(dcurricular);
+     
+    } catch(e) {
+      console.error('ERROR IN curriculo_set_aprendizaje_lista_aprendizajes_asigSuccess: ' + e); 
+    } 
   },
   _end: 0
 });
