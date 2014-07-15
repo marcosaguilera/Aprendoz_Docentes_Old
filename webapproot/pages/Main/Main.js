@@ -126,9 +126,8 @@ dojo.declare("Main", wm.Page, {
   cur_asig_datag_asignaturasDataGrid1Selected: function(inSender, inIndex) {
     try {
      this.l_cur_unid_unidades_unidadLiveVariable1.update(); 
-     var ida = main.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;
-     this.curriculo_aprendizaje_lista_aprendizajes_asig.filter.setValue("asignatura.idAsignatura", ida);
-     this.curriculo_aprendizaje_lista_aprendizajes_asig.update();
+     
+     
 
      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.clearData();
      this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.clearData();
@@ -190,22 +189,26 @@ dojo.declare("Main", wm.Page, {
     }}, 
   aprendizajeLiveForm1BeginInsert: function(inSender) {
     try {
+     this.aprAsigDojoGrid1.show();
+     this.panel17.hide();
+     this.panel27.hide();
      var _subtopico = this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico;
      this.a_nivel_esperado.update();
      this.cur_ls_inteligencias.update();
      this.subtopicoLookup6.setDataValue(_subtopico);
-     this.pesoEditor3.setDataValue("1");       
+     this.pesoEditor3.setDataValue("1"); 
+     this.l_cur_formularios_aprendizajes_listaEjes.update(); 
+     
+     var ida = main.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;
+     this.curriculo_aprendizaje_lista_aprendizajes_asig.filter.setValue("asignatura.idAsignatura", ida);
+     this.curriculo_aprendizaje_lista_aprendizajes_asig.update();     
+     this.cur_apr_form_panel.show();           
     } catch(e) {
       console.error('ERROR IN aprendizajeLiveForm1BeginInsert: ' + e); 
-    }},
-  
+    }
+  },  
   otrasmetasLiveForm1BeginInsert: function(inSender) {
-    try {
      this.subtopicoLookup1.setValue("dataValue",this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico);
-      
-    } catch(e) {
-      console.error('ERROR IN otrasmetasLiveForm1BeginInsert: ' + e); 
-    } 
   },
  
   actividadLiveForm1BeginInsert: function(inSender) {
@@ -481,20 +484,15 @@ dojo.declare("Main", wm.Page, {
      this.tablaAprendizajes.setDisabled(true);
      this.fechaIngresoEditor2.disable();
      this.fechaIngresoEditor2.setDataValue(new Date());
-  },
-  
+  },  
   aprendizajeLiveForm1BeginUpdate: function(inSender) {
-    try {
      var _peso= this.cur_apr_datag_aprendizajeDataGrid1.selectedItem.getData().peso;
      this.a_nivel_esperado.update();
      this.l_cur_formularios_aprendizajes_listaEjes.update();
      this.pesoEditor3.show();
      this.pesoEditor3.setDataValue(""+_peso+"");
      this.cur_ls_inteligencias.update();
-
-    } catch(e) {
-      console.error('ERROR IN aprendizajeLiveForm1BeginUpdate: ' + e); 
-    }},
+  },
   calif_asig_datag_aprendizajesDataGrid1Selected: function(inSender, inIndex) {
     try {
      var _emptyLearning= this.calif_asig_datag_aprendizajesDataGrid1.getEmptySelection();
@@ -772,7 +770,7 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   inscalumaprendizajeLiveForm1Success: function(inSender, inData) {
-    try {
+    try {    
      this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.update();
      this.l_calif_contenedor_tablas_calificacion_final.update();
      this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(false);
@@ -1007,21 +1005,12 @@ dojo.declare("Main", wm.Page, {
     }},
    
   inscalumaprendizajeLiveForm1CancelEdit: function(inSender) {
-    try {
        this.calif_alumnos_curso_datag_alumnosDataGrid1.setDisabled(false);
        this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(false);
-        
-    } catch(e) {
-      console.error('ERROR IN inscalumaprendizajeLiveForm1CancelEdit: ' + e); 
-    }},
+  },
   
   calif_alumnos_curso_datag_alumnosDataGrid1SelectionChanged: function(inSender) {
-    try {
       this.editPanel9.cancelEdit();
- 
-    } catch(e) {
-      console.error('ERROR IN personasSelectionChanged: ' + e); 
-    } 
   },
   
   calif_asig_datag_aprendizajesDataGrid1SelectionChanged: function(inSender) {
@@ -1774,57 +1763,15 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   subtopicoLiveForm1UpdateData: function(inSender) {
-    try {
       this.numeroSubtopicoEditor1.hide();
       this.numeroSubtopicoEditor3.show();
-      
-    } catch(e) {
-      console.error('ERROR IN subtopicoLiveForm1UpdateData: ' + e); 
-    } 
   },
   subtopicoLiveForm1CancelEdit: function(inSender) {
-    try {
       this.numeroSubtopicoEditor1.hide();
       this.numeroSubtopicoEditor3.show();
-      
-    } catch(e) {
-      console.error('ERROR IN subtopicoLiveForm1CancelEdit: ' + e); 
-    } 
-  },
-  pesoEditor2Change: function(inSender, inDisplayValue, inDataValue) {
-    try {
-      var peso = this.pesoEditor2.getDataValue();
-      this.pesoEditor3.setDataValue(peso);
-      
-    } catch(e) {
-      console.error('ERROR IN pesoEditor2Change: ' + e); 
-    } 
-  },
-  aprendizajeLiveForm1InsertData: function(inSender) {
-    try {
-      this.pesoEditor2.hide();
-      this.pesoEditor3.show();
-      
-    } catch(e) {
-      console.error('ERROR IN aprendizajeLiveForm1InsertData: ' + e); 
-    } 
-  },
-  aprendizajeLiveForm1UpdateData: function(inSender) {
-    try {
-      this.pesoEditor3.hide();
-      this.pesoEditor2.show();
-      
-    } catch(e) {
-      console.error('ERROR IN aprendizajeLiveForm1UpdateData: ' + e); 
-    } 
-  },
+  },      
   inicio_abrir_preferencias1Click: function(inSender, inEvent) {
-    try {
       this.inicio_filtros_claves.show();
-      
-    } catch(e) {
-      console.error('ERROR IN inicio_abrir_preferencias1Click: ' + e); 
-    } 
   },  
   pestana_reportes_seguimientoShow: function(inSender) {
       var jsonobject= main.a_informacionUsuario2.getItem(0);
@@ -3019,7 +2966,6 @@ dojo.declare("Main", wm.Page, {
       this.curriculo_set_aprendizaje_lista_aprendizajes_asig.update();
   },
   curriculo_set_aprendizaje_lista_aprendizajes_asigSuccess: function(inSender, inDeprecated) {
-    try {
      var json= main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data;
      main.aprendizajeEditor1.setDataValue(json.aprendizaje);
      main.learningEditor1.setDataValue(json.learning);
@@ -3031,10 +2977,21 @@ dojo.declare("Main", wm.Page, {
      main.nivelEsperadoLookup1.setDisplayValue(nivel); 
      var dcurricular = main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.dimensionCurricular.data.dimensionCurricular; 
      main.dimensionCurricularLookup1.setDisplayValue(dcurricular);
-     
-    } catch(e) {
-      console.error('ERROR IN curriculo_set_aprendizaje_lista_aprendizajes_asigSuccess: ' + e); 
-    } 
+     var inteligencia = main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.inteligencia.data.inteligencia
+     main.inteligenciaLookup1.setDisplayValue(inteligencia);
+     var dcomprension = main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.dimensionComprension.data.dimensionComprension;
+     main.dimensionComprensionLookup1.setDisplayValue(dcomprension);     
+  },
+  aprendizajeLiveForm1Success: function(inSender, inData) {
+     this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.update();
+     this.panel17.show();
+     this.panel27.show();
+     this.aprAsigDojoGrid1.hide();
+  },
+  aprendizajeLiveForm1CancelEdit: function(inSender) {
+     this.panel17.show();
+     this.panel27.show();
+     this.aprAsigDojoGrid1.hide();
   },
   _end: 0
 });

@@ -1939,3 +1939,7 @@ div#main_panel2 {
   border-radius: 3px 3px 3px 3px;
 }
 
+.Main .Main-aprAsigDojoGrid1 {
+	cursor: pointer;
+}
+
