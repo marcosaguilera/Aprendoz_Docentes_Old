@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 06/13/2014 08:33:42
+<!-- Generated 07/11/2014 08:22:29
 
 Configuration for 'aprendoz_test' database service
 
@@ -102,6 +102,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/TipoSemana.hbm.xml</value>
 <value>com/aprendoz_test/data/TipoDesempeno.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumCosto.hbm.xml</value>
+<value>com/aprendoz_test/data/TablaAnticiposMatriculas.hbm.xml</value>
 <value>com/aprendoz_test/data/ReportesDependencias.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumAsigCopy3.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumAsigCopy2.hbm.xml</value>
@@ -148,8 +149,8 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/CurriculoGrado.hbm.xml</value>
 <value>com/aprendoz_test/data/PersonaEdad.hbm.xml</value>
 <value>com/aprendoz_test/data/PromocionVistaInscAlumnCurso.hbm.xml</value>
-<value>com/aprendoz_test/data/PerfilPersonaImg.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaEventualidadesNotificaciones.hbm.xml</value>
+<value>com/aprendoz_test/data/PerfilPersonaImg.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumCurso.hbm.xml</value>
 <value>com/aprendoz_test/data/DocentesVistaInscAlumnAsig.hbm.xml</value>
 <value>com/aprendoz_test/data/TmpBoletin20122013.hbm.xml</value>
@@ -163,13 +164,15 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/AccAuthorization.hbm.xml</value>
 <value>com/aprendoz_test/data/DocentesVistaAprendizajesAsignatura.hbm.xml</value>
 <value>com/aprendoz_test/data/Matricula.hbm.xml</value>
+<value>com/aprendoz_test/data/TablaSaldosMatriculas.hbm.xml</value>
+<value>com/aprendoz_test/data/VistaInscAlumnCurso.hbm.xml</value>
 <value>com/aprendoz_test/data/CafeteriaProteina.hbm.xml</value>
 <value>com/aprendoz_test/data/ImportacionDavivienda.hbm.xml</value>
-<value>com/aprendoz_test/data/VistaInscAlumnCurso.hbm.xml</value>
 <value>com/aprendoz_test/data/BusStudentRoute.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumAprendizaje.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaAlumnosActivosPrejardinNuevos.hbm.xml</value>
 <value>com/aprendoz_test/data/CafeteriaTipoOpcion.hbm.xml</value>
+<value>com/aprendoz_test/data/VistaDatosPadres.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumCostoCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/Aprendizaje.hbm.xml</value>
 <value>com/aprendoz_test/data/CalificacionFinal.hbm.xml</value>
@@ -240,6 +243,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/ActualizacionDatosPersonaCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumAsigCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/DocentesInscCursoAsignatura.hbm.xml</value>
+<value>com/aprendoz_test/data/PersonaCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/CafeteriaSopas.hbm.xml</value>
 <value>com/aprendoz_test/data/SeguridadPermisosModulos.hbm.xml</value>
 <value>com/aprendoz_test/data/InscPersonaEduCom.hbm.xml</value>
@@ -258,6 +262,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/EventualidadPersonas.hbm.xml</value>
 <value>com/aprendoz_test/data/ImportacionCartera.hbm.xml</value>
 <value>com/aprendoz_test/data/CafeteriaPostres.hbm.xml</value>
+<value>com/aprendoz_test/data/TablaDescuentos.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaMatriculasGraficasTotalDia.hbm.xml</value>
 <value>com/aprendoz_test/data/Vistaasistencia.hbm.xml</value>
 <value>com/aprendoz_test/data/TipoEps.hbm.xml</value>
@@ -275,8 +280,8 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/LogMatriculasAccionesUsuarios.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumAsig.hbm.xml</value>
 <value>com/aprendoz_test/data/OtrasMetas.hbm.xml</value>
-<value>com/aprendoz_test/data/TipoPersona.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaEnvioCorreo.hbm.xml</value>
+<value>com/aprendoz_test/data/TipoPersona.hbm.xml</value>
 <value>com/aprendoz_test/data/Logeventosaprendoz.hbm.xml</value>
 <value>com/aprendoz_test/data/PromocionCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/Curso.hbm.xml</value>
