@@ -3003,7 +3003,7 @@ dojo.declare("Main", wm.Page, {
      this.cur_subt_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
   },
   cur_subt_datag_subtopicoDataGrid1SelectionChanged: function(inSender) {
-     this.editPanel5.cancelEdit(); 
+     this.editPanel5.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
   },
   cur_apr_datag_aprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
      this.cur_apr_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
