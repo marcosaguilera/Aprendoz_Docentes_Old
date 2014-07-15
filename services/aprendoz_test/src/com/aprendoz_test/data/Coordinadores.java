@@ -5,7 +5,11 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.Coordinadores
+<<<<<<< HEAD
  *  07/11/2014 08:22:39
+=======
+ *  07/15/2014 14:36:08
+>>>>>>> navegacion---mostrar-paneles
  * 
  */
 public class Coordinadores {

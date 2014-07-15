@@ -7,7 +7,11 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.TipoTransporte
+<<<<<<< HEAD
  *  07/11/2014 08:22:37
+=======
+ *  07/15/2014 14:36:08
+>>>>>>> navegacion---mostrar-paneles
  * 
  */
 public class TipoTransporte {

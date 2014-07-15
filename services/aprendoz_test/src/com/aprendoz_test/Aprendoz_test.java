@@ -47,7 +47,11 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
+<<<<<<< HEAD
  *  07/11/2014 08:24:04
+=======
+ *  07/15/2014 14:36:50
+>>>>>>> navegacion---mostrar-paneles
  * 
  */
 @SuppressWarnings("unchecked")
@@ -94,12 +98,12 @@ public class Aprendoz_test
         return ((List<EnviarMailEventualidadesRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.enviarMailEventualidadesQueryName), ide));
     }
 
-    public List<EventualitiesByDateRtnType> eventualitiesByDate(Date pfecha) {
-        return ((List<EventualitiesByDateRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.eventualitiesByDateQueryName), pfecha));
-    }
-
     public List<GetScheduleByProfileRtnType> getScheduleByProfile(Integer pcurso, Integer psy, Integer pasignatura) {
         return ((List<GetScheduleByProfileRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getScheduleByProfileQueryName), pcurso, psy, pasignatura));
+    }
+
+    public List<EventualitiesByDateRtnType> eventualitiesByDate(Date pfecha) {
+        return ((List<EventualitiesByDateRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.eventualitiesByDateQueryName), pfecha));
     }
 
     public List<GetTipoEventualidadByIdSubTipoRtnType> getTipoEventualidadByIdSubTipo(Integer id) {
@@ -163,6 +167,13 @@ public class Aprendoz_test
         } else {
             return rtn.get(0);
         }
+<<<<<<< HEAD
+=======
+    }
+
+    public List<Dash_aprendizajesRtnType> dash_aprendizajes(Integer idasignatura) {
+        return ((List<Dash_aprendizajesRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.dash_aprendizajesQueryName), idasignatura));
+>>>>>>> navegacion---mostrar-paneles
     }
 
     public List<Hql_ls_cursosRtnType> hql_ls_cursos(Integer idg) {
@@ -228,12 +239,12 @@ public class Aprendoz_test
         }
     }
 
-    public List<SubjectsBySyAndStudentRtnType> subjectsBySyAndStudent(Integer idpersona, Integer idsyp) {
-        return ((List<SubjectsBySyAndStudentRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.subjectsBySyAndStudentQueryName), idpersona, idsyp));
-    }
-
     public List<Dash_no_calificadosRtnType> dash_no_calificados(Integer idasignatura) {
         return ((List<Dash_no_calificadosRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.dash_no_calificadosQueryName), idasignatura));
+    }
+
+    public List<SubjectsBySyAndStudentRtnType> subjectsBySyAndStudent(Integer idpersona, Integer idsyp) {
+        return ((List<SubjectsBySyAndStudentRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.subjectsBySyAndStudentQueryName), idpersona, idsyp));
     }
 
     public List<SeachEventualidadHQLRtnType> seachEventualidadHQL(String search) {

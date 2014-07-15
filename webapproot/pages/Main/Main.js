@@ -2992,6 +2992,45 @@ dojo.declare("Main", wm.Page, {
      this.panel17.show();
      this.panel27.show();
      this.aprAsigDojoGrid1.hide();
+<<<<<<< HEAD
+=======
+  },
+  cur_unid_datag_unidadesDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_unidad_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_unid_datag_unidadesDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel4.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
+  cur_subt_datag_subtopicoDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_subt_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_subt_datag_subtopicoDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel5.cancelEdit(); 
+  },
+  cur_apr_datag_aprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_apr_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_apr_datag_aprendizajeDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel1.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
+  cur_metas_datag_otrasmetasDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_metas_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_metas_datag_otrasmetasDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel2.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
+  cur_act_datag_actividadDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_actv_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_act_datag_actividadDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel6.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
+  cur_rec_datag_recursosDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_src_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_rec_datag_recursosDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel13.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+>>>>>>> navegacion---mostrar-paneles
   },
   _end: 0
 });
