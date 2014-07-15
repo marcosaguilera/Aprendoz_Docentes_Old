@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  *  aprendoz_test.AccStudentCardAuthorizationId
- *  05/09/2014 07:43:03
+ *  07/15/2014 14:36:07
  * 
  */
 public class AccStudentCardAuthorizationId

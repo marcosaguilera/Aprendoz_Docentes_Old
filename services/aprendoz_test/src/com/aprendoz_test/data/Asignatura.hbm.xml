@@ -107,11 +107,23 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.Sesion"/>
         </set>
+        <set name="inscCursoAsigCopies" inverse="true">
+            <key>
+                <column name="Asignatura_Id_Asignatura" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscCursoAsigCopy"/>
+        </set>
         <set name="unidads" inverse="true">
             <key>
                 <column name="Asignatura_Id_Asignatura" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.Unidad"/>
+        </set>
+        <set name="aprendizajesAsignaturases" inverse="true">
+            <key>
+                <column name="Asignatura_Id_Asignatura"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.AprendizajesAsignaturas"/>
         </set>
         <set name="inscAlumAsigCopy2s" inverse="true">
             <key>

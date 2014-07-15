@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 /**
- * Generated for query "getSyByCurDate" on 05/14/2014 10:36:01
+ * Generated for query "getSyByCurDate" on 07/15/2014 14:36:36
  * 
  */
 public class GetSyByCurDateRtnType {

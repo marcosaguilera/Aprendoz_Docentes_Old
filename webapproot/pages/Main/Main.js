@@ -24,18 +24,21 @@ dojo.declare("Main", wm.Page, {
   mySessionExpiredMethod: function() {
       alert("Aviso importante: Sesión expirada \n\n"+"Su sesión ha excedido el tiempo de inactividad permitido en la aplicación. Por favor ingrese nuevamente.");
       window.location.reload();
-  },  
-  
+  },    
   cur_subt_datag_subtopicoDataGrid1Selected: function(inSender, inIndex) {
+      this.cur_subt_edit.enable();
+      this.cur_subt_view.enable();
+      this.button2.enable();
+      
       this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.update();
-       this.l_cur_metas_metas_otrasmetasLiveVariable1.update();
-       this.l_cur_act_actividades_actividadLiveVariable1.update();
-       this.l_cur_rec_recursos_recursoLiveVariable1.update();
-  },
-  
-   cur_encabezado_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
+      this.l_cur_metas_metas_otrasmetasLiveVariable1.update();
+      this.l_cur_act_actividades_actividadLiveVariable1.update();
+      this.l_cur_rec_recursos_recursoLiveVariable1.update();
+  },  
+  cur_encabezado_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
     try {
-   if(this.cur_encabezado_sel_sy.dataValue==1 || this.cur_encabezado_sel_sy.dataValue==2 || this.cur_encabezado_sel_sy.dataValue==3 || this.cur_encabezado_sel_sy.dataValue==4){
+    var sy_value= this.cur_encabezado_sel_sy.dataValue;
+    if(sy_value==1 || sy_value==2 || sy_value==3 || sy_value==4){
         //formulario unidades
         this.newButton4.hide();
         this.updateButton4.hide();
@@ -61,7 +64,7 @@ dojo.declare("Main", wm.Page, {
         this.updateButton13.hide();
         this.deleteButton13.hide();    
      }     
-     else if(this.cur_encabezado_sel_sy!=1 || this.cur_encabezado_sel_sy!=2) {
+     else if(sy_value!=1 || sy_value!=2) {
         //formulario unidades
         this.newButton4.show();
         this.updateButton4.show();
@@ -93,8 +96,7 @@ dojo.declare("Main", wm.Page, {
         this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.clearData();
         this.l_cur_metas_metas_otrasmetasLiveVariable1.clearData();
         this.l_cur_act_actividades_actividadLiveVariable1.clearData();
-        this.l_cur_act_actividades_actividadLiveVariable1.clearData();
-               
+        this.l_cur_act_actividades_actividadLiveVariable1.clearData();               
     } catch(e) {
       console.error('ERROR IN cur_encabezado_sel_syChange: ' + e); 
     } 
@@ -120,11 +122,13 @@ dojo.declare("Main", wm.Page, {
      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.clearData();
      this.l_cur_act_actividades_actividadLiveVariable1.clearData();
      this.l_cur_rec_recursos_recursoLiveVariable1.clearData();
-  },
-  
+  },  
   cur_asig_datag_asignaturasDataGrid1Selected: function(inSender, inIndex) {
     try {
-     this.l_cur_unid_unidades_unidadLiveVariable1.update();  
+     this.l_cur_unid_unidades_unidadLiveVariable1.update(); 
+     
+     
+
      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.clearData();
      this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.clearData();
      this.l_cur_metas_metas_otrasmetasLiveVariable1.clearData();
@@ -141,154 +145,30 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN cur_asig_datag_asignaturasDataGrid1Selected: ' + e); 
     } 
-  },
-
-  asignaturaDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.hide();
-     this.asignaturaDetailsPanel.show();
-      
-    } catch(e) {
-      console.error('ERROR IN asignaturaDataGrid1RowDblClick: ' + e); 
-    } 
-  },
- 
-  cur_unid_datag_unidadesDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.hide();  
-     this.cur_formularios_panel_unidad.show();
-      
-    } catch(e) {
-      console.error('ERROR IN cur_unid_datag_unidadesDataGrid1RowDblClick ' + e); 
-    } 
-  },
-
-  cur_subt_datag_subtopicoDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.hide();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.show();
-      
-    } catch(e) {
-      console.error('ERROR IN subtopicoDataGrid1RowDblClick: ' + e); 
-    } 
-  },
-
-  cur_apr_datag_aprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();     
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.hide();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.show();
-      
-    } catch(e) {
-      console.error('ERROR IN aprendizajeDataGrid1RowDblClick: ' + e); 
-    } 
-  },
-  //ok
-  cur_metas_datag_otrasmetasDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.hide();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.show();
-      
-    } catch(e) {
-      console.error('ERROR IN otrasmetasDataGrid1RowDblClick: ' + e); 
-    } 
-  },
-  //ok
-  
-  cur_act_datag_actividadDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_recurso.hide();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.show();
-      
-    } catch(e) {
-      console.error('ERROR IN actividadDataGrid1RowDblClick: ' + e); 
-    }},
-  cur_rec_datag_recursosDataGrid1RowDblClick: function(inSender, inEvent) {
-    try {
-     this.iraformularios.update();
-     this.cur_formularios_panel_unidad.hide();
-     this.cur_formularios_panel_subtopico.hide();
-     this.cur_formularios_panel_aprendizaje.hide();
-     this.cur_formularios_panel_otrasmetas.hide();
-     this.cur_formularios_panel_actividad.hide();
-     this.cur_formularios_panel_recurso.show();
-      
-    } catch(e) {
-      console.error('ERROR IN recursoDataGrid1RowDblClick: ' + e); 
-    }},
+  },   
   cur_encabezado2_butt_crea_unidadClick: function(inSender, inEvent) {
-    try {
-     this.cur_unid_datag_unidadesDataGrid1RowDblClick(inSender, inEvent);
      this.editPanel4.beginDataInsert();
-  
-    } catch(e) {
-      console.error('ERROR IN button1Click: ' + e); 
-    }}, 
+     this.cur_unidad_form_panel.show();
+  }, 
   cur_encabezado3_butt_crear_subtopicoClick: function(inSender, inEvent) {
-    try {
-     this.cur_subt_datag_subtopicoDataGrid1RowDblClick(inSender, inEvent);
      this.editPanel5.beginDataInsert();
-      
-    } catch(e) {
-      console.error('ERROR IN cur_encabezado3_butt_crear_subtopicoClick: ' + e); 
-    }},
+     this.cur_subt_form_panel.show();
+  },
   cur_apr_encabezado_butt_crear_aprendizajeClick: function(inSender, inEvent) {
-    try {
-     this.cur_apr_datag_aprendizajeDataGrid1RowDblClick(inSender, inEvent);
      this.editPanel1.beginDataInsert();
-     this.l_cur_formularios_aprendizajes_listaEjes.update();
- 
-    } catch(e) {
-      console.error('ERROR IN cur_apr_encabezado_butt_crear_aprendizajeClick: ' + e); 
-    }},
-  cur_act_encabezado_butt_crear_actividadClick: function(inSender, inEvent) {
-    try {
-     this.cur_act_datag_actividadDataGrid1RowDblClick(inSender, inEvent);
+     this.l_cur_formularios_aprendizajes_listaEjes.update(); 
+     this.cur_apr_form_panel.show();
+  },
+  cur_act_encabezado_butt_crear_actividadClick: function(inSender, inEvent) { 
      this.l_cur_formularios_actividad_listaTipoActividades.update();
      this.editPanel6.beginDataInsert();
-      
-    } catch(e) {
-      console.error('ERROR IN cur_act_encabezado_butt_crear_actividadClick: ' + e); 
-    }}, 
+     this.cur_actv_form_panel.show();
+  }, 
   cur_rec_encabezado_butt_crear_recursoClick: function(inSender, inEvent) {
-    try {
-     this.cur_rec_datag_recursosDataGrid1RowDblClick(inSender, inEvent);
      this.editPanel13.beginDataInsert();
      this.l_cur_formularios_recursos_tipoRecurso.update();
-    
-    } catch(e) {
-      console.error('ERROR IN cur_rec_encabezado_butt_crear_recursoClick: ' + e); 
-    }},   
+     this.cur_src_form_panel.show();
+  },   
   unidadLiveForm1BeginInsert: function(inSender) {
     try {
      this.asignaturaLookup1.setValue("dataValue",this.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura);
@@ -309,26 +189,26 @@ dojo.declare("Main", wm.Page, {
     }}, 
   aprendizajeLiveForm1BeginInsert: function(inSender) {
     try {
+     this.aprAsigDojoGrid1.show();
+     this.panel17.hide();
+     this.panel27.hide();
      var _subtopico = this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico;
      this.a_nivel_esperado.update();
      this.cur_ls_inteligencias.update();
-     //this.subtopicoLookup6.setValue("dataValue",_subtopico);
      this.subtopicoLookup6.setDataValue(_subtopico);
-     this.pesoEditor2.setDataValue("1");    
-     this.pesoEditor3.hide();
-     this.pesoEditor2.show();
-      
+     this.pesoEditor3.setDataValue("1"); 
+     this.l_cur_formularios_aprendizajes_listaEjes.update(); 
+     
+     var ida = main.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;
+     this.curriculo_aprendizaje_lista_aprendizajes_asig.filter.setValue("asignatura.idAsignatura", ida);
+     this.curriculo_aprendizaje_lista_aprendizajes_asig.update();     
+     this.cur_apr_form_panel.show();           
     } catch(e) {
       console.error('ERROR IN aprendizajeLiveForm1BeginInsert: ' + e); 
-    }},
-  
+    }
+  },  
   otrasmetasLiveForm1BeginInsert: function(inSender) {
-    try {
      this.subtopicoLookup1.setValue("dataValue",this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico);
-      
-    } catch(e) {
-      console.error('ERROR IN otrasmetasLiveForm1BeginInsert: ' + e); 
-    } 
   },
  
   actividadLiveForm1BeginInsert: function(inSender) {
@@ -359,35 +239,24 @@ dojo.declare("Main", wm.Page, {
   },
   /*Tablas de Unidades*/
    cur_unid_datag_unidadesDataGrid1CellClick: function(inSender, inEvent) {
-    try {
      this.cur_encabezado3_butt_crear_subtopico.enable();
      this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.clearData();
      this.l_cur_metas_metas_otrasmetasLiveVariable1.clearData();
      this.l_cur_act_actividades_actividadLiveVariable1.clearData();
      this.l_cur_rec_recursos_recursoLiveVariable1.clearData();
      
-     //botones a desativar
+     //botones a desactivar
      this.cur_apr_encabezado_butt_crear_aprendizaje.disable();
      this.cur_metas_encabezado_butt_crear_meta.disable();
      this.cur_act_encabezado_butt_crear_actividad.disable();
-     this.cur_rec_encabezado_butt_crear_recurso.disable();
-      
-    } catch(e) {
-      console.error('ERROR IN unidadDataGrid1CellClick: ' + e); 
-    } 
-  },
-  
+     this.cur_rec_encabezado_butt_crear_recurso.disable(); 
+  },  
   /*Tablas Subtopicos*/
-  cur_subt_datag_subtopicoDataGrid1CellClick: function(inSender, inEvent) {
-    try {
+  cur_subt_datag_subtopicoDataGrid1CellClick: function(inSender, inEvent) { 
      this.cur_apr_encabezado_butt_crear_aprendizaje.enable();
      this.cur_metas_encabezado_butt_crear_meta.enable();
      this.cur_act_encabezado_butt_crear_actividad.enable();
      this.cur_rec_encabezado_butt_crear_recurso.enable();
-      
-    } catch(e) {
-      console.error('ERROR IN subtopicoDataGrid1CellClick: ' + e); 
-    } 
   },
   
   recursosClick: function(inSender, inEvent) {
@@ -615,20 +484,15 @@ dojo.declare("Main", wm.Page, {
      this.tablaAprendizajes.setDisabled(true);
      this.fechaIngresoEditor2.disable();
      this.fechaIngresoEditor2.setDataValue(new Date());
-  },
-  
+  },  
   aprendizajeLiveForm1BeginUpdate: function(inSender) {
-    try {
      var _peso= this.cur_apr_datag_aprendizajeDataGrid1.selectedItem.getData().peso;
      this.a_nivel_esperado.update();
      this.l_cur_formularios_aprendizajes_listaEjes.update();
      this.pesoEditor3.show();
      this.pesoEditor3.setDataValue(""+_peso+"");
      this.cur_ls_inteligencias.update();
-
-    } catch(e) {
-      console.error('ERROR IN aprendizajeLiveForm1BeginUpdate: ' + e); 
-    }},
+  },
   calif_asig_datag_aprendizajesDataGrid1Selected: function(inSender, inIndex) {
     try {
      var _emptyLearning= this.calif_asig_datag_aprendizajesDataGrid1.getEmptySelection();
@@ -906,7 +770,7 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   inscalumaprendizajeLiveForm1Success: function(inSender, inData) {
-    try {
+    try {    
      this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.update();
      this.l_calif_contenedor_tablas_calificacion_final.update();
      this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(false);
@@ -1141,21 +1005,12 @@ dojo.declare("Main", wm.Page, {
     }},
    
   inscalumaprendizajeLiveForm1CancelEdit: function(inSender) {
-    try {
        this.calif_alumnos_curso_datag_alumnosDataGrid1.setDisabled(false);
        this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(false);
-        
-    } catch(e) {
-      console.error('ERROR IN inscalumaprendizajeLiveForm1CancelEdit: ' + e); 
-    }},
+  },
   
   calif_alumnos_curso_datag_alumnosDataGrid1SelectionChanged: function(inSender) {
-    try {
       this.editPanel9.cancelEdit();
- 
-    } catch(e) {
-      console.error('ERROR IN personasSelectionChanged: ' + e); 
-    } 
   },
   
   calif_asig_datag_aprendizajesDataGrid1SelectionChanged: function(inSender) {
@@ -1794,14 +1649,9 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN a_actualizaClaveError: ' + e); 
     } 
   },
-  cur_metas_encabezado_butt_crear_metaClick: function(inSender, inEvent) {
-    try {
-      this.cur_metas_datag_otrasmetasDataGrid1RowDblClick(inSender, inEvent);
+  cur_metas_encabezado_butt_crear_metaClick: function(inSender, inEvent) {   
       this.editPanel2.beginDataInsert();
-      
-    } catch(e) {
-      console.error('ERROR IN cur_metas_encabezado_butt_crear_metaClick: ' + e); 
-    } 
+      this.cur_metas_form_panel.show();
   },
   inscalumasigLiveForm1CancelEdit: function(inSender) {
     try {
@@ -1913,61 +1763,17 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   subtopicoLiveForm1UpdateData: function(inSender) {
-    try {
       this.numeroSubtopicoEditor1.hide();
       this.numeroSubtopicoEditor3.show();
-      
-    } catch(e) {
-      console.error('ERROR IN subtopicoLiveForm1UpdateData: ' + e); 
-    } 
   },
   subtopicoLiveForm1CancelEdit: function(inSender) {
-    try {
       this.numeroSubtopicoEditor1.hide();
       this.numeroSubtopicoEditor3.show();
-      
-    } catch(e) {
-      console.error('ERROR IN subtopicoLiveForm1CancelEdit: ' + e); 
-    } 
-  },
-  pesoEditor2Change: function(inSender, inDisplayValue, inDataValue) {
-    try {
-      var peso = this.pesoEditor2.getDataValue();
-      this.pesoEditor3.setDataValue(peso);
-      
-    } catch(e) {
-      console.error('ERROR IN pesoEditor2Change: ' + e); 
-    } 
-  },
-  aprendizajeLiveForm1InsertData: function(inSender) {
-    try {
-      this.pesoEditor2.hide();
-      this.pesoEditor3.show();
-      
-    } catch(e) {
-      console.error('ERROR IN aprendizajeLiveForm1InsertData: ' + e); 
-    } 
-  },
-  aprendizajeLiveForm1UpdateData: function(inSender) {
-    try {
-      this.pesoEditor3.hide();
-      this.pesoEditor2.show();
-      
-    } catch(e) {
-      console.error('ERROR IN aprendizajeLiveForm1UpdateData: ' + e); 
-    } 
-  },
+  },      
   inicio_abrir_preferencias1Click: function(inSender, inEvent) {
-    try {
       this.inicio_filtros_claves.show();
-      
-    } catch(e) {
-      console.error('ERROR IN inicio_abrir_preferencias1Click: ' + e); 
-    } 
-  },
-  
+  },  
   pestana_reportes_seguimientoShow: function(inSender) {
-    try {
       var jsonobject= main.a_informacionUsuario2.getItem(0);
       var rol = jsonobject.data.idtipo;
       var idpersona = jsonobject.data.idpersona;
@@ -1976,19 +1782,11 @@ dojo.declare("Main", wm.Page, {
       this.l_reportes_graficos_listado_reportes.filter.setValue("id.idTipoPersona", valueToFilter);
       this.l_reportes_graficos_listado_reportes.filter.setValue("id.idPersona", valuePersona);
       this.l_reportes_graficos_listado_reportes.update();
-        
-    } catch(e) {
-      console.error('ERROR IN pestana_reportes_seguimientoShow: ' + e); 
-    } 
   },
-
   pestana_curriculoShow: function(inSender) {
-    try {
-      this.cur_encabezado_sel_sy.setDataValue(3);
-      
-    } catch(e) {
-      console.error('ERROR IN pestana_curriculoShow: ' + e); 
-    } 
+      var _sy= main.a_cursy.getItem(0).data.idsy;
+      console.log(_sy);
+      this.cur_encabezado_sel_sy.setDataValue(_sy); 
   },
  
   reports_open_report_windowClick: function(inSender, inEvent) {
@@ -2871,6 +2669,9 @@ dojo.declare("Main", wm.Page, {
   },
   cur_act_datag_actividadDataGrid1Selected: function(inSender, inIndex) {
      this.l_cur_formularios_actividad_listaTipoActividades.update(); 
+     this.cur_activ_edit.enable();
+     this.cur_activ_view.enable();
+     this.button4.enable();
   },  
   subjects_activitiesChange: function(inSender, inDisplayValue, inDataValue) {
      var idcurso= this.subjects_activities.getDataValue();
@@ -3065,7 +2866,168 @@ dojo.declare("Main", wm.Page, {
          }
        });
        inEvent.preventDefault();
+  },  
+  cur_unid_datag_unidadesDataGrid1Selected: function(inSender, inIndex) {
+      this.cur_unidad_edit.enable();
+      this.cur_unidad_view.enable();
+      this.button1.enable();
+      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.update();
   },
-  
+  cur_unidad_editClick: function(inSender, inEvent) {
+      this.editPanel4.beginDataUpdate();
+      this.cur_unidad_form_panel.show();
+  },
+  cur_unidad_viewClick: function(inSender, inEvent) {
+      this.cur_unidad_form_panel.show(); 
+  },
+  cur_subt_editClick: function(inSender, inEvent) {
+      this.cur_subt_form_panel.show();
+      this.editPanel5.beginDataUpdate();
+  },
+  cur_subt_viewClick: function(inSender, inEvent) {
+      this.cur_subt_form_panel.show();
+  },
+  newButton1Click: function(inSender, inEvent) {
+      this.cur_apr_encabezado_butt_crear_aprendizajeClick();
+      this.editPanel1.beginDataInsert();
+  },
+  cur_apr_datag_aprendizajeDataGrid1Selected: function(inSender, inIndex) {
+      this.cur_apr_edit.enable();
+      this.cur_apr_view.enable();
+      this.button6.enable();
+  },
+  cur_apr_editClick: function(inSender, inEvent) {
+      this.cur_apr_form_panel.show();
+      this.editPanel1.beginDataUpdate();
+  },
+  cur_apr_viewClick: function(inSender, inEvent) {
+      this.cur_apr_form_panel.show();  
+  },
+  cur_meta_editClick: function(inSender, inEvent) {
+      this.cur_metas_form_panel.show();
+      this.editPanel2.beginDataUpdate();
+  },
+  cur_meta_viewClick: function(inSender, inEvent) {
+      this.cur_metas_form_panel.show(); 
+  },
+  cur_metas_datag_otrasmetasDataGrid1Selected: function(inSender, inIndex) {
+      this.cur_meta_edit.enable(); 
+      this.cur_meta_view.enable();
+      this.button5.enable(); 
+  },
+  newButton6Click: function(inSender, inEvent) {
+      this.editPanel6.beginDataInsert(); 
+      this.cur_act_encabezado_butt_crear_actividadClick();
+  },
+  cur_activ_editClick: function(inSender, inEvent) {
+      this.cur_actv_form_panel.show();
+      this.editPanel6.beginDataUpdate();
+  },
+  cur_activ_viewClick: function(inSender, inEvent) {
+      this.cur_actv_form_panel.show();
+  },
+  cur_src_editClick: function(inSender, inEvent) {
+      this.cur_src_form_panel.show(); 
+      this.editPanel13.beginDataUpdate();
+  },
+  cur_src_viewClick: function(inSender, inEvent) {
+      this.cur_src_form_panel.show();       
+  },
+  cur_rec_datag_recursosDataGrid1Selected: function(inSender, inIndex) {
+      this.cur_src_edit.enable();
+      this.cur_src_view.enable();
+      this.button7.enable();
+  },
+  newButton13Click: function(inSender, inEvent) {
+      this.editPanel13.beginDataInsert(); 
+      this.cur_rec_encabezado_butt_crear_recursoClick();
+  },
+  button1Click: function(inSender, inEvent) {
+      this.cur_unidad_form_panel.hide(); 
+  },
+  button2Click: function(inSender, inEvent) {
+      this.cur_subt_form_panel.hide(); 
+  },
+  button6Click: function(inSender, inEvent) {
+      this.cur_apr_form_panel.hide(); 
+  },
+  button5Click: function(inSender, inEvent) {
+      this.cur_metas_form_panel.hide(); 
+  },  
+  button7Click: function(inSender, inEvent) {
+      this.cur_src_form_panel.hide(); 
+  },
+  button4Click: function(inSender, inEvent) {
+      this.cur_actv_form_panel.hide(); 
+  },
+  aprAsigDojoGrid1Click: function(inSender, evt) {
+      var idaprSet= this.aprAsigDojoGrid1.selectedItem.data.idAprendizaje; 
+      this.curriculo_set_aprendizaje_lista_aprendizajes_asig.filter.setValue("idAprendizaje", idaprSet);
+      this.curriculo_set_aprendizaje_lista_aprendizajes_asig.update();
+  },
+  curriculo_set_aprendizaje_lista_aprendizajes_asigSuccess: function(inSender, inDeprecated) {
+     var json= main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data;
+     main.aprendizajeEditor1.setDataValue(json.aprendizaje);
+     main.learningEditor1.setDataValue(json.learning);
+     main.pesoEditor3.setDataValue(""+json.peso+"");
+     main.ejeIdEjeEditor1.setDataValue(json.ejeIdEje);
+     main.eje2IdEjeEditor1.setDataValue(json.eje2IdEje);
+     main.eje3IdEjeEditor1.setDataValue(json.eje3IdEje);
+     var nivel= main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.nivelEsperado.data.nivelEsperado;
+     main.nivelEsperadoLookup1.setDisplayValue(nivel); 
+     var dcurricular = main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.dimensionCurricular.data.dimensionCurricular; 
+     main.dimensionCurricularLookup1.setDisplayValue(dcurricular);
+     var inteligencia = main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.inteligencia.data.inteligencia
+     main.inteligenciaLookup1.setDisplayValue(inteligencia);
+     var dcomprension = main.curriculo_set_aprendizaje_lista_aprendizajes_asig.getItem(0).data.dimensionComprension.data.dimensionComprension;
+     main.dimensionComprensionLookup1.setDisplayValue(dcomprension);     
+  },
+  aprendizajeLiveForm1Success: function(inSender, inData) {
+     this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.update();
+     this.panel17.show();
+     this.panel27.show();
+     this.aprAsigDojoGrid1.hide();
+  },
+  aprendizajeLiveForm1CancelEdit: function(inSender) {
+     this.panel17.show();
+     this.panel27.show();
+     this.aprAsigDojoGrid1.hide();
+  },
+  cur_unid_datag_unidadesDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_unidad_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_unid_datag_unidadesDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel4.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
+  cur_subt_datag_subtopicoDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_subt_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_subt_datag_subtopicoDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel5.cancelEdit(); 
+  },
+  cur_apr_datag_aprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_apr_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_apr_datag_aprendizajeDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel1.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
+  cur_metas_datag_otrasmetasDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_metas_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_metas_datag_otrasmetasDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel2.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
+  cur_act_datag_actividadDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_actv_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_act_datag_actividadDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel6.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
+  cur_rec_datag_recursosDataGrid1RowDblClick: function(inSender, inEvent) {
+     this.cur_src_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
+  },
+  cur_rec_datag_recursosDataGrid1SelectionChanged: function(inSender) {
+     this.editPanel13.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+  },
   _end: 0
 });

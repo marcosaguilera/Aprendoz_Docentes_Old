@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.GrupoFamiliar
- *  05/09/2014 07:43:02
+ *  07/15/2014 14:36:08
  * 
  */
 public class GrupoFamiliar {
@@ -16,8 +16,11 @@ public class GrupoFamiliar {
     private String grupoFamiliar;
     private String grupoLdap;
     private Set<com.aprendoz_test.data.TransporteRutas> transporteRutases = new HashSet<com.aprendoz_test.data.TransporteRutas>();
+    private Set<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies = new HashSet<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy>();
+    private Set<com.aprendoz_test.data.PersonaCopy> personaCopies = new HashSet<com.aprendoz_test.data.PersonaCopy>();
     private Set<com.aprendoz_test.data.Persona> personas = new HashSet<com.aprendoz_test.data.Persona>();
     private Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars = new HashSet<com.aprendoz_test.data.InscPersonaGrupoFamiliar>();
+    private Set<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar> gestionEncuestasGrupoFamiliars = new HashSet<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar>();
     private Set<com.aprendoz_test.data.ActualizacionGrupoFamiliar> actualizacionGrupoFamiliars = new HashSet<com.aprendoz_test.data.ActualizacionGrupoFamiliar>();
 
     public GrupoFamiliar() {
@@ -29,13 +32,16 @@ public class GrupoFamiliar {
         this.grupoLdap = grupoLdap;
     }
 
-    public GrupoFamiliar(Integer idGrupoFamiliar, String grupoFamiliar, String grupoLdap, Set<com.aprendoz_test.data.TransporteRutas> transporteRutases, Set<com.aprendoz_test.data.Persona> personas, Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars, Set<com.aprendoz_test.data.ActualizacionGrupoFamiliar> actualizacionGrupoFamiliars) {
+    public GrupoFamiliar(Integer idGrupoFamiliar, String grupoFamiliar, String grupoLdap, Set<com.aprendoz_test.data.TransporteRutas> transporteRutases, Set<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies, Set<com.aprendoz_test.data.PersonaCopy> personaCopies, Set<com.aprendoz_test.data.Persona> personas, Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars, Set<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar> gestionEncuestasGrupoFamiliars, Set<com.aprendoz_test.data.ActualizacionGrupoFamiliar> actualizacionGrupoFamiliars) {
         this.idGrupoFamiliar = idGrupoFamiliar;
         this.grupoFamiliar = grupoFamiliar;
         this.grupoLdap = grupoLdap;
         this.transporteRutases = transporteRutases;
+        this.actualizacionGrupoFamiliarCopies = actualizacionGrupoFamiliarCopies;
+        this.personaCopies = personaCopies;
         this.personas = personas;
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
+        this.gestionEncuestasGrupoFamiliars = gestionEncuestasGrupoFamiliars;
         this.actualizacionGrupoFamiliars = actualizacionGrupoFamiliars;
     }
 
@@ -71,6 +77,22 @@ public class GrupoFamiliar {
         this.transporteRutases = transporteRutases;
     }
 
+    public Set<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy> getActualizacionGrupoFamiliarCopies() {
+        return actualizacionGrupoFamiliarCopies;
+    }
+
+    public void setActualizacionGrupoFamiliarCopies(Set<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies) {
+        this.actualizacionGrupoFamiliarCopies = actualizacionGrupoFamiliarCopies;
+    }
+
+    public Set<com.aprendoz_test.data.PersonaCopy> getPersonaCopies() {
+        return personaCopies;
+    }
+
+    public void setPersonaCopies(Set<com.aprendoz_test.data.PersonaCopy> personaCopies) {
+        this.personaCopies = personaCopies;
+    }
+
     public Set<com.aprendoz_test.data.Persona> getPersonas() {
         return personas;
     }
@@ -85,6 +107,14 @@ public class GrupoFamiliar {
 
     public void setInscPersonaGrupoFamiliars(Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars) {
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
+    }
+
+    public Set<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar> getGestionEncuestasGrupoFamiliars() {
+        return gestionEncuestasGrupoFamiliars;
+    }
+
+    public void setGestionEncuestasGrupoFamiliars(Set<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar> gestionEncuestasGrupoFamiliars) {
+        this.gestionEncuestasGrupoFamiliars = gestionEncuestasGrupoFamiliars;
     }
 
     public Set<com.aprendoz_test.data.ActualizacionGrupoFamiliar> getActualizacionGrupoFamiliars() {
