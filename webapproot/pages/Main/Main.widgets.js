@@ -490,7 +490,7 @@ Main.widgets = {
 		FancyCentered: ["wm.Template", {"height":"100%","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
 			templateMain: ["wm.Template", {"_classes":{"domNode":["template-main","wm_BackgroundColor_White"]},"height":"100%","horizontalAlign":"center","verticalAlign":"top","width":"100%","layoutKind":"left-to-right","autoScroll":true}, {}, {
 				aprendoz: ["wm.Panel", {"height":"1551px","width":"100%","horizontalAlign":"left","verticalAlign":"top","freeze":true}, {}, {
-					panelHeader: ["wm.Panel", {"_classes":{"domNode":["template-header-panel","wm_BackgroundColor_White"]},"height":"80px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","padding":"15","layoutKind":"left-to-right"}, {}, {
+					panelHeader: ["wm.Panel", {"_classes":{"domNode":["template-header-panel","wm_BackgroundColor_White"]},"height":"80px","width":"100%","horizontalAlign":"left","verticalAlign":"bottom","padding":"15","layoutKind":"left-to-right"}, {}, {
 						top_Head: ["wm.Panel", {"height":"28px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","lock":true}, {}, {
 							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"width":"80px","captionPosition":"right","displayValue":"15/07/2014","readonly":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
@@ -501,7 +501,7 @@ Main.widgets = {
 							label1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"height":"24px","width":"10px","border":"0","align":"center","padding":"0","caption":"|"}, {}, {
 								format: ["wm.DataFormatter", {}, {}]
 							}],
-							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"15:17 p.m.","width":"76px","readonly":true}, {}, {
+							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"15:34 p.m.","width":"76px","readonly":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 								}],
@@ -519,7 +519,7 @@ Main.widgets = {
 						templateLeft: ["wm.Panel", {"_classes":{"domNode":["template-left"]},"height":"100%","width":"24px","horizontalAlign":"left","verticalAlign":"top","lock":true,"showing":false}, {}],
 						templateContent: ["wm.Panel", {"_classes":{"domNode":["template-content"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"10"}, {}, {
 							main: ["wm.TabLayers", {"padding":"0"}, {}, {
-								inicio: ["wm.Layer", {"caption":"Inicio","horizontalAlign":"left","verticalAlign":"top","padding":"50"}, {}, {
+								inicio: ["wm.Layer", {"caption":"Inicio","horizontalAlign":"left","verticalAlign":"top","padding":"50","lock":true}, {}, {
 									image_logo: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"138px","width":"100%","horizontalAlign":"center","verticalAlign":"middle","layoutKind":"left-to-right"}, {}, {
 										logo_aprendoz: ["wm.Picture", {"height":"97px","border":"0","width":"389px","source":"http://aprendoz.rochester.edu.co/recursos/logo_aprendoz_nuevo.png","aspect":"v"}, {}]
 									}],
@@ -682,7 +682,7 @@ Main.widgets = {
 													}],
 													editor: ["wm._DateEditor", {}, {}]
 												}],
-												inicio_box_hora: ["wm.TimeEditor", {"displayValue":"15:17 p.m.","disabled":true,"caption":"fecha","showing":false}, {}, {
+												inicio_box_hora: ["wm.TimeEditor", {"displayValue":"15:34 p.m.","disabled":true,"caption":"fecha","showing":false}, {}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 													}],
@@ -727,7 +727,7 @@ Main.widgets = {
 													cur_encabezado_butt_restaurar: ["wm.Button", {"_classes":{"domNode":["wm_TextDecoration_Bold","wm_FontSizePx_14px"]},"height":"43px","width":"150px","caption":"Restaurar","borderColor":"#bbb","iconUrl":"resources/images/ico/refresh.png","iconMargin":"0 0px 0 0"}, {"onclick":"cur_encabezado_butt_restaurarClick"}]
 												}],
 												cur_panel_asig: ["wm.LivePanel", {"verticalAlign":"top","horizontalAlign":"left"}, {}, {
-													cur_asig_panel_asignaturas: ["wm.FancyPanel", {"_classes":{"domNode":["wm_BackgroundGradient_Blue"]},"horizontalAlign":"left","verticalAlign":"top","title":"ASIGNATURAS","captionClasses":"wm_BackgroundGradient_Blue wm_FontSizePx_16px wm_FontColor_White wm_TextDecoration_Bold","margin":"0","borderColor":"#fff"}, {}, {
+													cur_asig_panel_asignaturas: ["wm.FancyPanel", {"_classes":{"domNode":["wm_BackgroundGradient_Blue"]},"horizontalAlign":"left","verticalAlign":"top","title":"ASIGNATURAS","captionClasses":"wm_BackgroundGradient_Blue wm_FontSizePx_16px wm_FontColor_White wm_TextDecoration_Bold","margin":"0","borderColor":"#fff","lock":true}, {}, {
 														cur_asig_datag_asignaturasDataGrid1: ["wm.DataGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0"}, {"onSelected":"cur_asig_datag_asignaturasDataGrid1Selected"}, {
 															binding: ["wm.Binding", {}, {}, {
 																wire: ["wm.Wire", {"targetProperty":"dataSet","source":"l_cur_asig_asignaturas_vista_docentes_asignaturas","expression":undefined}, {}]
@@ -747,7 +747,7 @@ Main.widgets = {
 														}]
 													}]
 												}],
-												cur_panel_encabezado2: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_LightBlue","wm_BackgroundColor_VeryLightGray"]},"height":"44px","width":"100%","horizontalAlign":"right","verticalAlign":"middle","layoutKind":"left-to-right"}, {}, {
+												cur_panel_encabezado2: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_LightBlue","wm_BackgroundColor_VeryLightGray"]},"height":"44px","width":"100%","horizontalAlign":"right","verticalAlign":"middle","layoutKind":"left-to-right","lock":true}, {}, {
 													cur_encabezado2_butt_crea_unidad: ["wm.Button", {"_classes":{"domNode":["wm_FontSizePx_14px"]},"height":"32px","width":"32px","caption":" ","disabled":true,"margin":"","borderColor":"#bbb","iconUrl":"resources/images/news_icons/new.png","iconWidth":"32px","iconHeight":"32px","iconMargin":"6px 5px 5px 6px"}, {"onclick":"cur_encabezado2_butt_crea_unidadClick"}],
 													spacer1: ["wm.Spacer", {"height":"48px","width":"5px"}, {}],
 													cur_unidad_edit: ["wm.Button", {"height":"32px","width":"32px","caption":" ","disabled":true,"margin":"0","borderColor":"#bbb","iconUrl":"resources/images/news_icons/edit.png","iconMargin":"6px 5px 5px 6px"}, {"onclick":"cur_unidad_editClick"}],
@@ -782,7 +782,7 @@ Main.widgets = {
 																	format: ["wm.NumberFormatter", {}, {}]
 																}]
 															}],
-															cur_unidad_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top","lock":true,"showing":false}, {}, {
+															cur_unidad_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top","showing":false}, {}, {
 																unidadLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"170%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"padding":"3","validateBeforeSave":true}, {"onSuccess":"l_cur_unid_unidades_unidadLiveVariable1","onBeginInsert":"unidadLiveForm1BeginInsert","onInsertData":"unidadLiveForm1InsertData","onBeginUpdate":"unidadLiveForm1BeginUpdate","onUpdateData":"unidadLiveForm1UpdateData","onCancelEdit":"unidadLiveForm1CancelEdit"}, {
 																	binding: ["wm.Binding", {}, {}, {
 																		wire: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_unid_datag_unidadesDataGrid1.selectedItem","expression":undefined}, {}],
@@ -827,7 +827,7 @@ Main.widgets = {
 																			}]
 																		}]
 																	}],
-																	editPanel4: ["wm.EditPanel", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"liveForm":"unidadLiveForm1","savePanel":"savePanel4","operationPanel":"operationPanel4","lock":false}, {}, {
+																	editPanel4: ["wm.EditPanel", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"liveForm":"unidadLiveForm1","savePanel":"savePanel4","operationPanel":"operationPanel4"}, {}, {
 																		savePanel4: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 																			saveButton4: ["wm.RoundedButton", {"caption":"Guardar","width":"100px","height":"100%"}, {"onclick":"editPanel4.saveData"}, {
 																				binding: ["wm.Binding", {}, {}, {
