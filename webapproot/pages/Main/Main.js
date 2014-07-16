@@ -36,9 +36,12 @@ dojo.declare("Main", wm.Page, {
       this.l_cur_rec_recursos_recursoLiveVariable1.update();
   },  
   cur_encabezado_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
     var sy_value= this.cur_encabezado_sel_sy.dataValue;
-    if(sy_value==1 || sy_value==2 || sy_value==3 || sy_value==4){
+    var json= main.a_cursy.getItem(0);
+    var sy= json.data.sy;
+    var idsy= json.data.idsy;
+    if(sy_value < idsy){
+    console.log("año escolar menor");
         //formulario unidades
         this.newButton4.hide();
         this.updateButton4.hide();
@@ -64,7 +67,8 @@ dojo.declare("Main", wm.Page, {
         this.updateButton13.hide();
         this.deleteButton13.hide();    
      }     
-     else if(sy_value!=1 || sy_value!=2) {
+     else{
+        console.log("año escolar actual");  
         //formulario unidades
         this.newButton4.show();
         this.updateButton4.show();
@@ -97,9 +101,6 @@ dojo.declare("Main", wm.Page, {
         this.l_cur_metas_metas_otrasmetasLiveVariable1.clearData();
         this.l_cur_act_actividades_actividadLiveVariable1.clearData();
         this.l_cur_act_actividades_actividadLiveVariable1.clearData();               
-    } catch(e) {
-      console.error('ERROR IN cur_encabezado_sel_syChange: ' + e); 
-    } 
   },
   
   cur_encabezado_sel_gradoChange: function(inSender, inDisplayValue, inDataValue) {
@@ -706,16 +707,10 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN button_activitiesClick: ' + e); 
     } 
-  },
- 
+  }, 
   informes_fuckersShow: function(inSender) {
-     try {
       this.RLVGrados.update(); 
-      
-    } catch(e) {
-      console.error('ERROR IN layer16Show: ' + e); 
-    }}, 
-    
+  },     
   calificaTodosClick: function(inSender, inEvent) {  
       var fecha= this.fechaEditor3.getDataValue();
       var comentario= this.comentarioEditor4.getDataValue();
@@ -729,16 +724,10 @@ dojo.declare("Main", wm.Page, {
       this.sp_insertar_actividades.input.setValue("Pr_Logrado", logrado);
       this.sp_insertar_actividades.update();
       this.editPanel12.cancelEdit();
-  },
-  
+  },  
   picture9Click: function(inSender) {
-     try {
       this.actAlumnos.clearSelection();
       this.inscalumactividadLiveVariable1.update();
-      
-    } catch(e) {
-      console.error('ERROR IN picture9Click: ' + e); 
-    } 
   },
   button48Click: function(inSender, inEvent) {
     try {
@@ -1359,8 +1348,6 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN l_dirNivel_formulario_aprendizaje_lista_domension_curricularSuccess: ' + e); 
     } 
   },
-  
-  
   l_dirNivel_formulario_aprendizaje_lista_inteligenciaBeforeUpdate: function(inSender, ioInput) {
     try {
        app.pageDialog.showPage("Loading_message", true, 456,90);
