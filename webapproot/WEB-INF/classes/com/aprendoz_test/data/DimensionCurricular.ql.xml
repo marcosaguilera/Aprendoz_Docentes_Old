@@ -3,11 +3,7 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<<<<<<< HEAD
-<!-- Generated 07/11/2014 08:22:29
-=======
 <!-- Generated 07/15/2014 14:35:59
->>>>>>> navegacion---mostrar-paneles
 
 Queries for entity: DimensionCurricular.
 

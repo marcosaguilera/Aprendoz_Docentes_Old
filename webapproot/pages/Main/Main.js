@@ -2979,8 +2979,6 @@ dojo.declare("Main", wm.Page, {
      this.panel17.show();
      this.panel27.show();
      this.aprAsigDojoGrid1.hide();
-<<<<<<< HEAD
-=======
   },
   cur_unid_datag_unidadesDataGrid1RowDblClick: function(inSender, inEvent) {
      this.cur_unidad_form_panel.show(); //cuando se haga doble click en la tabla se abrira el panel de detalles
@@ -3017,7 +3015,6 @@ dojo.declare("Main", wm.Page, {
   },
   cur_rec_datag_recursosDataGrid1SelectionChanged: function(inSender) {
      this.editPanel13.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
->>>>>>> navegacion---mostrar-paneles
   },
   _end: 0
 });

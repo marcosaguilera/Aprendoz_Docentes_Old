@@ -19,11 +19,11 @@ Coordinador.widgets = {
 	}],
 	insccomentariosalumnosLiveVariable1: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"liveSource":"app.insccomentariosalumnosLiveView1","maxResults":10}, {}],
 	layoutBox1: ["wm.Layout", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"10"}, {}, {
-		top_header_buttons: ["wm.Panel", {"height":"41px","width":"100%","horizontalAlign":"left","verticalAlign":"bottom","layoutKind":"left-to-right","margin":"0px 0px 0px 3px"}, {}, {
-			comentarios: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"96px","borderColor":"#357ebd","margin":"0","caption":"Comentarios"}, {}]
+		top_header_buttons: ["wm.Panel", {"height":"41px","horizontalAlign":"left","width":"100%","verticalAlign":"bottom","layoutKind":"left-to-right","margin":"0px 0px 0px 3px"}, {}, {
+			comentarios: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"96px","caption":"Comentarios","margin":"0","borderColor":"#357ebd"}, {}]
 		}],
-		main_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-			left_comentario: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","width":"38%","horizontalAlign":"left","verticalAlign":"top","padding":"5"}, {}, {
+		main_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+			left_comentario: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","horizontalAlign":"left","width":"38%","verticalAlign":"top","padding":"5"}, {}, {
 				label1: ["wm.Label", {"height":"154px","width":"100%","border":"0","caption":"Instrucciones de uso:<br><br>A continuación se describen los pasos a seguir para realizar el registro de comentarios para los estudiantes.<br><br>1. Seleccione un <u>Grado</u><br>2. Seleccione un <u>Curso</u><br>3. Seleccione el estudiante al cual desea ingresar el comentario","singleLine":false}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
@@ -59,8 +59,8 @@ Coordinador.widgets = {
 					}]
 				}]
 			}],
-			right_comentario: ["wm.Panel", {"height":"100%","width":"65%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-				panel1: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"48px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}],
+			right_comentario: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"65%","verticalAlign":"top"}, {}, {
+				panel1: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"48px","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}],
 				insccomentariosalumnosLivePanel1: ["wm.LivePanel", {"verticalAlign":"top","horizontalAlign":"left","padding":"8"}, {}, {
 					insccomentariosalumnosDataGrid1: ["wm.DataGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0","height":"154px"}, {"onSelectionChanged":"insccomentariosalumnosDataGrid1SelectionChanged"}, {
 						binding: ["wm.Binding", {}, {}, {
@@ -76,20 +76,20 @@ Coordinador.widgets = {
 							format: ["wm.DateFormatter", {}, {}]
 						}]
 					}],
-					panel2: ["wm.Panel", {"height":"258px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+					panel2: ["wm.Panel", {"height":"258px","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 						insccomentariosalumnosLiveForm1: ["wm.LiveForm", {"height":"100%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"validateBeforeSave":true}, {"onSuccess":"insccomentariosalumnosLiveVariable1","onBeginInsert":"insccomentariosalumnosLiveForm1BeginInsert","onBeginUpdate":"insccomentariosalumnosLiveForm1BeginUpdate"}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"targetProperty":"dataSet","source":"insccomentariosalumnosDataGrid1.selectedItem","expression":undefined}, {}],
 								wire1: ["wm.Wire", {"targetProperty":"dataOutput.sy","source":"syRelatedEditor1.dataOutput","expression":undefined}, {}],
 								wire2: ["wm.Wire", {"targetProperty":"dataOutput.persona","source":"personaRelatedEditor1.dataOutput","expression":undefined}, {}]
 							}],
-							fullpanel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-								left: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+							fullpanel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+								left: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top"}, {}, {
 									idComentarioEstudianteEditor1: ["wm.Editor", {"caption":"Id","width":"100%","height":"26px","display":"Number","readonly":true,"formField":"idComentarioEstudiante"}, {}, {
 										editor: ["wm._NumberEditor", {}, {}]
 									}],
 									numeroBimestreEditor1: ["wm.Editor", {"caption":"No. Bimestre","width":"100%","height":"26px","display":"Select","readonly":true,"formField":"numeroBimestre"}, {}, {
-										editor: ["wm._SelectEditor", {"displayField":"name","dataField":"dataValue","options":"1,2,3,4","required":true}, {}, {
+										editor: ["wm._SelectEditor", {"displayField":"name","dataField":"dataValue","required":true,"options":"1,2,3,4"}, {}, {
 											optionsVar: ["wm.Variable", {"type":"EntryData"}, {}]
 										}]
 									}],
@@ -97,7 +97,7 @@ Coordinador.widgets = {
 										editor: ["wm._TextAreaEditor", {"required":true}, {}]
 									}]
 								}],
-								right: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+								right: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top"}, {}, {
 									fechaActualEditor1: ["wm.Editor", {"caption":"Fecha ingreso","width":"100%","height":"26px","display":"Date","readonly":true,"formField":"fechaActual"}, {}, {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
@@ -123,7 +123,7 @@ Coordinador.widgets = {
 								}]
 							}],
 							editPanel1: ["wm.EditPanel", {"liveForm":"insccomentariosalumnosLiveForm1","savePanel":"savePanel1","operationPanel":"operationPanel1","lock":false}, {}, {
-								savePanel1: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
+								savePanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 									saveButton1: ["wm.RoundedButton", {"caption":"Guardar","width":"100px","height":"100%"}, {"onclick":"editPanel1.saveData"}, {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel1.formInvalid","expression":undefined}, {}]
@@ -131,7 +131,7 @@ Coordinador.widgets = {
 									}],
 									cancelButton1: ["wm.RoundedButton", {"caption":"Cancelar","width":"100px","height":"100%"}, {"onclick":"editPanel1.cancelEdit"}]
 								}],
-								operationPanel1: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+								operationPanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 									newButton1: ["wm.RoundedButton", {"caption":"Nuevo","width":"100px","height":"100%"}, {"onclick":"editPanel1.beginDataInsert"}],
 									updateButton1: ["wm.RoundedButton", {"caption":"Actualizar","width":"100px","height":"100%","disabled":true}, {"onclick":"editPanel1.beginDataUpdate"}, {
 										binding: ["wm.Binding", {}, {}, {

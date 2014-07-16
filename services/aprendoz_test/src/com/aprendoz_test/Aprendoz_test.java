@@ -47,11 +47,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
-<<<<<<< HEAD
- *  07/11/2014 08:24:04
-=======
  *  07/15/2014 14:36:50
->>>>>>> navegacion---mostrar-paneles
  * 
  */
 @SuppressWarnings("unchecked")
@@ -167,21 +163,14 @@ public class Aprendoz_test
         } else {
             return rtn.get(0);
         }
-<<<<<<< HEAD
-=======
     }
 
     public List<Dash_aprendizajesRtnType> dash_aprendizajes(Integer idasignatura) {
         return ((List<Dash_aprendizajesRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.dash_aprendizajesQueryName), idasignatura));
->>>>>>> navegacion---mostrar-paneles
     }
 
     public List<Hql_ls_cursosRtnType> hql_ls_cursos(Integer idg) {
         return ((List<Hql_ls_cursosRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.hql_ls_cursosQueryName), idg));
-    }
-
-    public List<Dash_aprendizajesRtnType> dash_aprendizajes(Integer idasignatura) {
-        return ((List<Dash_aprendizajesRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.dash_aprendizajesQueryName), idasignatura));
     }
 
     public Integer actualizarClave(String usuario, String clave) {
