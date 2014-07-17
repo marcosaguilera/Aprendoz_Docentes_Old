@@ -784,7 +784,7 @@ Main.widgets = {
 																	format: ["wm.NumberFormatter", {}, {}]
 																}]
 															}],
-															cur_unidad_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top","showing":false}, {}, {
+															cur_unidad_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 																unidadLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"170%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"padding":"3","validateBeforeSave":true}, {"onSuccess":"l_cur_unid_unidades_unidadLiveVariable1","onBeginInsert":"unidadLiveForm1BeginInsert","onInsertData":"unidadLiveForm1InsertData","onBeginUpdate":"unidadLiveForm1BeginUpdate","onUpdateData":"unidadLiveForm1UpdateData","onCancelEdit":"unidadLiveForm1CancelEdit","onDeleteData":"unidadLiveForm1DeleteData"}, {
 																	binding: ["wm.Binding", {}, {}, {
 																		wire: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_unid_datag_unidadesDataGrid1.selectedItem","expression":undefined}, {}],
@@ -896,7 +896,7 @@ Main.widgets = {
 																	format: ["wm.NumberFormatter", {}, {}]
 																}]
 															}],
-															cur_subt_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top","showing":false}, {}, {
+															cur_subt_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 																subtopicoLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"170%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"padding":"3","validateBeforeSave":true}, {"onSuccess":"l_cur_subt_subtopicos_subtopicoLiveVariable1","onBeginInsert":"subtopicoLiveForm1BeginInsert","onInsertData":"subtopicoLiveForm1InsertData","onBeginUpdate":"subtopicoLiveForm1BeginUpdate","onUpdateData":"subtopicoLiveForm1UpdateData","onCancelEdit":"subtopicoLiveForm1CancelEdit","onDeleteData":"subtopicoLiveForm1DeleteData"}, {
 																	binding: ["wm.Binding", {}, {}, {
 																		wire: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_subt_datag_subtopicoDataGrid1.selectedItem","expression":undefined}, {}],
@@ -942,7 +942,7 @@ Main.widgets = {
 																			}]
 																		}]
 																	}],
-																	editPanel5: ["wm.EditPanel", {"_classes":{"domNode":["wm_FontSizePx_10px"]},"liveForm":"subtopicoLiveForm1","savePanel":"savePanel5","operationPanel":"operationPanel5","lock":false}, {}, {
+																	editPanel5: ["wm.EditPanel", {"_classes":{"domNode":["wm_FontSizePx_10px"]},"liveForm":"subtopicoLiveForm1","savePanel":"savePanel5","operationPanel":"operationPanel5"}, {}, {
 																		savePanel5: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 																			saveButton5: ["wm.RoundedButton", {"caption":"Guardar","width":"100px","height":"100%"}, {"onclick":"editPanel5.saveData"}, {
 																				binding: ["wm.Binding", {}, {}, {
@@ -1019,7 +1019,7 @@ Main.widgets = {
 																		format: ["wm.DataFormatter", {}, {}]
 																	}]
 																}],
-																cur_apr_form_panel: ["wm.Panel", {"height":"100%","width":"150%","horizontalAlign":"left","verticalAlign":"top","lock":true,"showing":false}, {}, {
+																cur_apr_form_panel: ["wm.Panel", {"height":"100%","width":"150%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 																	aprendizajeLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"padding":"3","validateBeforeSave":true}, {"onBeginInsert":"aprendizajeLiveForm1BeginInsert","onBeginUpdate":"aprendizajeLiveForm1BeginUpdate","onCancelEdit":"aprendizajeLiveForm1CancelEdit","onSuccess":"aprendizajeLiveForm1Success","onInsertData":"aprendizajeLiveForm1InsertData","onUpdateData":"aprendizajeLiveForm1UpdateData","onDeleteData":"aprendizajeLiveForm1DeleteData"}, {
 																		binding: ["wm.Binding", {}, {}, {
 																			wire: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_apr_datag_aprendizajeDataGrid1.selectedItem","expression":undefined}, {}],
@@ -1143,7 +1143,7 @@ Main.widgets = {
 																				}]
 																			}]
 																		}],
-																		editPanel1: ["wm.EditPanel", {"liveForm":"aprendizajeLiveForm1","savePanel":"savePanel1","operationPanel":"operationPanel1","lock":false}, {}, {
+																		editPanel1: ["wm.EditPanel", {"liveForm":"aprendizajeLiveForm1","savePanel":"savePanel1","operationPanel":"operationPanel1"}, {}, {
 																			savePanel1: ["wm.Panel", {"_classes":{"domNode":["wm_FontSizePx_10px"]},"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 																				saveButton1: ["wm.RoundedButton", {"caption":"Guardar","width":"100px","height":"100%"}, {"onclick":"editPanel1.saveData"}, {
 																					binding: ["wm.Binding", {}, {}, {
@@ -1202,7 +1202,7 @@ Main.widgets = {
 																		format: ["wm.DataFormatter", {}, {}]
 																	}]
 																}],
-																cur_metas_form_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","lock":true,"showing":false}, {}, {
+																cur_metas_form_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 																	otrasmetasLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"165%","verticalAlign":"top","horizontalAlign":"left","readonly":true}, {"onSuccess":"l_cur_metas_metas_otrasmetasLiveVariable1","onBeginInsert":"otrasmetasLiveForm1BeginInsert","onInsertData":"otrasmetasLiveForm1InsertData","onUpdateData":"otrasmetasLiveForm1UpdateData","onDeleteData":"otrasmetasLiveForm1DeleteData"}, {
 																		binding: ["wm.Binding", {}, {}, {
 																			wire: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_metas_datag_otrasmetasDataGrid1.selectedItem","expression":undefined}, {}],
@@ -1292,7 +1292,7 @@ Main.widgets = {
 																		format: ["wm.DataFormatter", {}, {}]
 																	}]
 																}],
-																cur_actv_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top","lock":true,"showing":false}, {}, {
+																cur_actv_form_panel: ["wm.Panel", {"height":"100%","width":"96%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 																	actividadLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray","wm_FontSizePx_10px"]},"height":"224%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"padding":"3"}, {"onSuccess":"l_cur_act_actividades_actividadLiveVariable1","onBeginInsert":"actividadLiveForm1BeginInsert","onBeforeOperation":"l_cur_formularios_actividad_listaTipoActividades","onInsertData":"actividadLiveForm1InsertData","onUpdateData":"actividadLiveForm1UpdateData","onDeleteData":"actividadLiveForm1DeleteData"}, {
 																		binding: ["wm.Binding", {}, {}, {
 																			wire: ["wm.Wire", {"targetProperty":"dataSet","source":"cur_act_datag_actividadDataGrid1.selectedItem","expression":undefined}, {}],
@@ -1365,7 +1365,7 @@ Main.widgets = {
 																				}]
 																			}]
 																		}],
-																		editPanel6: ["wm.EditPanel", {"liveForm":"actividadLiveForm1","savePanel":"savePanel6","operationPanel":"operationPanel6","lock":false}, {}, {
+																		editPanel6: ["wm.EditPanel", {"liveForm":"actividadLiveForm1","savePanel":"savePanel6","operationPanel":"operationPanel6"}, {}, {
 																			savePanel6: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 																				saveButton6: ["wm.RoundedButton", {"caption":"Guardar","width":"100px","height":"100%"}, {"onclick":"editPanel6.saveData"}, {
 																					binding: ["wm.Binding", {}, {}, {
@@ -1467,7 +1467,7 @@ Main.widgets = {
 																		cur_formulario_recurso_panel2: ["wm.Panel", {"height":"48px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 																			cur_formularios_butt_cargar_recurso: ["wm.Button", {"_classes":{"domNode":["wm_Border_TopStyleCurved4px","wm_Border_BottomStyleCurved4px","wm_FontSizePx_16px"]},"height":"100%","width":"193px","caption":"Recursos","iconUrl":"resources/images/ico/page_up.png","iconMargin":"0 2px 0 0"}, {"onclick":"cur_formularios_butt_cargar_recursoClick"}]
 																		}],
-																		editPanel13: ["wm.EditPanel", {"_classes":{"domNode":["wm_FontSizePx_10px"]},"liveForm":"recursoLiveForm2","savePanel":"savePanel13","operationPanel":"operationPanel13","lock":false,"height":"50px"}, {}, {
+																		editPanel13: ["wm.EditPanel", {"_classes":{"domNode":["wm_FontSizePx_10px"]},"liveForm":"recursoLiveForm2","savePanel":"savePanel13","operationPanel":"operationPanel13","height":"50px"}, {}, {
 																			savePanel13: ["wm.Panel", {"_classes":{"domNode":["wm_FontSizePx_10px"]},"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 																				saveButton13: ["wm.RoundedButton", {"caption":"Guardar","width":"100px","height":"100%"}, {"onclick":"editPanel13.saveData"}, {
 																					binding: ["wm.Binding", {}, {}, {

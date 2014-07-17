@@ -42,57 +42,21 @@ dojo.declare("Main", wm.Page, {
     var idsy= json.data.idsy;
     if(sy_value < idsy){
     console.log("año escolar menor");
-        //formulario unidades
-        this.newButton4.hide();
-        this.updateButton4.hide();
-        this.deleteButton4.hide();                 
-        //subtopicos
-        this.newButton5.hide();
-        this.updateButton5.hide();
-        this.deleteButton5.hide();  
-        //aprendizajes
-        this.newButton1.hide();
-        this.updateButton1.hide();
-        this.deleteButton1.hide();  
-        //otras metas
-        this.newButton2.hide();
-        this.updateButton2.hide();
-        this.deleteButton2.hide(); 
-        //Actividades 
-        this.newButton6.hide();
-        this.updateButton6.hide();
-        this.deleteButton6.hide(); 
-        //Recursos
-        this.newButton13.hide();
-        this.updateButton13.hide();
-        this.deleteButton13.hide();    
+        this.editPanel4.hide();
+        this.editPanel5.hide();
+        this.editPanel1.hide();
+        this.editPanel2.hide();
+        this.editPanel6.hide();
+        this.editPanel13.hide();    
      }     
      else{
         console.log("año escolar actual");  
-        //formulario unidades
-        this.newButton4.show();
-        this.updateButton4.show();
-        this.deleteButton4.show();  
-        //subtopicos 
-        this.newButton5.show();
-        this.updateButton5.show();
-        this.deleteButton5.show(); 
-        //aprendizajes
-        this.newButton1.show();
-        this.updateButton1.show();
-        this.deleteButton1.show();  
-        // otras metas
-        this.newButton2.show();
-        this.updateButton2.show();
-        this.deleteButton2.show(); 
-        //actividades  
-        this.newButton6.show();
-        this.updateButton6.show();
-        this.deleteButton6.show();
-        //recursos
-        this.newButton7.show();
-        this.updateButton7.show();
-        this.deleteButton7.show();
+        this.editPanel4.show();
+        this.editPanel5.show();
+        this.editPanel1.show();
+        this.editPanel2.show();
+        this.editPanel6.show();
+        this.editPanel13.show();
      }
         this.l_cur_asig_asignaturas_vista_docentes_asignaturas.update();
         this.l_cur_unid_unidades_unidadLiveVariable1.clearData();
