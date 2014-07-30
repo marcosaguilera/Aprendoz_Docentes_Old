@@ -18,27 +18,27 @@ Horarios.widgets = {
 		input: ["wm.ServiceInput", {"type":"getScheduleByProfileInputs"}, {}]
 	}],
 	layoutBox1: ["wm.Layout", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-		panel6: ["wm.Panel", {"height":"48px","horizontalAlign":"left","width":"100%","verticalAlign":"bottom","layoutKind":"left-to-right","padding":"5,0,0,10"}, {}, {
-			horarioButton1: ["wm.Button", {"height":"36px","width":"110px","caption":"Horarios","margin":"0","borderColor":"#C1272D","iconUrl":"resources/images/buttons/ring.png","iconWidth":"30px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {}],
+		panel6: ["wm.Panel", {"height":"48px","width":"100%","horizontalAlign":"left","verticalAlign":"bottom","padding":"5,0,0,10","layoutKind":"left-to-right"}, {}, {
+			horarioButton1: ["wm.Button", {"height":"36px","width":"110px","caption":"Horarios","margin":"0","borderColor":"#C1272D","iconUrl":"resources/images/buttons/ring.png","iconWidth":"30px","iconMargin":"0 0px 0 0","iconHeight":"20px"}, {}],
 			coordinacionButton2: ["wm.Button", {"height":"48px","width":"96px","caption":"Coordinación","showing":false}, {}]
 		}],
-		horario: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-			left_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","horizontalAlign":"left","width":"380px","verticalAlign":"top","padding":"10"}, {}, {
-				userName: ["wm.TextEditor", {"width":"100%","readonly":true,"showing":false}, {"onchange":"userNameChange"}, {
+		horario: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+			left_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","width":"380px","horizontalAlign":"left","verticalAlign":"top","padding":"10"}, {}, {
+				userName: ["wm.TextEditor", {"width":"100%","showing":false,"displayValue":"m","readonly":true}, {"onchange":"userNameChange"}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"targetProperty":"dataValue","source":"getUserName.dataValue"}, {}]
 					}],
 					editor: ["wm._TextEditor", {}, {}]
 				}],
-				panel3: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_Border_TopStyleCurved4px"]},"height":"49px","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-					horarios_title: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"caption":"GESTIÓN DE HORARIOS","height":"48px","width":"100%","border":"0"}, {}, {
+				panel3: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_Border_TopStyleCurved4px"]},"height":"49px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+					horarios_title: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"height":"48px","width":"100%","border":"0","caption":"GESTIÓN DE HORARIOS"}, {}, {
 						format: ["wm.DataFormatter", {}, {}]
 					}]
 				}],
-				label1: ["wm.Label", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"caption":"A continuación siga los siguiente pasos para realizar el proceso de manera exitosa.<br><br>1. Seleccione un Año escolar<br>2. Seleccione la asignatura para la cual desea consultar, ingresar o actualizar los horarios.<br>3. Use los botones Nuevo, Actualizar y Borrar para realizar acciones sobre los horarios.<br>4. Tenga en cuenta los siguientes datos importantes para realizar con éxito el proceso. <br><br>a) Número de sesión<br>b) Día se la semana<br>c) Tipo de semana     ","height":"203px","width":"100%","border":"0","singleLine":false}, {}, {
+				label1: ["wm.Label", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"203px","width":"100%","border":"0","caption":"A continuación siga los siguiente pasos para realizar el proceso de manera exitosa.<br><br>1. Seleccione un Año escolar<br>2. Seleccione la asignatura para la cual desea consultar, ingresar o actualizar los horarios.<br>3. Use los botones Nuevo, Actualizar y Borrar para realizar acciones sobre los horarios.<br>4. Tenga en cuenta los siguientes datos importantes para realizar con éxito el proceso. <br><br>a) Número de sesión<br>b) Día se la semana<br>c) Tipo de semana     ","singleLine":false}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
-				panel7: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_Border_BottomStyleCurved4px"]},"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top"}, {}, {
+				panel7: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_Border_BottomStyleCurved4px"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 					syHorario: ["wm.SelectEditor", {"width":"100%","caption":"Año Escolar"}, {"onchange":"syHorarioChange"}, {
 						editor: ["wm._SelectEditor", {"displayField":"schoolYear","dataField":"idSy"}, {}, {
 							binding: ["wm.Binding", {}, {}, {
@@ -53,17 +53,17 @@ Horarios.widgets = {
 					}]
 				}]
 			}],
-			content_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top"}, {}, {
-				panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top"}, {}, {
-					panel2: ["wm.Panel", {"height":"49px","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+			content_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+				panel1: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+					panel2: ["wm.Panel", {"height":"49px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 						guardarNewButton: ["wm.Button", {"height":"48px","width":"96px","caption":"Guardar","borderColor":"#cccccc","showing":false}, {"onclick":"guardarNewButtonClick"}],
 						guardarUpdateButton: ["wm.Button", {"height":"48px","width":"96px","caption":"Guardar ","borderColor":"#cccccc","showing":false}, {"onclick":"guardarUpdateButtonClick"}],
 						cancelarButton: ["wm.Button", {"height":"48px","width":"96px","caption":"Cancelar","borderColor":"#cccccc","showing":false}, {"onclick":"cancelarButtonClick"}],
-						nuevohorario: ["wm.Button", {"height":"48px","width":"96px","caption":"Nuevo","disabled":true,"borderColor":"#006dcc"}, {"onclick":"nuevohorarioClick"}],
-						actualizahorario: ["wm.Button", {"height":"48px","width":"96px","caption":"Actualizar","disabled":true,"borderColor":" #006dcc"}, {"onclick":"actualizahorarioClick"}],
-						eliminahorario: ["wm.Button", {"height":"48px","width":"96px","caption":"Borrar","disabled":true,"borderColor":"#da4f49"}, {"onclick":"eliminahorarioClick"}]
+						nuevohorario: ["wm.Button", {"height":"48px","width":"96px","caption":"Nuevo","borderColor":"#006dcc","disabled":true}, {"onclick":"nuevohorarioClick"}],
+						actualizahorario: ["wm.Button", {"height":"48px","width":"96px","caption":"Actualizar","borderColor":" #006dcc","disabled":true}, {"onclick":"actualizahorarioClick"}],
+						eliminahorario: ["wm.Button", {"height":"48px","width":"96px","caption":"Borrar","borderColor":"#da4f49","disabled":true}, {"onclick":"eliminahorarioClick"}]
 					}],
-					panel4: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+					panel4: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 						horariosDataGrid: ["wm.DataGrid", {"border":"0","width":"280px"}, {"onSelected":"horariosDataGridSelected","onSelectionChanged":"horariosDataGridSelectionChanged"}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"targetProperty":"dataSet","source":"horariosServiceVariable","expression":undefined}, {}]
@@ -72,8 +72,8 @@ Horarios.widgets = {
 								format: ["wm.DataFormatter", {}, {}]
 							}]
 						}],
-						panel5: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top"}, {}, {
-							idHorarioEditor1: ["wm.NumberEditor", {"caption":"Id","width":"100%","readonly":true}, {}, {
+						panel5: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+							idHorarioEditor1: ["wm.NumberEditor", {"width":"100%","caption":"Id","readonly":true}, {}, {
 								editor: ["wm._NumberEditor", {}, {}]
 							}],
 							idSesionEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Número de sesión","readonly":true}, {}, {

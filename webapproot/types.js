@@ -22949,6 +22949,15 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.String"
 				},
+				"grade": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
 				"grado": {
 					"exclude": [],
 					"fieldOrder": 10,
@@ -23006,6 +23015,15 @@ wm.types = {
 				"nombre": {
 					"exclude": [],
 					"fieldOrder": 2,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"sapiens": {
+					"exclude": [],
+					"fieldOrder": 12,
 					"include": [],
 					"isList": false,
 					"noChange": [],

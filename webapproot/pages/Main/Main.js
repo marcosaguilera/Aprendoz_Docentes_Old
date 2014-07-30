@@ -91,8 +91,7 @@ dojo.declare("Main", wm.Page, {
   cur_asig_datag_asignaturasDataGrid1Selected: function(inSender, inIndex) {
     try {
      this.l_cur_unid_unidades_unidadLiveVariable1.update(); 
-     
-     
+     this.cur_encabezado_butt_reporte1.enable();
 
      this.l_cur_subt_subtopicos_subtopicoLiveVariable1.clearData();
      this.l_cur_apr_aprendizajes_aprendizajeLiveVariable1.clearData();
@@ -523,13 +522,8 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   cur_formularios_butt_cargar_recursoClick: function(inSender, inEvent) {
-    try {
-      url= "http://aprendoz.rochester.edu.co/ckfinder/ckfinder.html";
-      window.open(url,"_BLANK"); 
-      
-    } catch(e) {
-      console.error('ERROR IN button37Click: ' + e); 
-    } 
+    url= "http://www.rochester.edu.co/apps/index/aprendoz-finder/token/266c25fad84169c44dca7b8462db4369";
+      window.open(url,"_BLANK");  
   },
   
   picture7Click: function(inSender) {
@@ -806,44 +800,24 @@ dojo.declare("Main", wm.Page, {
     } catch(e) {
       console.error('ERROR IN botonRepClick: ' + e); 
     } 
-  },
-  
+  },  
   cur_encabezado_butt_reporte1Click: function(inSender, inEvent) {
-    try {
-       url= "services/catalogoAsignaturas.download?method=getReport&ida="+this.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;  
-       window.open(url,"_BLANK");   
-    
-    } catch(e) {
-      console.error('ERROR IN cur_encabezado_butt_reporte1Click: ' + e); 
-    } 
-  },
-  
-  generar2Click: function(inSender, inEvent) {
-    try {
-      url= "services/s311.download?method=getReport";
-        window.open(url,"_BLANK");    
-      
-    } catch(e) {
-      console.error('ERROR IN generar2Click: ' + e); 
-    } 
-  },
-  generar3Click: function(inSender, inEvent) {
-    try {
-       url= "services/s312.download?method=getReport";
-        window.open(url,"_BLANK");    
-      
-    } catch(e) {
-      console.error('ERROR IN generar3Click: ' + e); 
-    } 
-  },
-  generar4Click: function(inSender, inEvent) {
-    try {
-       url= "services/s313.download?method=getReport";
-        window.open(url,"_BLANK");   
-      
-    } catch(e) {
-      console.error('ERROR IN generar4Click: ' + e); 
-    } 
+      var id= main.a_informacionUsuario2.getItem(0).data.idpersona;
+      var clave= main.a_informacionUsuario2.getItem(0).data.clave;
+      var ida= main.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;
+      var idsy= main.cur_encabezado_sel_sy.getDataValue();
+      var formatType= "XLS";
+      $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
+        failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
+        httpMethod: "POST",
+        data:{ idp: id, 
+               pass: clave,
+               uri: "/aprendozreports/REC030",
+               format: formatType,
+               params: { sy: idsy, asignatura: ida }
+         }
+       });
+       inEvent.preventDefault();
   },
     
   dataGridAlumnosSelected: function(inSender, inIndex) {

@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "getSubjectsByProfile" on 07/15/2014 14:36:36
+ * Generated for query "getSubjectsByProfile" on 07/30/2014 16:06:57
  * 
  */
 public class GetSubjectsByProfileRtnType {
@@ -20,11 +20,13 @@ public class GetSubjectsByProfileRtnType {
     private String curso;
     private Integer idgrado;
     private String grado;
+    private String grade;
+    private String sapiens;
 
     public GetSubjectsByProfileRtnType() {
     }
 
-    public GetSubjectsByProfileRtnType(Integer idpersona, String usuario, String nombre, Integer idasignatura, String asignatura, Integer idsy, String sy_escolar, Integer idcurso, String curso, Integer idgrado, String grado) {
+    public GetSubjectsByProfileRtnType(Integer idpersona, String usuario, String nombre, Integer idasignatura, String asignatura, Integer idsy, String sy_escolar, Integer idcurso, String curso, Integer idgrado, String grado, String grade, String sapiens) {
         this.idpersona = idpersona;
         this.usuario = usuario;
         this.nombre = nombre;
@@ -36,6 +38,8 @@ public class GetSubjectsByProfileRtnType {
         this.curso = curso;
         this.idgrado = idgrado;
         this.grado = grado;
+        this.grade = grade;
+        this.sapiens = sapiens;
     }
 
     public Integer getIdpersona() {
@@ -124,6 +128,22 @@ public class GetSubjectsByProfileRtnType {
 
     public void setGrado(String grado) {
         this.grado = grado;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getSapiens() {
+        return sapiens;
+    }
+
+    public void setSapiens(String sapiens) {
+        this.sapiens = sapiens;
     }
 
 }

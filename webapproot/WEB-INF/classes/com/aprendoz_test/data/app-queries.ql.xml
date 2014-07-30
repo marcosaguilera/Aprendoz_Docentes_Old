@@ -441,7 +441,9 @@ sy.schoolYear as sy_escolar,
 c.idCurso as idcurso,
 c.curso as curso,
 g.idGrado as idgrado,
-g.grado as grado
+g.grado as grado,
+g.grade as grade,
+g.gradoSapiens as sapiens
 FROM InscCursoAsig ica INNER JOIN ica.persona p INNER JOIN ica.curso c INNER JOIN ica.asignatura a INNER JOIN ica.periodo pr INNER JOIN pr.sy sy INNER JOIN a.grado g
 WHERE p.nombreLdap=:usuario and sy.idSy=:sy
 

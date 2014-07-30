@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "a_getCursoProcesoSV" on 07/15/2014 14:36:36
+ * Generated for query "a_getCursoProcesoSV" on 07/30/2014 16:06:57
  * 
  */
 public class A_getCursoProcesoSVRtnType {

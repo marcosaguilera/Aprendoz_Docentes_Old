@@ -33,6 +33,10 @@ dojo.declare("Horarios", wm.Page, {
      var sy           = data.sy_escolar;
      var idasignatura = data.idasignatura;
      var asignatura   = data.asignatura;
+     var idgrado      = data.idgrado;
+     var grado        = data.grado;
+     var grade        = data.grade;
+     var sapiens      = data.sapiens;
      var sesion       = this.idSesionEditor1.getDataValue();
      var idtipoSemana = this.idTipoSemanaEditor1.getDataValue();
      var tiposemana   = this.idTipoSemanaEditor1.getDisplayValue();
@@ -46,6 +50,10 @@ dojo.declare("Horarios", wm.Page, {
      this.accionesHorarios.setValue("curso.curso", curso); 
      this.accionesHorarios.setValue("asignatura.idAsignatura", idasignatura); 
      this.accionesHorarios.setValue("asignatura.asignatura", asignatura);
+     this.accionesHorarios.setValue("asignatura.grado.idGrado",idgrado);
+     this.accionesHorarios.setValue("asignatura.grado.grado",grado);
+     this.accionesHorarios.setValue("asignatura.grado.grade",grade);
+     this.accionesHorarios.setValue("asignatura.grado.gradoSapiens",sapiens);
      this.accionesHorarios.setValue("sy.idSy", syid);
      this.accionesHorarios.setValue("sy.schoolYear", sy);
      this.horariosLiveForm.setDataSet(this.accionesHorarios);   
@@ -61,6 +69,10 @@ dojo.declare("Horarios", wm.Page, {
      var sy           = data.sy_escolar;
      var idasignatura = data.idasignatura;
      var asignatura   = data.asignatura;
+     var idgrado      = data.idgrado;
+     var grado        = data.grado;
+     var grade        = data.grade;
+     var sapiens      = data.sapiens;
      var sesion       = this.idSesionEditor1.getDataValue();
      var idtipoSemana = this.idTipoSemanaEditor1.getDataValue();
      var tiposemana   = this.idTipoSemanaEditor1.getDisplayValue();
@@ -76,6 +88,10 @@ dojo.declare("Horarios", wm.Page, {
      this.accionesHorarios.setValue("curso.curso", curso); 
      this.accionesHorarios.setValue("asignatura.idAsignatura", idasignatura); 
      this.accionesHorarios.setValue("asignatura.asignatura", asignatura);
+     this.accionesHorarios.setValue("asignatura.grado.idGrado",idgrado);
+     this.accionesHorarios.setValue("asignatura.grado.grado",grado);
+     this.accionesHorarios.setValue("asignatura.grado.grade",grade);
+     this.accionesHorarios.setValue("asignatura.grado.gradoSapiens",sapiens);    
      this.accionesHorarios.setValue("sy.idSy", syid);
      this.accionesHorarios.setValue("sy.schoolYear", sy);
      this.horariosLiveForm.setDataSet(this.accionesHorarios);  
