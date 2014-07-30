@@ -3230,5 +3230,15 @@ dojo.declare("Main", wm.Page, {
      this.logDocentesliveForm.insertData(); 
   },
 
+  calif_encabezado_opciones_sel_syChange: function(inSender, inDisplayValue, inDataValue) {
+     var idsy= this.calif_encabezado_opciones_sel_sy.getDataValue();
+     if(idsy==5){
+       this.editPanel9.show();
+       this.editPanel10.show();
+     }else{
+       this.editPanel9.hide();
+       this.editPanel10.hide();
+     }
+  },
   _end: 0
 });

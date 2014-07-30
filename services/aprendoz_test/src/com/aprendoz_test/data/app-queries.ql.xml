@@ -101,7 +101,7 @@ g.idGrado as idgrado,
 g.grado as grado,
 sy.schoolYear as schoolYear
 FROM InscAlumCurso iac INNER JOIN iac.persona p INNER JOIN iac.curso c INNER JOIN iac.sy sy INNER JOIN c.grado g
-WHERE c.idCurso=:pcurso AND sy.idSy=4
+WHERE c.idCurso=:pcurso AND sy.idSy=5
 ORDER BY c.idCurso,p.apellido1,p.apellido2,p.nombre1,p.nombre2
     </query>
     <query name="orientacionInvolucradosGrupoFamiliar">
@@ -161,7 +161,7 @@ INNER JOIN ep.eventualidades as e
 INNER JOIN e.tipoLugar as t
 INNER JOIN ep.subtipoEventualidad as se
 WHERE
-CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+(CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
@@ -184,7 +184,7 @@ CONCAT(p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.apellido1,&apos; &apo
 CONCAT(p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;
+CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;) AND  e.fecha&gt;&apos;2014-07-01&apos; AND  e.fecha&lt;&apos;2015-07-01&apos;
 ORDER BY
 e.idEventualidad desc, e.fecha desc, e.hora desc
     </query>
@@ -304,7 +304,7 @@ pc.idPersona as idpersonacurso,
 c.curso as curso,
 iaa.idInscAlumAsig as idaa
 FROM InscAlumAsig iaa INNER JOIN iaa.persona p INNER JOIN iaa.asignatura a INNER JOIN iaa.periodo per, InscAlumCurso iac INNER JOIN iac.persona pc INNER JOIN iac.curso c
-WHERE a.idAsignatura=:pasignatura AND c.idCurso=:pcurso AND per.idPeriodo=10 AND (p.idPersona=pc.idPersona) AND (c.idCurso&gt;=10101 AND c.idCurso&lt;=40403)
+WHERE a.idAsignatura=:pasignatura AND c.idCurso=:pcurso AND per.idPeriodo=13 AND (p.idPersona=pc.idPersona) AND (c.idCurso&gt;=10101 AND c.idCurso&lt;=40403)
 GROUP BY a.idAsignatura, c.idCurso, p.idPersona
 ORDER BY c.idCurso desc,p.apellido1,p.apellido2,p.nombre1,p.nombre2
     </query>
@@ -391,7 +391,7 @@ MONTHNAME(log.fechaIngreso) as mes,
 COUNT(log.fechaIngreso) as totalingresos,
 YEAR(log.fechaIngreso) as sy
 FROM LogDocentes log INNER JOIN log.persona p
-WHERE p.nombreLdap=:usuario
+WHERE p.nombreLdap=:usuario AND log.fechaIngreso&gt;&apos;2014-07-01&apos; AND log.fechaIngreso&lt;&apos;2015-07-01&apos;
 GROUP BY p.nombreLdap, MONTHNAME(log.fechaIngreso), YEAR(log.fechaIngreso)
 ORDER BY YEAR(log.fechaIngreso), MONTH(log.fechaIngreso)
     </query>

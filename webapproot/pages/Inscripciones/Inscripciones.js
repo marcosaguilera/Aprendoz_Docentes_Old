@@ -1,6 +1,6 @@
 dojo.declare("Inscripciones", wm.Page, {
   start: function() {
-    
+ 
   },
   
   subjectsSelectChange: function(inSender, inDisplayValue, inDataValue) {
@@ -41,8 +41,8 @@ dojo.declare("Inscripciones", wm.Page, {
     this.subject   = this.data.asignatura; 
     this.gradoid   = this.data.idgrado;
     this.grado     = this.data.grado;
-    this.periodoid = 10;
-    this.periodo   = "2013-2014";
+    this.periodoid = 13;
+    this.periodo   = "2014-2015";
     this.writeNext();
   },
   
@@ -115,7 +115,7 @@ dojo.declare("Inscripciones", wm.Page, {
   showSubjectsButtonClick: function(inSender, inEvent) {
     var username = this.getUserName.getData().dataValue;
     //var idgrado  = this.subjectsSelect.getDataValue();
-    this.subjectsByUser.input.setValue("sy","4");
+    this.subjectsByUser.input.setValue("sy","5");
     this.subjectsByUser.input.setValue("usuario",username);
     this.subjectsByUser.update();
   },
@@ -160,7 +160,7 @@ dojo.declare("Inscripciones", wm.Page, {
   
   getUserNameSuccess: function(inSender, inDeprecated) {
      var username = this.getUserName.getData().dataValue;
-     this.subjectsByUser.input.setValue("sy","4");
+     this.subjectsByUser.input.setValue("sy","5");
      this.subjectsByUser.input.setValue("usuario",username);
      this.subjectsByUser.update(); 
   },

@@ -125,29 +125,29 @@ Reg_eventualidades.widgets = {
 		input: ["wm.ServiceInput", {"type":"sendEmailNotificationInputs"}, {}]
 	}],
 	main_layer: ["wm.Layout", {"height":"100%","width":"1038px","horizontalAlign":"left","verticalAlign":"top","padding":"10","autoScroll":false}, {}, {
-		buttons_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"61px","horizontalAlign":"left","width":"100%","verticalAlign":"middle","padding":"1","layoutKind":"left-to-right","lock":true}, {}, {
-			setUsername: ["wm.TextEditor", {"width":"242px","showing":false}, {}, {
+		buttons_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"61px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","padding":"1","layoutKind":"left-to-right","lock":true}, {}, {
+			setUsername: ["wm.TextEditor", {"width":"242px","showing":false,"displayValue":"m"}, {}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"targetProperty":"dataValue","source":"getUserID.dataValue"}, {}]
 				}],
 				editor: ["wm._TextEditor", {}, {}]
 			}],
 			spacer3: ["wm.Spacer", {"height":"48px","width":"100px"}, {}],
-			r_eventualidades: ["wm.Button", {"height":"100%","width":"179px","caption":"Registrar Eventualidad","borderColor":"#c6c6c6","iconUrl":"resources/images/buttons/eventualidades.png","iconWidth":"30px","iconHeight":"30px","iconMargin":"0 -10px 0 0"}, {"onclick":"r_eventualidadesClick"}],
-			b_consulta: ["wm.Button", {"height":"100%","width":"169px","caption":"Consultar Eventualidad","borderColor":"#c6c6c6","iconUrl":"resources/images/buttons/buscar.png","iconWidth":"25px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {"onclick":"b_consultaClick"}],
-			b_orientacion: ["wm.Button", {"height":"100%","width":"150px","caption":"ORIENTACIÓN","borderColor":"#c6c6c6","iconUrl":"resources/images/buttons/orientacion.png","iconWidth":"25px","iconHeight":"20px","iconMargin":"0 0px 0 0","roles":["18"]}, {"onclick":"b_orientacionClick"}]
+			r_eventualidades: ["wm.Button", {"height":"100%","width":"179px","caption":"Registrar Eventualidad","borderColor":"#c6c6c6","iconUrl":"resources/images/buttons/eventualidades.png","iconWidth":"30px","iconMargin":"0 -10px 0 0","iconHeight":"30px"}, {"onclick":"r_eventualidadesClick"}],
+			b_consulta: ["wm.Button", {"height":"100%","width":"169px","caption":"Consultar Eventualidad","borderColor":"#c6c6c6","iconUrl":"resources/images/buttons/buscar.png","iconWidth":"25px","iconMargin":"0 0px 0 0","iconHeight":"20px"}, {"onclick":"b_consultaClick"}],
+			b_orientacion: ["wm.Button", {"height":"100%","width":"150px","caption":"ORIENTACIÓN","borderColor":"#c6c6c6","iconUrl":"resources/images/buttons/orientacion.png","iconWidth":"25px","iconMargin":"0 0px 0 0","iconHeight":"20px","roles":["18"]}, {"onclick":"b_orientacionClick"}]
 		}],
 		Ingreso_Eventualidades: ["wm.Layers", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"padding":"0,100,0,100"}, {}, {
 			layer5: ["wm.Layer", {"caption":"layer5","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-				panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"center","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-					eventualidadesLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_Border_TopStyleCurved8px"]},"height":"100%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"validateBeforeSave":true,"autoScroll":true}, {"onSuccess":"eventualidadesLiveVariable1","onBeginInsert":"eventualidadesLiveForm1BeginInsert","onInsertData":"eventualidadesLiveForm1InsertData"}, {
+				panel1: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"center","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+					eventualidadesLiveForm1: ["wm.LiveForm", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_Border_TopStyleCurved8px"]},"height":"100%","verticalAlign":"top","horizontalAlign":"left","readonly":true,"validateBeforeSave":true,"lock":true,"autoScroll":true}, {"onSuccess":"eventualidadesLiveVariable1","onBeginInsert":"eventualidadesLiveForm1BeginInsert","onInsertData":"eventualidadesLiveForm1InsertData"}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire1: ["wm.Wire", {"targetProperty":"dataOutput.subtipoEventualidad","source":"subtipoEventualidadRelatedEditor1.dataOutput","expression":undefined}, {}],
 							wire2: ["wm.Wire", {"targetProperty":"dataOutput.tipoLugar","source":"relatedEditor1.dataOutput","expression":undefined}, {}],
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"eventualidadesDataGrid1.selectedItem"}, {}]
 						}],
 						editPanel1: ["wm.EditPanel", {"liveForm":"eventualidadesLiveForm1","savePanel":"savePanel1","operationPanel":"operationPanel1","padding":"2","height":"45px"}, {}, {
-							savePanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
+							savePanel1: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 								saveButton1: ["wm.RoundedButton", {"caption":"Guardar","width":"100px","height":"100%"}, {"onclick":"editPanel1.saveData"}, {
 									binding: ["wm.Binding", {}, {}, {
 										wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel1.formInvalid","expression":undefined}, {}]
@@ -155,7 +155,7 @@ Reg_eventualidades.widgets = {
 								}],
 								cancelButton1: ["wm.RoundedButton", {"caption":"Cancelar","width":"100px","height":"100%"}, {"onclick":"editPanel1.cancelEdit"}]
 							}],
-							operationPanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+							operationPanel1: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 								newButton1: ["wm.RoundedButton", {"caption":"Nueva eventualidad","width":"172px","height":"100%"}, {"onclick":"editPanel1.beginDataInsert"}],
 								updateButton1: ["wm.RoundedButton", {"caption":"Actualizar","width":"100px","height":"100%","disabled":true}, {"onclick":"editPanel1.beginDataUpdate"}, {
 									binding: ["wm.Binding", {}, {}, {
@@ -169,7 +169,7 @@ Reg_eventualidades.widgets = {
 								}]
 							}]
 						}],
-						panel13: ["wm.Panel", {"height":"35px","horizontalAlign":"right","width":"100%","verticalAlign":"middle","layoutKind":"left-to-right","lock":true}, {}, {
+						panel13: ["wm.Panel", {"height":"35px","width":"100%","horizontalAlign":"right","verticalAlign":"middle","layoutKind":"left-to-right","lock":true}, {}, {
 							spacer11: ["wm.Spacer", {"height":"26px","width":"45%"}, {}],
 							picture1: ["wm.Picture", {"height":"28px","border":"0","width":"24px","source":"resources/images/buttons/number_1.png","aspect":"v"}, {}],
 							label1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"height":"28px","width":"100%","border":"0","caption":"Ingresa los detalles principales de la eventualidad, posteriormente guarde los detalles."}, {}, {
@@ -182,7 +182,7 @@ Reg_eventualidades.widgets = {
 						fechaIngresoEditor1: ["wm.Editor", {"caption":"FechaIngreso","width":"100%","height":"26px","display":"Date","readonly":true,"formField":"fechaIngreso","showing":false}, {}, {
 							editor: ["wm._DateEditor", {"required":true}, {}]
 						}],
-						panel5: ["wm.Panel", {"height":"27px","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+						panel5: ["wm.Panel", {"height":"27px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 							spacer6: ["wm.Spacer", {"height":"26px","width":"102%"}, {}],
 							fechaEditor1: ["wm.Editor", {"caption":"Fecha","width":"100%","height":"26px","display":"Date","readonly":true,"formField":"fecha","captionSize":"51%"}, {}, {
 								editor: ["wm._DateEditor", {"required":true}, {}]
@@ -195,11 +195,11 @@ Reg_eventualidades.widgets = {
 							}]
 						}],
 						estadoEditor1: ["wm.Editor", {"caption":"Estado","width":"100%","height":"28px","display":"Select","readonly":true,"formField":"estado","captionSize":"51%"}, {}, {
-							editor: ["wm._SelectEditor", {"displayField":"name","dataField":"dataValue","required":true,"options":"Abierto, Cerrado"}, {}, {
+							editor: ["wm._SelectEditor", {"displayField":"name","dataField":"dataValue","options":"Abierto, Cerrado","required":true}, {}, {
 								optionsVar: ["wm.Variable", {"type":"EntryData"}, {}]
 							}]
 						}],
-						relatedEditor1: ["wm.RelatedEditor", {"formField":"tipoLugar","height":"28px","lock":true,"fitToContentHeight":true,"horizontalAlign":"left","verticalAlign":"top"}, {}, {
+						relatedEditor1: ["wm.RelatedEditor", {"formField":"tipoLugar","lock":true,"fitToContentHeight":true,"horizontalAlign":"left","verticalAlign":"top"}, {}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"targetProperty":"dataSet","source":"eventualidadesDataGrid1.selectedItem.tipoLugar","expression":undefined}, {}],
 								wire1: ["wm.Wire", {"targetProperty":"dataOutput","source":"tipoLugarLookup1.selectedItem","expression":undefined}, {}]
@@ -208,7 +208,7 @@ Reg_eventualidades.widgets = {
 								editor: ["wm._LookupEditor", {"required":true,"displayField":"lugar","allowNone":true}, {}]
 							}]
 						}],
-						panel14: ["wm.Panel", {"height":"35px","horizontalAlign":"right","width":"100%","verticalAlign":"middle","layoutKind":"left-to-right","lock":true}, {}, {
+						panel14: ["wm.Panel", {"height":"35px","width":"100%","horizontalAlign":"right","verticalAlign":"middle","layoutKind":"left-to-right","lock":true}, {}, {
 							spacer12: ["wm.Spacer", {"height":"26px","width":"45%"}, {}],
 							picture2: ["wm.Picture", {"height":"28px","border":"0","width":"24px","source":"resources/images/buttons/number_2.png","aspect":"v"}, {}],
 							label2: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"height":"28px","width":"100%","border":"0","caption":"Busca, selecciona y adiciona las eventualidades de los involucrados"}, {}, {
@@ -217,13 +217,13 @@ Reg_eventualidades.widgets = {
 						}],
 						layers1: ["wm.Layers", {"height":"329px"}, {}, {
 							layer1: ["wm.Layer", {"caption":"layer1","horizontalAlign":"right","verticalAlign":"top"}, {}, {
-								panel2: ["wm.Panel", {"height":"32px","horizontalAlign":"left","width":"100%","verticalAlign":"middle","layoutKind":"left-to-right"}, {}, {
+								panel2: ["wm.Panel", {"height":"32px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","layoutKind":"left-to-right"}, {}, {
 									limpiar_boton_1: ["wm.Button", {"height":"34px","width":"150px","caption":"Limpiar","margin":"2","borderColor":"#4D90FE","showing":false}, {"onclick":"limpiar_boton_1Click"}],
 									searchInput: ["wm.TextEditor", {"width":"100%","caption":"Buscar involucrados","height":"30px","captionSize":"51%"}, {"onchange":"complexSearch"}, {
 										editor: ["wm._TextEditor", {"changeOnKey":true,"changeOnEnter":true}, {}]
 									}]
 								}],
-								panel10: ["wm.Panel", {"height":"150px","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+								panel10: ["wm.Panel", {"height":"150px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 									spacer10: ["wm.Spacer", {"height":"48px","width":"102%"}, {}],
 									tabla_buscar_persona: ["wm.DataGrid", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"border":"0","width":"130%"}, {"onRowDblClick":"tabla_buscar_personaRowDblClick"}, {
 										binding: ["wm.Binding", {}, {}, {
@@ -256,14 +256,14 @@ Reg_eventualidades.widgets = {
 												}]
 											}],
 											spacer9: ["wm.Spacer", {"height":"100%","width":"100%"}, {}],
-											panel7: ["wm.Panel", {"height":"38px","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+											panel7: ["wm.Panel", {"height":"38px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 												agregar_butt: ["wm.Button", {"height":"100%","width":"100%","caption":"+ Agregar","disabled":true}, {"onclick":"agregar_buttClick"}],
-												quitar_butt: ["wm.Button", {"height":"100%","width":"100%","caption":"- Quitar","disabled":true,"borderColor":"#aaa"}, {"onclick":"quitar_buttClick"}]
+												quitar_butt: ["wm.Button", {"height":"100%","width":"100%","caption":"- Quitar","borderColor":"#aaa","disabled":true}, {"onclick":"quitar_buttClick"}]
 											}]
 										}]
 									}]
 								}],
-								panel4: ["wm.Panel", {"height":"100%","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+								panel4: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 									spacer8: ["wm.Spacer", {"height":"48px","width":"51%"}, {}],
 									eventualidadPersonasDataGrid: ["wm.DataGrid", {"border":"0"}, {"onSelected":"eventualidadPersonasDataGridSelected"}, {
 										binding: ["wm.Binding", {}, {}, {
@@ -282,18 +282,18 @@ Reg_eventualidades.widgets = {
 								}]
 							}]
 						}],
-						panel11: ["wm.Panel", {"height":"39px","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-							testSV: ["wm.Button", {"height":"100%","width":"160px","caption":"Enviar notificación","disabled":true,"margin":"3","iconUrl":"resources/images/buttons/sendMail.png","iconWidth":"20px","iconHeight":"18px","iconMargin":"0 0px 0 0"}, {"onclick":"testSVClick"}]
+						panel11: ["wm.Panel", {"height":"39px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+							testSV: ["wm.Button", {"height":"100%","width":"160px","caption":"Enviar notificación","margin":"3","iconUrl":"resources/images/buttons/sendMail.png","iconWidth":"20px","iconMargin":"0 0px 0 0","disabled":true,"iconHeight":"18px"}, {"onclick":"testSVClick"}]
 						}],
-						panel15: ["wm.Panel", {"height":"35px","horizontalAlign":"right","width":"100%","verticalAlign":"middle","layoutKind":"left-to-right","lock":true}, {}, {
+						panel15: ["wm.Panel", {"height":"35px","width":"100%","horizontalAlign":"right","verticalAlign":"middle","layoutKind":"left-to-right","lock":true}, {}, {
 							spacer13: ["wm.Spacer", {"height":"26px","width":"45%"}, {}],
 							picture3: ["wm.Picture", {"height":"28px","border":"0","width":"24px","source":"resources/images/buttons/number_3.png","aspect":"v"}, {}],
 							label3: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"height":"28px","width":"100%","border":"0","caption":"Presione el botón <u><b>Editar acta</b></u> y a continuación ingrese los detalles del acta"}, {}, {
 								format: ["wm.DataFormatter", {}, {}]
 							}]
 						}],
-						panel12: ["wm.Panel", {"height":"38px","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-							quitar_butt2: ["wm.Button", {"height":"100%","width":"120px","caption":"Editar acta","disabled":true,"borderColor":"#aaa","iconUrl":"resources/images/buttons/update0.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {"onclick":"quitar_butt2Click"}, {
+						panel12: ["wm.Panel", {"height":"38px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+							quitar_butt2: ["wm.Button", {"height":"100%","width":"120px","caption":"Editar acta","borderColor":"#aaa","iconUrl":"resources/images/buttons/update0.png","iconWidth":"20px","iconMargin":"0 0px 0 0","disabled":true,"iconHeight":"20px"}, {"onclick":"quitar_butt2Click"}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel1.formUneditable"}, {}]
 								}]
@@ -311,7 +311,7 @@ Reg_eventualidades.widgets = {
 						pregunta3: ["wm.TextAreaEditor", {"height":"120px","width":"100%","caption":"Socialización del plan con padres y otros, <br>y sus comentarios","singleLine":false,"readonly":true,"formField":"pregunta3"}, {}, {
 							editor: ["wm._TextAreaEditor", {}, {}]
 						}],
-						confidencialcheckBoxEditor1: ["wm.CheckBoxEditor", {"width":"100%","caption":"Confidencial","readonly":true,"formField":"confidencial","display":"Select"}, {}, {
+						confidencialcheckBoxEditor1: ["wm.CheckBoxEditor", {"width":"100%","caption":"Confidencial","readonly":true,"display":"Select","formField":"confidencial"}, {}, {
 							editor: ["wm._SelectEditor", {"displayField":"name","dataField":"dataValue","options":"Si, No"}, {}, {
 								optionsVar: ["wm.Variable", {"type":"EntryData"}, {}]
 							}]
@@ -319,14 +319,14 @@ Reg_eventualidades.widgets = {
 						fechaPlanReparacionEditor1: ["wm.Editor", {"caption":"Fecha Revisión","width":"100%","height":"26px","display":"Date","readonly":true,"formField":"fechaPlanReparacion"}, {}, {
 							editor: ["wm._DateEditor", {}, {}]
 						}],
-						panel16: ["wm.Panel", {"height":"38px","horizontalAlign":"center","width":"100%","verticalAlign":"middle","layoutKind":"left-to-right"}, {}, {
+						panel16: ["wm.Panel", {"height":"38px","width":"100%","horizontalAlign":"center","verticalAlign":"middle","layoutKind":"left-to-right"}, {}, {
 							picture4: ["wm.Picture", {"height":"30px","border":"0","width":"24px","source":"resources/images/buttons/number_4.png","aspect":"v"}, {}],
-							imprimir_acta: ["wm.Button", {"height":"100%","width":"132px","caption":"Imprimir acta","disabled":true,"borderColor":"#aaa","iconUrl":"resources/images/buttons/acta.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {"onclick":"imprimir_actaClick"}, {
+							imprimir_acta: ["wm.Button", {"height":"100%","width":"132px","caption":"Imprimir acta","borderColor":"#aaa","iconUrl":"resources/images/buttons/acta.png","iconWidth":"20px","iconMargin":"0 0px 0 0","disabled":true,"iconHeight":"20px"}, {"onclick":"imprimir_actaClick"}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel1.formUneditable"}, {}]
 								}]
 							}],
-							guardar_cuerpo_eventualidades: ["wm.Button", {"height":"100%","width":"120px","caption":"Guardar acta","disabled":true,"borderColor":"#aaa","iconUrl":"resources/images/buttons/save.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {"onclick":"guardar_cuerpo_eventualidadesClick"}]
+							guardar_cuerpo_eventualidades: ["wm.Button", {"height":"100%","width":"120px","caption":"Guardar acta","borderColor":"#aaa","iconUrl":"resources/images/buttons/save.png","iconWidth":"20px","iconMargin":"0 0px 0 0","disabled":true,"iconHeight":"20px"}, {"onclick":"guardar_cuerpo_eventualidadesClick"}]
 						}]
 					}],
 					eventualidadesDataGrid1: ["wm.DataGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0","showing":false}, {"onAfterRender":"eventualidadesDataGrid1AfterRender","onSelected":"eventualidadesDataGrid1Selected"}, {
@@ -359,14 +359,14 @@ Reg_eventualidades.widgets = {
 		}],
 		Consulta_Eventualidades: ["wm.Layers", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"padding":"0,100,0,100","showing":false}, {}, {
 			layer6: ["wm.Layer", {"caption":"layer6","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-				detalles_usuarios1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+				detalles_usuarios1: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 					layers7: ["wm.Layers", {}, {}, {
 						layer7: ["wm.Layer", {"caption":"layer1","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-							panel6: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"54px","horizontalAlign":"right","width":"100%","verticalAlign":"middle","layoutKind":"left-to-right","lock":true,"showing":false}, {}, {
+							panel6: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"54px","width":"100%","horizontalAlign":"right","verticalAlign":"middle","layoutKind":"left-to-right","lock":true,"showing":false}, {}, {
 								button3: ["wm.Button", {"height":"48px","width":"96px","caption":"Reporte"}, {}],
 								button4: ["wm.Button", {"height":"48px","width":"96px","caption":"Reporte"}, {}]
 							}],
-							panel_usuarios_2: ["wm.Panel", {"_classes":{"domNode":["wm_FontSizePx_14px","wm_BackgroundColor_VeryLightGray"]},"height":"90px","horizontalAlign":"right","width":"100%","verticalAlign":"bottom","layoutKind":"left-to-right","lock":true}, {}, {
+							panel_usuarios_2: ["wm.Panel", {"_classes":{"domNode":["wm_FontSizePx_14px","wm_BackgroundColor_VeryLightGray"]},"height":"90px","width":"100%","horizontalAlign":"right","verticalAlign":"bottom","layoutKind":"left-to-right","lock":true}, {}, {
 								layers4: ["wm.Layers", {"width":"350px"}, {}, {
 									layer4: ["wm.Layer", {"caption":"layer4","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 										inputSearchEventuralidades: ["wm.TextEditor", {"width":"100%","height":"32px"}, {"onchange":"a_searchEventualities"}, {
@@ -374,16 +374,16 @@ Reg_eventualidades.widgets = {
 										}],
 										layers10: ["wm.Layers", {"height":"50px"}, {}, {
 											layer10: ["wm.Layer", {"caption":"layer3","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-												panel8: ["wm.Panel", {"height":"37px","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-													actualizarEventualidad_butt: ["wm.Button", {"height":"100%","width":"40%","caption":"Actualizar","disabled":true,"margin":"2","borderColor":"#BBB","iconUrl":"resources/images/buttons/update0.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {"onclick":"actualizarEventualidad_buttClick"}],
-													limpiar_boton_2: ["wm.Button", {"height":"100%","width":"40%","caption":"Limpiar","margin":"2","borderColor":"#BBB","iconUrl":"resources/images/buttons/clear.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {"onclick":"limpiar_boton_2Click"}]
+												panel8: ["wm.Panel", {"height":"37px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+													actualizarEventualidad_butt: ["wm.Button", {"height":"100%","width":"40%","caption":"Actualizar","margin":"2","borderColor":"#BBB","iconUrl":"resources/images/buttons/update0.png","iconWidth":"20px","iconMargin":"0 0px 0 0","disabled":true,"iconHeight":"20px"}, {"onclick":"actualizarEventualidad_buttClick"}],
+													limpiar_boton_2: ["wm.Button", {"height":"100%","width":"40%","caption":"Limpiar","margin":"2","borderColor":"#BBB","iconUrl":"resources/images/buttons/clear.png","iconWidth":"20px","iconMargin":"0 0px 0 0","iconHeight":"20px"}, {"onclick":"limpiar_boton_2Click"}]
 												}]
 											}]
 										}]
 									}]
 								}],
 								spacer2: ["wm.Spacer", {"height":"48px","width":"474%"}, {}],
-								reporte_eventualidades: ["wm.Button", {"height":"50px","width":"140px","caption":"Eventualidades x alumno","margin":"2","borderColor":"#bbb","iconUrl":"resources/images/buttons/reporte.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {"onclick":"reporte_eventualidadesClick"}]
+								reporte_eventualidades: ["wm.Button", {"height":"50px","width":"140px","caption":"Eventualidades x alumno","margin":"2","borderColor":"#bbb","iconUrl":"resources/images/buttons/reporte.png","iconWidth":"20px","iconMargin":"0 0px 0 0","iconHeight":"20px"}, {"onclick":"reporte_eventualidadesClick"}]
 							}],
 							eventualidades: ["wm.DataGrid", {"_classes":{"domNode":["wm_FontSizePx_10px"]},"border":"0"}, {"onSelected":"eventualidadesSelected"}, {
 								binding: ["wm.Binding", {}, {}, {
@@ -422,10 +422,10 @@ Reg_eventualidades.widgets = {
 				}]
 			}]
 		}],
-		registro_orientacion: ["wm.Panel", {"height":"100%","horizontalAlign":"center","width":"100%","verticalAlign":"top","layoutKind":"left-to-right","lock":true,"showing":false}, {}, {
-			orientacion_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-				panel_faltasgraves: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"60%","verticalAlign":"top"}, {}, {
-					orientacionTopHead: ["wm.Panel", {"height":"27px","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+		registro_orientacion: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"center","verticalAlign":"top","layoutKind":"left-to-right","lock":true,"showing":false}, {}, {
+			orientacion_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+				panel_faltasgraves: ["wm.Panel", {"height":"100%","width":"60%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+					orientacionTopHead: ["wm.Panel", {"height":"27px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 						label4: ["wm.Label", {"_classes":{"domNode":["wm_FontColor_White"]},"height":"100%","width":"100%","border":"0","caption":"Eventualidades"}, {}, {
 							format: ["wm.DataFormatter", {}, {}]
 						}]
@@ -433,14 +433,14 @@ Reg_eventualidades.widgets = {
 					label6: ["wm.Label", {"height":"27px","width":"100%","border":"0","caption":"A continuación realice la busqueda seleccionando una fecha"}, {}, {
 						format: ["wm.DataFormatter", {}, {}]
 					}],
-					panel17: ["wm.Panel", {"height":"158px","horizontalAlign":"left","width":"100%","verticalAlign":"top","padding":"5"}, {}, {
+					panel17: ["wm.Panel", {"height":"158px","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"5"}, {}, {
 						fecha: ["wm.DateEditor", {"width":"250px","caption":"Fecha"}, {}, {
 							editor: ["wm._DateEditor", {}, {}]
 						}],
 						involucrado: ["wm.TextEditor", {"width":"250px","caption":"Incolucrado","showing":false}, {"onchange":"historicosEventualidades"}, {
 							editor: ["wm._TextEditor", {"changeOnKey":true,"changeOnEnter":true}, {}]
 						}],
-						panel19: ["wm.Panel", {"height":"48px","horizontalAlign":"right","width":"250px","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+						panel19: ["wm.Panel", {"height":"48px","width":"250px","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 							buscarEventualidades: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_Blue"]},"height":"48px","width":"96px","caption":"Buscar","borderColor":"#357ebd"}, {"onclick":"buscarEventualidadesClick"}]
 						}],
 						importantMessage: ["wm.Label", {"height":"100%","width":"100%","border":"0","caption":"<u>Aviso importante:</u><br><br>Antes de proceder con el envió de la notificación vía correo asegúrese que exista un acta creada. Para esto verifique la columna <u>\"¿Existe acta?\"</u>, de no ser así contacte al docente que proceso la eventualidad y asegúrese que el acta sea creada de manera correcta.","singleLine":false}, {}, {
@@ -471,8 +471,8 @@ Reg_eventualidades.widgets = {
 						}]
 					}]
 				}],
-				panel_involucrados: ["wm.Panel", {"height":"100%","horizontalAlign":"left","width":"40%","verticalAlign":"top"}, {}, {
-					orientacionTopHead1: ["wm.Panel", {"height":"27px","horizontalAlign":"left","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+				panel_involucrados: ["wm.Panel", {"height":"100%","width":"40%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+					orientacionTopHead1: ["wm.Panel", {"height":"27px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 						label5: ["wm.Label", {"_classes":{"domNode":["wm_FontColor_White"]},"height":"100%","width":"100%","border":"0","caption":"Estudiantes Involucrados"}, {}, {
 							format: ["wm.DataFormatter", {}, {}]
 						}]
@@ -488,18 +488,18 @@ Reg_eventualidades.widgets = {
 							horaCita: ["wm.TimeEditor", {"disabled":true,"caption":"Hora de la cita","width":"100%"}, {}, {
 								editor: ["wm._TimeEditor", {"required":true,"promptMessage":"La hora tiene intervalos de 15 minutos, si necesita ingresar una hora diferente puede hacerlo de manera manual.","invalidMessage":"Es necesario ingresar una hora para la cita"}, {}]
 							}],
-							panel20: ["wm.Panel", {"height":"32px","horizontalAlign":"right","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-								imprimirCita: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"45px","caption":"","disabled":true,"margin":"1","borderColor":"#357ebd","iconUrl":"resources/images/buttons/print.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 0px 0 0"}, {"onclick":"imprimirCitaClick"}],
-								enviarCita: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"45px","caption":"","disabled":true,"margin":"1","borderColor":"#357ebd","iconUrl":"resources/images/buttons/email.png","iconWidth":"19px","iconHeight":"15px","iconMargin":"0 0px 0 0"}, {"onclick":"enviarCitaClick"}],
-								cancelar: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"96px","caption":"Cancelar","disabled":true,"margin":"1","borderColor":"#ac2925"}, {}]
+							panel20: ["wm.Panel", {"height":"32px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+								imprimirCita: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"45px","caption":"","margin":"1","borderColor":"#357ebd","iconUrl":"resources/images/buttons/print.png","iconWidth":"20px","iconMargin":"0 0px 0 0","disabled":true,"iconHeight":"20px"}, {"onclick":"imprimirCitaClick"}],
+								enviarCita: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"45px","caption":"","margin":"1","borderColor":"#357ebd","iconUrl":"resources/images/buttons/email.png","iconWidth":"19px","iconMargin":"0 0px 0 0","disabled":true,"iconHeight":"15px"}, {"onclick":"enviarCitaClick"}],
+								cancelar: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"96px","caption":"Cancelar","margin":"1","borderColor":"#ac2925","disabled":true}, {}]
 							}],
-							responseMessageOk: ["wm.Label", {"height":"28px","width":"100%","border":"0","caption":"¡Notificación enviada exitosamente!","align":"center","showing":false}, {}, {
+							responseMessageOk: ["wm.Label", {"height":"28px","width":"100%","border":"0","align":"center","caption":"¡Notificación enviada exitosamente!","showing":false}, {}, {
 								format: ["wm.DataFormatter", {}, {}]
 							}],
-							responseMessageBad: ["wm.Label", {"height":"28px","width":"100%","border":"0","caption":"¡Acción no realizada, verifique la información de padres!","align":"center","showing":false}, {}, {
+							responseMessageBad: ["wm.Label", {"height":"28px","width":"100%","border":"0","align":"center","caption":"¡Acción no realizada, verifique la información de padres!","showing":false}, {}, {
 								format: ["wm.DataFormatter", {}, {}]
 							}],
-							responseMessageWait: ["wm.Label", {"height":"28px","width":"100%","border":"0","caption":"Envio en proceso...","align":"center","showing":false}, {}, {
+							responseMessageWait: ["wm.Label", {"height":"28px","width":"100%","border":"0","align":"center","caption":"Envio en proceso...","showing":false}, {}, {
 								format: ["wm.DataFormatter", {}, {}]
 							}]
 						}]
