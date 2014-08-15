@@ -218,17 +218,17 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.TransporteInscAlumTransporte"/>
         </set>
-        <set name="inscComentariosAlumnoses" inverse="true">
-            <key>
-                <column name="persona_id_persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscComentariosAlumnos"/>
-        </set>
         <set name="calificacionFinals" inverse="true">
             <key>
                 <column name="Persona_Id_Persona"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.CalificacionFinal"/>
+        </set>
+        <set name="inscComentariosAlumnoses" inverse="true">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscComentariosAlumnos"/>
         </set>
         <set name="inscDirectorNivels" inverse="true">
             <key>
@@ -319,12 +319,6 @@
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscCursoAsigCopy"/>
-        </set>
-        <set name="inscAlumCostoCopies" inverse="true">
-            <key>
-                <column name="Persona_Id_Persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumCostoCopy"/>
         </set>
         <set name="actualizacionDatosPersonas" inverse="true">
             <key>

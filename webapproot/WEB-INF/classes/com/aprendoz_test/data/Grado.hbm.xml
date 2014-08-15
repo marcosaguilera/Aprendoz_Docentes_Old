@@ -15,7 +15,7 @@
             <column name="Grado_sapiens" length="11"/>
         </property>
         <many-to-one name="nivel" class="com.aprendoz_test.data.Nivel" cascade="none">
-            <column name="Nivel_Id_Nivel"/>
+            <column name="Nivel_Id_Nivel" not-null="true"/>
         </many-to-one>
         <set name="costosAnualesCopies" inverse="true">
             <key>

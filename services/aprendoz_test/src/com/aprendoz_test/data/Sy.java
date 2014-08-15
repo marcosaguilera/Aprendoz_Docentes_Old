@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Sy
- *  07/15/2014 14:36:07
+ *  08/15/2014 11:25:13
  * 
  */
 public class Sy {
@@ -26,7 +26,6 @@ public class Sy {
     private Set<com.aprendoz_test.data.Cronograma> cronogramas = new HashSet<com.aprendoz_test.data.Cronograma>();
     private Set<com.aprendoz_test.data.Semana> semanas = new HashSet<com.aprendoz_test.data.Semana>();
     private Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses = new HashSet<com.aprendoz_test.data.InscComentariosAlumnos>();
-    private Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies = new HashSet<com.aprendoz_test.data.InscAlumCostoCopy>();
     private Set<com.aprendoz_test.data.Horario> horarios = new HashSet<com.aprendoz_test.data.Horario>();
     private Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies = new HashSet<com.aprendoz_test.data.AsignaturaCopy>();
     private Set<com.aprendoz_test.data.Periodo> periodos = new HashSet<com.aprendoz_test.data.Periodo>();
@@ -52,7 +51,7 @@ public class Sy {
         this.fechaHasta = fechaHasta;
     }
 
-    public Sy(Integer idSy, String schoolYear, Date fechaDesde, Date fechaHasta, Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos, Set<com.aprendoz_test.data.Promocion> promocions, Set<com.aprendoz_test.data.InscCoordinadoresCurso> inscCoordinadoresCursos, Set<com.aprendoz_test.data.CoordinacionDeGrupo> coordinacionDeGrupos, Set<com.aprendoz_test.data.InscAlumCurso> inscAlumCursos, Set<com.aprendoz_test.data.BimestreSy> bimestreSies, Set<com.aprendoz_test.data.Cronograma> cronogramas, Set<com.aprendoz_test.data.Semana> semanas, Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses, Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies, Set<com.aprendoz_test.data.Horario> horarios, Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies, Set<com.aprendoz_test.data.Periodo> periodos, Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies, Set<com.aprendoz_test.data.Asignatura> asignaturas, Set<com.aprendoz_test.data.Educom> educoms, Set<com.aprendoz_test.data.Coordinadores> coordinadoreses, Set<com.aprendoz_test.data.Costos> costoses, Set<com.aprendoz_test.data.Matricula> matriculas, Set<com.aprendoz_test.data.SesionNivel> sesionNivels, Set<com.aprendoz_test.data.SecretariaEquivalenciaNotas> secretariaEquivalenciaNotases, Set<com.aprendoz_test.data.Coordinacion> coordinacions, Set<com.aprendoz_test.data.CostosAnuales> costosAnualeses, Set<com.aprendoz_test.data.PromocionCopy> promocionCopies) {
+    public Sy(Integer idSy, String schoolYear, Date fechaDesde, Date fechaHasta, Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos, Set<com.aprendoz_test.data.Promocion> promocions, Set<com.aprendoz_test.data.InscCoordinadoresCurso> inscCoordinadoresCursos, Set<com.aprendoz_test.data.CoordinacionDeGrupo> coordinacionDeGrupos, Set<com.aprendoz_test.data.InscAlumCurso> inscAlumCursos, Set<com.aprendoz_test.data.BimestreSy> bimestreSies, Set<com.aprendoz_test.data.Cronograma> cronogramas, Set<com.aprendoz_test.data.Semana> semanas, Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses, Set<com.aprendoz_test.data.Horario> horarios, Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies, Set<com.aprendoz_test.data.Periodo> periodos, Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies, Set<com.aprendoz_test.data.Asignatura> asignaturas, Set<com.aprendoz_test.data.Educom> educoms, Set<com.aprendoz_test.data.Coordinadores> coordinadoreses, Set<com.aprendoz_test.data.Costos> costoses, Set<com.aprendoz_test.data.Matricula> matriculas, Set<com.aprendoz_test.data.SesionNivel> sesionNivels, Set<com.aprendoz_test.data.SecretariaEquivalenciaNotas> secretariaEquivalenciaNotases, Set<com.aprendoz_test.data.Coordinacion> coordinacions, Set<com.aprendoz_test.data.CostosAnuales> costosAnualeses, Set<com.aprendoz_test.data.PromocionCopy> promocionCopies) {
         this.idSy = idSy;
         this.schoolYear = schoolYear;
         this.fechaDesde = fechaDesde;
@@ -66,7 +65,6 @@ public class Sy {
         this.cronogramas = cronogramas;
         this.semanas = semanas;
         this.inscComentariosAlumnoses = inscComentariosAlumnoses;
-        this.inscAlumCostoCopies = inscAlumCostoCopies;
         this.horarios = horarios;
         this.asignaturaCopies = asignaturaCopies;
         this.periodos = periodos;
@@ -185,14 +183,6 @@ public class Sy {
 
     public void setInscComentariosAlumnoses(Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses) {
         this.inscComentariosAlumnoses = inscComentariosAlumnoses;
-    }
-
-    public Set<com.aprendoz_test.data.InscAlumCostoCopy> getInscAlumCostoCopies() {
-        return inscAlumCostoCopies;
-    }
-
-    public void setInscAlumCostoCopies(Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies) {
-        this.inscAlumCostoCopies = inscAlumCostoCopies;
     }
 
     public Set<com.aprendoz_test.data.Horario> getHorarios() {
