@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "hQLlsCursos" on 07/30/2014 18:31:12
+ * Generated for query "HQLlsCursos" on 08/15/2014 11:25:33
  * 
  */
 public class HQLlsCursosRtnType {

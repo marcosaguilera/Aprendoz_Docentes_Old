@@ -5,7 +5,7 @@ package com.aprendoz_test;
 
 /**
  *  Query names for service "aprendoz_test"
- *  07/30/2014 18:31:21
+ *  08/15/2014 11:30:02
  * 
  */
 public class Aprendoz_testConstants {
@@ -19,8 +19,8 @@ public class Aprendoz_testConstants {
     public final static String orientacionInvolucradosGrupoFamiliarQueryName = "orientacionInvolucradosGrupoFamiliar";
     public final static String hQLlsCursosQueryName = "hQLlsCursos";
     public final static String enviarMailEventualidadesQueryName = "enviarMailEventualidades";
-    public final static String getScheduleByProfileQueryName = "getScheduleByProfile";
     public final static String eventualitiesByDateQueryName = "eventualitiesByDate";
+    public final static String getScheduleByProfileQueryName = "getScheduleByProfile";
     public final static String getTipoEventualidadByIdSubTipoQueryName = "getTipoEventualidadByIdSubTipo";
     public final static String crearPlanQueryName = "crearPlan";
     public final static String hQLlsGradoQueryName = "hQLlsGrado";
@@ -33,8 +33,8 @@ public class Aprendoz_testConstants {
     public final static String hql_tipo_eventualidadQueryName = "hql_tipo_eventualidad";
     public final static String getSyByCurDateQueryName = "getSyByCurDate";
     public final static String getDimensionCurricularByIdQueryName = "getDimensionCurricularById";
-    public final static String dash_aprendizajesQueryName = "dash_aprendizajes";
     public final static String hql_ls_cursosQueryName = "hql_ls_cursos";
+    public final static String dash_aprendizajesQueryName = "dash_aprendizajes";
     public final static String actualizarClaveQueryName = "actualizarClave";
     public final static String searchReportesAlumnosQueryName = "searchReportesAlumnos";
     public final static String dash_logDocentesQueryName = "dash_logDocentes";
@@ -45,8 +45,8 @@ public class Aprendoz_testConstants {
     public final static String sendMailHQLQueryName = "sendMailHQL";
     public final static String showInformationUserQueryName = "showInformationUser";
     public final static String deleteEventualidadPersonaQueryName = "deleteEventualidadPersona";
-    public final static String dash_no_calificadosQueryName = "dash_no_calificados";
     public final static String subjectsBySyAndStudentQueryName = "subjectsBySyAndStudent";
+    public final static String dash_no_calificadosQueryName = "dash_no_calificados";
     public final static String SeachEventualidadHQLQueryName = "SeachEventualidadHQL";
 
     private Aprendoz_testConstants() {

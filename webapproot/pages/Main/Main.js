@@ -2988,21 +2988,33 @@ dojo.declare("Main", wm.Page, {
   },
   cur_unid_datag_unidadesDataGrid1SelectionChanged: function(inSender) {
      this.editPanel4.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+     var ida = main.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;
+     this.asignaturaLookup1.setDataValue(ida);
   },
   cur_subt_datag_subtopicoDataGrid1SelectionChanged: function(inSender) {
      this.editPanel5.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+     var idunidad= this.cur_unid_datag_unidadesDataGrid1.selectedItem.getData().idUnidad
+     this.unidadLookup1.setDataValue(idunidad);
   },
   cur_apr_datag_aprendizajeDataGrid1SelectionChanged: function(inSender) {
      this.editPanel1.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+     var _subtopico = this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico;
+     this.subtopicoLookup6.setDataValue(_subtopico);     
   },
   cur_metas_datag_otrasmetasDataGrid1SelectionChanged: function(inSender) {
      this.editPanel2.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+     var _subtopico = this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico;
+     this.subtopicoLookup1.setDataValue(_subtopico);
   },
   cur_act_datag_actividadDataGrid1SelectionChanged: function(inSender) {
      this.editPanel6.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+     var _subtopico = this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico;
+     this.subtopicoLookup3.setDataValue(_subtopico);
   },
   cur_rec_datag_recursosDataGrid1SelectionChanged: function(inSender) {
      this.editPanel13.cancelEdit(); //cancela cualquier operacion en el formulario si se cambia el registro en la tabla
+     var _subtopico = this.cur_subt_datag_subtopicoDataGrid1.selectedItem.getData().idSubtopico;
+     this.subtopicoLookup4.setDataValue(_subtopico);
   }, 
   aprendizajeLiveForm1InsertData: function(inSender){
      var user= main.getUserName.getData().dataValue;
@@ -3240,5 +3252,6 @@ dojo.declare("Main", wm.Page, {
        this.editPanel10.hide();
      }
   },
+ 
   _end: 0
 });
