@@ -14,7 +14,6 @@ dojo.declare("Reg_eventualidades", wm.Page, {
   },
 
   eventualidadpersonasLiveForm1BeginInsert: function(inSender) {
-    try {
     var idp = this.tabla_buscar_persona.selectedItem.getData().id;
     var ide = this.eventualidadesDataGrid1.selectedItem.getData().idEventualidad;
     this.eventualidadesLookup1.setDataValue(ide); 
@@ -24,9 +23,7 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      if(eventualidad >0 && persona >0){
        this.editPanel2.saveData();
      }   
-    } catch(e) {
-      console.error('ERROR IN eventualidadpersonasLiveForm1BeginInsert: ' + e); 
-    }},
+  },
   eventualidadesLiveForm1BeginInsert: function(inSender) {
     try {
      this.fechaIngresoEditor1.setDataValue(new Date());
@@ -317,7 +314,6 @@ dojo.declare("Reg_eventualidades", wm.Page, {
       console.error('ERROR IN guardar_cuerpo_eventualidadesClick: ' + e); 
     }},
   reporte_eventualidadesClick: function(inSender, inEvent) {
-    try {
      main.a_informacionUsuario.update();
      var getter = main.a_informacionUsuario2.getItem(0);
      var id= getter.data.idpersona;
@@ -336,34 +332,21 @@ dojo.declare("Reg_eventualidades", wm.Page, {
         }
       });
        inEvent.preventDefault();  
-      
-    } catch(e) {
-      console.error('ERROR IN reporte_eventualidadesClick: ' + e); 
-    } 
   },
   eventualidadesLiveForm1InsertData: function(inSender) {
-    try { 
      var _user= this.setUsername.getDataValue(); 
      this.eventualidadesLiveVariable1.filter.setValue("usuarioReg", _user); 
      var _un= null;
      this.eventualidadesLiveVariable1.filter.setValue("idEventualidad", _un);
      this.eventualidadesLiveVariable1.update();
-    } catch(e) {
-      console.error('ERROR IN eventualidadesLiveForm1InsertData: ' + e); 
-    }}, 
+  }, 
   testSVClick: function(inSender, inEvent) {
-    try {
      var _ide= this.idEventualidadEditor1.getDataValue();
      console.log(_ide);
      this.sendMailHQLService.input.setValue("ide", _ide);
      this.sendMailHQLService.update();
-           
-    } catch(e) {
-      console.error('ERROR IN testSVClick: ' + e); 
-    }},
-    
+  },    
   sendMailHQLServiceSuccess: function(inSender, inDeprecated) {
-    try {
      var _acum=""; 
      var _cursos="";
      var _cont=  this.sendMailHQLService.getCount();
@@ -373,7 +356,9 @@ dojo.declare("Reg_eventualidades", wm.Page, {
         var _alumno= _json.data.nombreAlumno;
         var _curso= _json.data.curso;
         var _cursos= _cursos+" - "+_curso;
-        var _acum= _acum+" * "+_alumno;
+       ,0  0, 14
+       ç+ñ´
+       4ar _acum= _acum+" * "+_alumno;
         var _correocoordinador= _json.data.cor_mail;
         var _correodirector= _json.data.dir_mail;
         var _lugar= _json.data.lugar;
@@ -382,50 +367,42 @@ dojo.declare("Reg_eventualidades", wm.Page, {
         var _eve= _json.data.tipo;
         var _sub= _json.data.subtipo;         
      }      
-      console.log(_acum);
-      console.log(_correocoordinador);
-      console.log(_correodirector);
-      console.log(_lugar);
-      this.jsSendMail.input.setValue("alumnos",_acum);
-      this.jsSendMail.input.setValue("correocoordinador",_correocoordinador);
-      this.jsSendMail.input.setValue("correodirector",_correodirector);
-      this.jsSendMail.input.setValue("lugar",_lugar);
-      this.jsSendMail.input.setValue("profesorRemitente",_docente);
-      this.jsSendMail.input.setValue("fechaEventualidad",_fecha);
-      this.jsSendMail.input.setValue("eventualidad",_eve);
-      this.jsSendMail.input.setValue("subtipoEventualidad",_sub);
-      this.jsSendMail.input.setValue("cursos", _cursos);
-      this.jsSendMail.update(); 
-     
-    } catch(e) {
-      console.error('ERROR IN sendMailHQLServiceSuccess: ' + e); 
-    }},  
+     console.log(_acum);
+     console.log(_correocoordinador);
+     console.log(_correodirector);
+     console.log(_lugar);
+     this.jsSendMail.input.setValue("alumnos",_acum);
+     this.jsSendMail.input.setValue("correocoordinador",_correocoordinador);
+     this.jsSendMail.input.setValue("correodirector",_correodirector);
+     this.jsSendMail.input.setValue("lugar",_lugar);
+     this.jsSendMail.input.setValue("profesorRemitente",_docente);
+     this.jsSendMail.input.setValue("fechaEventualidad",_fecha);
+     this.jsSendMail.input.setValue("eventualidad",_eve);
+     this.jsSendMail.input.setValue("subtipoEventualidad",_sub);
+     this.jsSendMail.input.setValue("cursos", _cursos);
+     this.jsSendMail.update(); 
+  },  
   jsSendMailSuccess: function(inSender, inDeprecated) {
-      app.pageDialog.dismiss("SendingMessage");
-      app.pageDialog.showPage("SendedMessage", false, 260,130);
-    },
-    
+     app.pageDialog.dismiss("SendingMessage");
+     app.pageDialog.showPage("SendedMessage", false, 260,130);
+  },    
   jsSendMailError: function(inSender, inError) {
      alert("error!"); 
-    }, 
-    
+  },     
   button1Click: function(inSender, inEvent) {
      this.tabla_buscar_persona.setDisabled(true); 
-  },
-  
+  },  
   subtipo_eventualidadChange: function(inSender, inDisplayValue, inDataValue) {
-    var _tipo= this.tipo_eventualidad_select.getDataValue();
-    var _sub=  this.subtipo_eventualidad.getDataValue();
-    
-    if(_tipo != undefined && _sub != undefined){
-      this.agregar_butt.enable();
-      this.quitar_butt.enable();
-    }else{
-      this.agregar_butt.disable();
-      this.quitar_butt.disable();
-    }
+     var _tipo= this.tipo_eventualidad_select.getDataValue();
+     var _sub=  this.subtipo_eventualidad.getDataValue();    
+     if(_tipo != undefined && _sub != undefined){
+       this.agregar_butt.enable();
+       this.quitar_butt.enable();
+     }else{
+       this.agregar_butt.disable();
+       this.quitar_butt.disable();
+     }
   },
-
   faltasLeves2GraveSVSuccess: function(inSender, inDeprecated) {
     var _count = this.faltasLeves2GraveSV.getData().dataValue;
     var _tipo  = this.tipo_eventualidad_select.getDataValue();
@@ -443,33 +420,31 @@ dojo.declare("Reg_eventualidades", wm.Page, {
       this.graveRegistroLiveForm.insertData();
       this.getCurseOne.update();
     }else{/*nothing to do here!*/}
-  },
-  
+  },  
   buscarEventualidadesClick: function(inSender, inEvent) {
      var _fecha= this.fecha.getDataValue();
      this.historicosEventualidades.input.setValue("pfecha", _fecha);
      this.historicosEventualidades.update();
-  },
-  
+  },  
   eventualidadPersonasDataGridSelected: function(inSender, inIndex) {
      this.agregar_butt.enable();
-     this.quitar_butt.enable(); 
+     t-+
+     7his123
+     0.quitar_butt.enable(); 
   },
-  
   b_orientacionClick: function(inSender, inEvent) {
      this.Consulta_Eventualidades.hide();
-     this.Ingreso_Eventualidades.hide();
-     this.registro_orientacion.show(); 
+     thi1s.Ingreso_Eventualidades.hide();
+     th1
+     0 14is.registro_orientacion.show(); 
   },
-  
   orientacionEventualidadesSelected: function(inSender, inIndex) {
      var _ideventualidad= this.orientacionEventualidades.selectedItem.getData().ideventualidad; 
      this.involucradoSv.input.setValue("peventualidad",_ideventualidad);
      this.orientacionDocentesCorreo.input.setValue("ide",_ideventualidad);
      this.involucradoSv.update();
      this.orientacionDocentesCorreo.update(); 
-  },
-  
+  },  
   orientacionInvolucradosSelect: function(inSender, inItem) {
       var index     = this.orientacionInvolucrados.getSelectedIndex();
       var data      = this.orientacionInvolucrados.getItemData(index);
@@ -529,7 +504,7 @@ dojo.declare("Reg_eventualidades", wm.Page, {
       this.enviarNotificacionCorreo.update();
     }else{/*nothing to do*/}
   },
-
+ 
   graveRegistroLiveFormSuccess: function(inSender, inData) {
      this.svEventualidadPersonas.update();
      app.pageDialog.dismiss("CreandoFaltaGrave"); 

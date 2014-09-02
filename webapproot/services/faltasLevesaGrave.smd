@@ -5,9 +5,6 @@
 			"name": "persona",
 			"type": "java.lang.Integer"
 		}, {
-			"name": "fecha",
-			"type": "java.sql.Date"
-		}, {
 			"name": "tipo",
 			"type": "java.lang.Integer"
 		}],

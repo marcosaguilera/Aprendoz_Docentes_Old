@@ -30,7 +30,7 @@ sub.subtipoEventualidad as subtipo,
 pidn.email as dir_mail,
 sycp.idSy as sycp
 FROM InscAlumCurso i INNER JOIN i.curso c INNER JOIN i.persona pc INNER JOIN c.grado.nivel n INNER JOIN i.sy sy, EventualidadPersonas ep INNER JOIN ep.persona alumno INNER JOIN ep.eventualidades e INNER JOIN e.tipoLugar l INNER JOIN ep.subtipoEventualidad as sub INNER JOIN sub.tipoEventualidad tipo, InscCoordinadoresCurso icc INNER JOIN icc.curso cc INNER JOIN icc.persona cp INNER JOIN icc.sy sycp, InscDirectorNivel idn INNER JOIN idn.nivel nidn INNER JOIN idn.persona pidn
-WHERE e.idEventualidad=:ide AND alumno.idPersona=:ppersona AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and sy.idSy=4 and c.idCurso=cc.idCurso AND sycp.idSy=4
+WHERE e.idEventualidad=:ide AND alumno.idPersona=:ppersona AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and sy.idSy=5 and c.idCurso=cc.idCurso AND sycp.idSy=5
 GROUP BY alumno.idPersona
     </query>
     <query name="showInformationUser2">
@@ -192,7 +192,7 @@ WHERE n.id.ideventualidad=:ide
         <query-param name="pfecha" type="java.util.Date"/>
         SELECT  e.fecha as fecha, e.hora as hora, e.estado as estado, e.idEventualidad as ideventualidad, e.usuarioReg as registrante, se.idSubtipoEventualidad as idsub, se.subtipoEventualidad as subtipo, e.descripcion as descripcion
 FROM EventualidadPersonas ep INNER JOIN ep.eventualidades e INNER JOIN  ep.subtipoEventualidad se
-WHERE e.fecha=:pfecha AND se.idSubtipoEventualidad&gt;= 12 AND se.idSubtipoEventualidad&lt;=22 AND e.fecha&gt;=&apos;2013-09-01&apos; AND e.fecha&lt;=&apos;2014-08-01&apos;
+WHERE e.fecha=:pfecha AND se.idSubtipoEventualidad&gt;= 12 AND se.idSubtipoEventualidad&lt;=22 AND e.fecha&gt;=&apos;2014-07-31&apos; AND e.fecha&lt;=&apos;2015-07-01&apos;
 GROUP BY e.idEventualidad
     </query>
     <query name="getScheduleByProfile">
@@ -264,7 +264,7 @@ RIGHT OUTER JOIN p.inscAlumCursos c
 INNER JOIN c.curso curso
 INNER JOIN c.sy sy
 INNER JOIN p.grupoFamiliar gf
-WHERE p.idPersona=:ppersona AND (curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403) AND sy.idSy=4
+WHERE p.idPersona=:ppersona AND (curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403) AND sy.idSy=5
 GROUP BY p.idPersona
     </query>
     <query name="getSubjectsByProfileGrouped">
@@ -312,7 +312,7 @@ ORDER BY c.idCurso desc,p.apellido1,p.apellido2,p.nombre1,p.nombre2
         <query-param name="usuario" type="java.lang.String"/>
         SELECT a.idAsignatura as idasignatura, a.asignatura as asignatura, p.nombreLdap as user, sy.idSy as schoolyear
 FROM InscCursoAsig ica INNER JOIN ica.persona p INNER JOIN ica.asignatura a INNER JOIN ica.periodo pe INNER JOIN pe.sy sy
-WHERE p.nombreLdap=:usuario AND sy.idSy=3
+WHERE p.nombreLdap=:usuario AND sy.idSy=5
 GROUP BY a.idAsignatura
 ORDER BY pe.idPeriodo desc
     </query>
@@ -407,7 +407,7 @@ sy.idSy as idsy,
 sy.schoolYear as schoolyear,
 gf.idGrupoFamiliar as idgrupofamiliar
 FROM EventualidadPersonas ep INNER JOIN ep.persona p INNER JOIN ep.eventualidades e RIGHT OUTER JOIN p.inscAlumCursos c INNER JOIN c.curso curso INNER JOIN c.sy sy INNER JOIN p.grupoFamiliar gf
-WHERE e.idEventualidad=:peventualidad AND sy.idSy=4 AND curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403
+WHERE e.idEventualidad=:peventualidad AND sy.idSy=5 AND curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403
 GROUP BY p.idPersona
     </query>
     <query name="getCurseByidGrade">
@@ -468,7 +468,7 @@ sub.subtipoEventualidad as subtipo,
 pidn.email as dir_mail,
 sycp.idSy as sycp
 FROM InscAlumCurso i INNER JOIN i.curso c INNER JOIN i.persona pc INNER JOIN c.grado.nivel n INNER JOIN i.sy sy, EventualidadPersonas ep INNER JOIN ep.persona alumno INNER JOIN ep.eventualidades e INNER JOIN e.tipoLugar l INNER JOIN ep.subtipoEventualidad as sub INNER JOIN sub.tipoEventualidad tipo, InscCoordinadoresCurso icc INNER JOIN icc.curso cc INNER JOIN icc.persona cp INNER JOIN icc.sy sycp, InscDirectorNivel idn INNER JOIN idn.nivel nidn INNER JOIN idn.persona pidn
-WHERE e.idEventualidad=:ide AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and sy.idSy=4 and c.idCurso=cc.idCurso AND sycp.idSy=4
+WHERE e.idEventualidad=:ide AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and sy.idSy=5 and c.idCurso=cc.idCurso AND sycp.idSy=5
 GROUP BY alumno.idPersona
     </query>
     <query name="showInformationUser">
