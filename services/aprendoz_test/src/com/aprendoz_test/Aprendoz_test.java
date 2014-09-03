@@ -47,7 +47,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  09/01/2014 12:59:32
+ *  09/03/2014 13:12:38
  * 
  */
 @SuppressWarnings("unchecked")
@@ -206,8 +206,8 @@ public class Aprendoz_test
         return ((List<GetSubjectsByProfileRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getSubjectsByProfileQueryName), usuario, sy));
     }
 
-    public List<SendMailHQLRtnType> sendMailHQL(Integer ide) {
-        return ((List<SendMailHQLRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.sendMailHQLQueryName), ide));
+    public List<SendMailHQLRtnType> sendMailHQL(Integer ide, Integer psy) {
+        return ((List<SendMailHQLRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.sendMailHQLQueryName), ide, psy));
     }
 
     public com.aprendoz_test.data.output.ShowInformationUserRtnType showInformationUser(String user) {

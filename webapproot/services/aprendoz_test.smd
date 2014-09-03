@@ -246,6 +246,9 @@
 		"parameters": [{
 			"name": "ide",
 			"type": "java.lang.Integer"
+		}, {
+			"name": "psy",
+			"type": "java.lang.Integer"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.SendMailHQLRtnType]"
 	}, {

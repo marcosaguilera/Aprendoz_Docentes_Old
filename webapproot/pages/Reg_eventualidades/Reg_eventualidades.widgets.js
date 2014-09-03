@@ -124,6 +124,9 @@ Reg_eventualidades.widgets = {
 	enviaCorreoAcumulado: ["wm.ServiceVariable", {"service":"EnviarMailAcumulado","operation":"sendEmailNotification"}, {}, {
 		input: ["wm.ServiceInput", {"type":"sendEmailNotificationInputs"}, {}]
 	}],
+	getCurSy: ["wm.ServiceVariable", {"service":"aprendoz_test","operation":"getSyByCurDate_"}, {}, {
+		input: ["wm.ServiceInput", {"type":"getSyByCurDate_Inputs"}, {}]
+	}],
 	main_layer: ["wm.Layout", {"height":"100%","width":"1038px","horizontalAlign":"left","verticalAlign":"top","padding":"10","autoScroll":false}, {}, {
 		buttons_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"61px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","padding":"1","layoutKind":"left-to-right"}, {}, {
 			setUsername: ["wm.TextEditor", {"width":"242px","showing":false,"displayValue":"m"}, {}, {
@@ -241,7 +244,7 @@ Reg_eventualidades.widgets = {
 									}],
 									layers3: ["wm.Layers", {"width":"70%"}, {}, {
 										layer3: ["wm.Layer", {"caption":"layer3","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-											tipo_eventualidad_select: ["wm.SelectEditor", {"width":"100%","caption":"Tipo eventualidad","captionSize":"70%","height":"26px"}, {"onchange":"ls_subtipo_eventualidad"}, {
+											tipo_eventualidad_select: ["wm.SelectEditor", {"width":"100%","caption":"Tipo eventualidad","captionSize":"70%","height":"26px"}, {"onchange":"tipo_eventualidad_selectChange"}, {
 												editor: ["wm._SelectEditor", {"displayField":"tipoEventualidad","dataField":"idTipoEventualidad"}, {}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"targetProperty":"dataSet","source":"ls_tipo_eventualidad","expression":undefined}, {}]

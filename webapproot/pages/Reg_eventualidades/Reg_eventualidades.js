@@ -6,6 +6,11 @@ dojo.declare("Reg_eventualidades", wm.Page, {
     this.agregar_butt.disable();
     this.quitar_butt.disable();
     /**** disable DataGrid ****/
+    /**trigger global sy**/
+    var curdate= new Date().getTime();
+    this.getCurSy.input.setValue("f1",curdate);
+    this.getCurSy.update();
+    /***end trigger**/
     wm.DataGrid.extend({
     setDisabled: function(inDisabled) {
     dojo[inDisabled ? "addClass" : "removeClass"](this.domNode, "wmgrid-disabled");
@@ -25,7 +30,6 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      }   
   },
   eventualidadesLiveForm1BeginInsert: function(inSender) {
-    try {
      this.fechaIngresoEditor1.setDataValue(new Date());
      this.usuarioRegEditor1.setValue("dataValue", this.setUsername.getDataValue()); 
      this.confidencialcheckBoxEditor1.setDataValue("No");
@@ -44,47 +48,30 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      this.complexSearch.clearData();
      this.svEventualidadPersonas.clearData();
      this.subtipo_eventualidad.disable();
-          
-    } catch(e) {
-      console.error('ERROR IN eventualidadesLiveForm1BeginInsert: ' + e); 
-    }},
+  },
   eventualidadpersonasLiveForm1Success: function(inSender, inData) {
-    try {
      this.limpiar_boton_1.enable();
      this.tabla_buscar_persona.setDisabled(false);        
      this.eventualidadpersonasLiveVariable1.update();
-      
-    } catch(e) {
-      console.error('ERROR IN eventualidadpersonasLiveForm1Success: ' + e); 
-    }},
+  },
   eventualidadpersonasLiveForm1CancelEdit: function(inSender) {
-    try {
      this.limpiar_boton_1.enable();
      this.tabla_buscar_persona.setDisabled(false);
-      
-    } catch(e) {
-      console.error('ERROR IN eventualidadpersonasLiveForm1CancelEdit: ' + e); 
-    }},
+  },
   subtipo_eventualidad_select_1Change: function(inSender, inDisplayValue, inDataValue) {
-    try {
       this.subtipoEventualidadLookup1.setValue("dataValue", this.subtipo_eventualidad_select_1.getDataValue());
-      
-    } catch(e) {
-      console.error('ERROR IN subtipo_eventualidad_select_1Change: ' + e); 
-    }},
-    
+  },   
   b_consultaClick: function(inSender, inEvent) {
         this.Ingreso_Eventualidades.hide();
         this.registro_orientacion.hide();
         this.Consulta_Eventualidades.show();
-      },
-      
+  },    
   r_eventualidadesClick: function(inSender, inEvent) {
      this.Consulta_Eventualidades.hide();
      this.registro_orientacion.hide();
      this.Ingreso_Eventualidades.show();
      
-     },
+  },
   eventualidadesLiveForm1BeginUpdate: function(inSender) {
     try { 
      this.tipo_eventualidad_select.enable();
@@ -342,8 +329,11 @@ dojo.declare("Reg_eventualidades", wm.Page, {
   }, 
   testSVClick: function(inSender, inEvent) {
      var _ide= this.idEventualidadEditor1.getDataValue();
+     var now= this.getCurSy.getItem(0).data.idsy;
      console.log(_ide);
+     console.log(now);
      this.sendMailHQLService.input.setValue("ide", _ide);
+     this.sendMailHQLService.input.setValue("psy", now);
      this.sendMailHQLService.update();
   },    
   sendMailHQLServiceSuccess: function(inSender, inDeprecated) {
@@ -356,9 +346,7 @@ dojo.declare("Reg_eventualidades", wm.Page, {
         var _alumno= _json.data.nombreAlumno;
         var _curso= _json.data.curso;
         var _cursos= _cursos+" - "+_curso;
-       ,0  0, 14
-       ç+ñ´
-       4ar _acum= _acum+" * "+_alumno;
+        var _acum= _acum+" * "+_alumno;
         var _correocoordinador= _json.data.cor_mail;
         var _correodirector= _json.data.dir_mail;
         var _lugar= _json.data.lugar;
@@ -366,7 +354,7 @@ dojo.declare("Reg_eventualidades", wm.Page, {
         var _fecha= _json.data.fecha;
         var _eve= _json.data.tipo;
         var _sub= _json.data.subtipo;         
-     }      
+     }    
      console.log(_acum);
      console.log(_correocoordinador);
      console.log(_correodirector);
@@ -428,15 +416,12 @@ dojo.declare("Reg_eventualidades", wm.Page, {
   },  
   eventualidadPersonasDataGridSelected: function(inSender, inIndex) {
      this.agregar_butt.enable();
-     t-+
-     7his123
-     0.quitar_butt.enable(); 
+     this.quitar_butt.enable(); 
   },
   b_orientacionClick: function(inSender, inEvent) {
      this.Consulta_Eventualidades.hide();
-     thi1s.Ingreso_Eventualidades.hide();
-     th1
-     0 14is.registro_orientacion.show(); 
+     this.Ingreso_Eventualidades.hide();
+     this.registro_orientacion.show(); 
   },
   orientacionEventualidadesSelected: function(inSender, inIndex) {
      var _ideventualidad= this.orientacionEventualidades.selectedItem.getData().ideventualidad; 
@@ -610,6 +595,13 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      this.enviaCorreoAcumulado.input.setValue("id",_eventualidad);
      this.enviaCorreoAcumulado.input.setValue("profesorRemitente",_reg);    
      this.enviaCorreoAcumulado.update();
+  },
+  tipo_eventualidad_selectChange: function(inSender, inDisplayValue, inDataValue) {
+     var id= this.tipo_eventualidad_select.getDataValue();
+     var sy= this.getCurSy.getItem(0).data.idsy; 
+     this.ls_subtipo_eventualidad.filter.setValue("",);
+     this.ls_subtipo_eventualidad.filter.setValue("",);
+     this.ls_subtipo_eventualidad.update();
   },
   _end: 0
 });

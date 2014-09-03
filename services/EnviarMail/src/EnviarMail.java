@@ -57,7 +57,7 @@ public class EnviarMail extends com.wavemaker.runtime.javaservice.JavaServiceSup
                message.addRecipient(
                   Message.RecipientType.TO, new InternetAddress("jospina@rochester.edu.co"));               
 
-             message.setSubject("No Reply - Aprendoz | Notificacion de eventualidad(es)");
+             message.setSubject("***Prueba No Reply - Aprendoz | Notificacion de eventualidad(es)***");
              message.setText(
               "<img src=\"http://www.rochester.edu.co/images/logo.png\">"+"<br/><br/>"+
               "***Este un mensaje automático del sistema APRENDOZ***<br/><br/>"+

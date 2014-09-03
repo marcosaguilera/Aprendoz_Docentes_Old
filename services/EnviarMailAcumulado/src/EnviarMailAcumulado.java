@@ -43,7 +43,7 @@ public class EnviarMailAcumulado extends com.wavemaker.runtime.javaservice.JavaS
                message.addRecipient(
                   Message.RecipientType.TO, new InternetAddress("jospina@rochester.edu.co")); 
                              
-             message.setSubject("Falta grave acumulada - No Reply - Aprendoz");
+             message.setSubject("***Prueba Falta grave acumulada - No Reply - Aprendoz");
              message.setText(
               "<img src=\"http://www.rochester.edu.co/images/logo.png\">"+"<br/><br/>"+
               "***Este un mensaje automático del sistema Aprendoz***<br/><br/>"+

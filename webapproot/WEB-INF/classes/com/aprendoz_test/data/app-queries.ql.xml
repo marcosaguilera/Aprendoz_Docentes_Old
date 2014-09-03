@@ -452,6 +452,7 @@ a.idAsignatura, c.idCurso
     </query>
     <query name="sendMailHQL">
         <query-param name="ide" type="java.lang.Integer"/>
+        <query-param name="psy" type="java.lang.Integer"/>
         SELECT
 alumno.idPersona as idalumno,
 CONCAT(alumno.nombre1,&apos; &apos;,alumno.nombre2,&apos; &apos;,alumno.apellido1,&apos; &apos;,alumno.apellido2) as nombreAlumno,
@@ -467,8 +468,8 @@ tipo.tipoEventualidad as tipo,
 sub.subtipoEventualidad as subtipo,
 pidn.email as dir_mail,
 sycp.idSy as sycp
-FROM InscAlumCurso i INNER JOIN i.curso c INNER JOIN i.persona pc INNER JOIN c.grado.nivel n INNER JOIN i.sy sy, EventualidadPersonas ep INNER JOIN ep.persona alumno INNER JOIN ep.eventualidades e INNER JOIN e.tipoLugar l INNER JOIN ep.subtipoEventualidad as sub INNER JOIN sub.tipoEventualidad tipo, InscCoordinadoresCurso icc INNER JOIN icc.curso cc INNER JOIN icc.persona cp INNER JOIN icc.sy sycp, InscDirectorNivel idn INNER JOIN idn.nivel nidn INNER JOIN idn.persona pidn
-WHERE e.idEventualidad=:ide AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and sy.idSy=5 and c.idCurso=cc.idCurso AND sycp.idSy=5
+FROM InscAlumCurso i LEFT JOIN i.curso c LEFT JOIN i.persona pc LEFT JOIN c.grado.nivel n LEFT JOIN i.sy sy, EventualidadPersonas ep LEFT JOIN ep.persona alumno LEFT JOIN ep.eventualidades e LEFT JOIN e.tipoLugar l LEFT JOIN ep.subtipoEventualidad as sub LEFT JOIN sub.tipoEventualidad tipo, InscCoordinadoresCurso icc LEFT JOIN icc.curso cc LEFT JOIN icc.persona cp LEFT JOIN icc.sy sycp, InscDirectorNivel idn LEFT JOIN idn.nivel nidn LEFT JOIN idn.persona pidn
+WHERE e.idEventualidad=:ide AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND sycp.idSy=:psy AND sy.idSy=:psy
 GROUP BY alumno.idPersona
     </query>
     <query name="showInformationUser">
