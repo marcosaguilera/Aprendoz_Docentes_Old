@@ -29,6 +29,12 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.Asignatura"/>
         </set>
+        <set name="costosCopies" inverse="true">
+            <key>
+                <column name="Grado_Id_Grado" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.CostosCopy"/>
+        </set>
         <set name="costoses" inverse="true">
             <key>
                 <column name="Grado_Id_Grado" not-null="true"/>

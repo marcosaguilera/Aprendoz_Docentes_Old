@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="studentGrade.spring.xml" type="JavaService" CRUDService="false" class="studentGrade" id="studentGrade">
+    <operation name="getStudentGradeById">
+        <parameter isList="false" typeRef="java.lang.Integer" name="idpersona"/>
+        <return isList="false" typeRef="java.lang.Integer"/>
+    </operation>
+    <dataobjects/>
+</service>

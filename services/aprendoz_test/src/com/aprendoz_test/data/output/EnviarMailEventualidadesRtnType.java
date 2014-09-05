@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 /**
- * Generated for query "enviarMailEventualidades" on 09/03/2014 13:12:01
+ * Generated for query "enviarMailEventualidades" on 09/03/2014 16:11:21
  * 
  */
 public class EnviarMailEventualidadesRtnType {

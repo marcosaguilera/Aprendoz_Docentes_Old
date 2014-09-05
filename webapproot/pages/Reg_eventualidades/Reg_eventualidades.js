@@ -218,7 +218,6 @@ dojo.declare("Reg_eventualidades", wm.Page, {
       console.error('ERROR IN quitar_buttClick: ' + e); 
     }},
   actualizarEventualidad_buttClick: function(inSender, inEvent) {
-    try {
      var _user= this.eventualidades.selectedItem.getData().resgistrante; 
      this.eventualidadesLiveVariable1.filter.setValue("usuarioReg", _user);
      var _eventualidad= this.eventualidades.selectedItem.getData().ideventualidad;
@@ -232,19 +231,12 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      this.svEventualidadPersonas.update(); 
      this.usuarioRegEditor1.setReadonly(true);
      this.testSV.enable();
-    } catch(e) {
-      console.error('ERROR IN actualizarEventualidad_buttClick: ' + e); 
-    }},
+  },
   eventualidadesSelected: function(inSender, inIndex) {
-    try {
      this.actualizarEventualidad_butt.enable(); 
      this.quitar_butt2.enable();
-      
-    } catch(e) {
-      console.error('ERROR IN eventualidadesSelected: ' + e); 
-    }},
+  },
   agregarLiveFormSuccess: function(inSender, inData) {
-    try {
      var _eventualidad= this.eventualidadesDataGrid1.selectedItem.getData().idEventualidad;
      this.svEventualidadPersonas.input.setValue("ide", _eventualidad);
      this.svEventualidadPersonas.update(); 
@@ -254,22 +246,19 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      var _subtipoEventualidad= this.subtipo_eventualidad.getDataValue();
      var _fecha= this.fechaEditor1.getDataValue();
      var _tipoEventualidad= this.tipo_eventualidad_select.getDataValue();
-
+     //gettin' total faltas leves año
      this.faltasLeves2GraveSV.input.setValue("fecha", _fecha);
      this.faltasLeves2GraveSV.input.setValue("persona", _persona);
      this.faltasLeves2GraveSV.input.setValue("tipo",  _tipoEventualidad);
-     this.faltasLeves2GraveSV.update(); 
-  
-    } catch(e) {
-      console.error('ERROR IN agregarLiveFormSuccess: ' + e); 
-    }},
+     //gettin' grado por id persona
+     this.getStudentGradeSV.input.setValue("idpersona", _persona);          
+     //updating service variables
+     this.getStudentGradeSV.update();
+     this.faltasLeves2GraveSV.update();     
+  },
   quitar_butt2Click: function(inSender, inEvent) {
-    try {
      this.editPanel1.beginDataUpdate();
-      
-    } catch(e) {
-      console.error('ERROR IN quitar_butt1Click: ' + e); 
-    }},
+  },
   imprimir_actaClick: function(inSender, inEvent) {
     try {
       main.a_informacionUsuario.update();
@@ -332,9 +321,14 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      var now= this.getCurSy.getItem(0).data.idsy;
      console.log(_ide);
      console.log(now);
-     this.sendMailHQLService.input.setValue("ide", _ide);
-     this.sendMailHQLService.input.setValue("psy", now);
-     this.sendMailHQLService.update();
+     var r=confirm("¿Se enviará un correo electrónico al Coordinador y Director de nivel, esta seguro de realizar esta acción?");
+     if(r==true){
+       this.sendMailHQLService.input.setValue("ide", _ide);
+       this.sendMailHQLService.input.setValue("psy", now);
+       this.sendMailHQLService.update(); 
+     }else{
+       alert("Acción cancelada");
+     }    
   },    
   sendMailHQLServiceSuccess: function(inSender, inDeprecated) {
      var _acum=""; 
@@ -398,16 +392,32 @@ dojo.declare("Reg_eventualidades", wm.Page, {
     var _persona= this.tabla_buscar_persona.selectedItem.getData().id;
     var _personanombre= this.tabla_buscar_persona.selectedItem.getData().complex;
     var _eventualidad= this.eventualidadesDataGrid1.selectedItem.getData().idEventualidad;
-    if(_count > 2 && _tipo == 2){     
-      this.faltagraveRegistroV.setValue("persona.idPersona", _persona);
-      this.faltagraveRegistroV.setValue("eventualidades.idEventualidad", _eventualidad);
-      this.faltagraveRegistroV.setValue("subtipoEventualidad.idSubtipoEventualidad", "17");
-      this.getCurseOne.input.setValue("ide",_eventualidad);
-      this.getCurseOne.input.setValue("ppersona",_persona);    
-      this.graveRegistroLiveForm.setDataSet(this.faltagraveRegistroV);
-      this.graveRegistroLiveForm.insertData();
-      this.getCurseOne.update();
-    }else{/*nothing to do here!*/}
+    
+    var grado= this.getStudentGradeSV.getData().dataValue;
+    modchild= _count % 8;
+    modteen= _count % 4;
+    
+    if(grado>=101 && grado<=204 && _count>=8 && _tipo == 2){
+       console.log("se crea la falta grave para el niño");
+          this.faltagraveRegistroV.setValue("persona.idPersona", _persona);
+          this.faltagraveRegistroV.setValue("eventualidades.idEventualidad", _eventualidad);
+          this.faltagraveRegistroV.setValue("subtipoEventualidad.idSubtipoEventualidad", "49");
+          this.getCurseOne.input.setValue("ide",_eventualidad);
+          this.getCurseOne.input.setValue("ppersona",_persona);    
+          this.graveRegistroLiveForm.setDataSet(this.faltagraveRegistroV);
+          this.graveRegistroLiveForm.insertData();
+          this.getCurseOne.update();
+    }else if(grado>=301 && grado<=404 && _count>=4 && _tipo == 2){
+       console.log("se crea la falta grave para el estudiane!");
+          this.faltagraveRegistroV.setValue("persona.idPersona", _persona);
+          this.faltagraveRegistroV.setValue("eventualidades.idEventualidad", _eventualidad);
+          this.faltagraveRegistroV.setValue("subtipoEventualidad.idSubtipoEventualidad", "49");
+          this.getCurseOne.input.setValue("ide",_eventualidad);
+          this.getCurseOne.input.setValue("ppersona",_persona);    
+          this.graveRegistroLiveForm.setDataSet(this.faltagraveRegistroV);
+          this.graveRegistroLiveForm.insertData();
+          this.getCurseOne.update();
+    }
   },  
   buscarEventualidadesClick: function(inSender, inEvent) {
      var _fecha= this.fecha.getDataValue();
@@ -431,68 +441,68 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      this.orientacionDocentesCorreo.update(); 
   },  
   orientacionInvolucradosSelect: function(inSender, inItem) {
-      var index     = this.orientacionInvolucrados.getSelectedIndex();
-      var data      = this.orientacionInvolucrados.getItemData(index);
-      var id        = data.idpersona;
-      var nombre    = data.nombre;       
-      var grupofamiliar = data.idgrupofamiliar;
-      this.headMessage.setCaption("Usted ha seleccionado al estudiante "+nombre+", por favor ingrese la <u>hora y fecha</u> para la citación de los padres. <br>Los detalles adicionales estan descritos en el correo a enviar.");
-      this.svNotificacionCorreosPadres.input.setValue("pgrupo", grupofamiliar);
-      this.svNotificacionCorreosPadres.input.setValue("ppersona", id);
-      this.svNotificacionCorreosPadres.update();    
+     var index     = this.orientacionInvolucrados.getSelectedIndex();
+     var data      = this.orientacionInvolucrados.getItemData(index);
+     var id        = data.idpersona;
+     var nombre    = data.nombre;       
+     var grupofamiliar = data.idgrupofamiliar;
+     this.headMessage.setCaption("Usted ha seleccionado al estudiante "+nombre+", por favor ingrese la <u>hora y fecha</u> para la citación de los padres. <br>Los detalles adicionales estan descritos en el correo a enviar.");
+     this.svNotificacionCorreosPadres.input.setValue("pgrupo", grupofamiliar);
+     this.svNotificacionCorreosPadres.input.setValue("ppersona", id);
+     this.svNotificacionCorreosPadres.update();    
        
-      this.fechaCita.enable();
-      this.horaCita.enable();
-      this.enviarCita.enable();
-      this.imprimirCita.enable();
-      this.cancelar.enable();
+     this.fechaCita.enable();
+     this.horaCita.enable();
+     this.enviarCita.enable();
+     this.imprimirCita.enable();
+     this.cancelar.enable();
   },
   
   enviarCitaClick: function(inSender, inEvent) {
-    var _json      = this.svNotificacionCorreosPadres.getItem(0);
-    var _json2     = this.involucradoSv.getItem(0);
-    var _json3     = this.orientacionDocentesCorreo.getItem(0);
-    var stdname    = _json.data.stdn1+" "+_json.data.stdn2+" "+_json.data.stda1+" "+_json.data.stda2;
-    var fathername = _json.data.papan1+" "+_json.data.papan2+" "+_json.data.papaa1+" "+_json.data.papaa2;
-    var mothername = _json.data.maman1+" "+_json.data.maman2+" "+_json.data.mamaa1+" "+_json.data.mamaa2;
-    var fatheremail= _json.data.correopapa;
-    var motheremail= _json.data.correomama;
-    var dnifather= _json.data.dnipapa;
-    var dnimother= _json.data.dnimama;
-    var curse= _json2.data.curso;
-    var fechacita= this.fechaCita.getDisplayValue();
-    var horacita= this.horaCita.getDisplayValue();
-    var falta= this.orientacionEventualidades.selectedItem.getData().subtipo;
-    var coordinador= _json3.data.cor_mail;
-    var dirnivel= _json3.data.dir_mail;
+     var _json      = this.svNotificacionCorreosPadres.getItem(0);
+     var _json2     = this.involucradoSv.getItem(0);
+     var _json3     = this.orientacionDocentesCorreo.getItem(0);
+     var stdname    = _json.data.stdn1+" "+_json.data.stdn2+" "+_json.data.stda1+" "+_json.data.stda2;
+     var fathername = _json.data.papan1+" "+_json.data.papan2+" "+_json.data.papaa1+" "+_json.data.papaa2;
+     var mothername = _json.data.maman1+" "+_json.data.maman2+" "+_json.data.mamaa1+" "+_json.data.mamaa2;
+     var fatheremail= _json.data.correopapa;
+     var motheremail= _json.data.correomama;
+     var dnifather= _json.data.dnipapa;
+     var dnimother= _json.data.dnimama;
+     var curse= _json2.data.curso;
+     var fechacita= this.fechaCita.getDisplayValue();
+     var horacita= this.horaCita.getDisplayValue();
+     var falta= this.orientacionEventualidades.selectedItem.getData().subtipo;
+     var coordinador= _json3.data.cor_mail;
+     var dirnivel= _json3.data.dir_mail;
 
-    console.log("Alumno: "+stdname);
-    console.log("Papa:"+ fathername);
-    console.log("Mama:"+ mothername);
+     console.log("Alumno: "+stdname);
+     console.log("Papa:"+ fathername);
+     console.log("Mama:"+ mothername);
    
-    var r=confirm("¿Se enviará una notificación a los padres del estudiante "+stdname+", esta seguro de realizar esta acción?");
-    if (r==true){
-      this.enviarNotificacionCorreo.input.setValue("alumno", stdname);
-      this.enviarNotificacionCorreo.input.setValue("nombremadre", mothername);
-      this.enviarNotificacionCorreo.input.setValue("nombrepadre", fathername);
-      this.enviarNotificacionCorreo.input.setValue("correopadre", fatheremail);
-      this.enviarNotificacionCorreo.input.setValue("correomadre", motheremail);
-      this.enviarNotificacionCorreo.input.setValue("correomadre", motheremail);
-      this.enviarNotificacionCorreo.input.setValue("curso", curse);
-      this.enviarNotificacionCorreo.input.setValue("fechaCita", fechacita);
-      this.enviarNotificacionCorreo.input.setValue("horaCita", horacita);
-      this.enviarNotificacionCorreo.input.setValue("subtipoEventualidad", falta);
-      this.enviarNotificacionCorreo.input.setValue("dnipap", dnifather);
-      this.enviarNotificacionCorreo.input.setValue("dnimam", dnimother);
-      this.enviarNotificacionCorreo.input.setValue("correocoordinador", coordinador);
-      this.enviarNotificacionCorreo.input.setValue("correodirector", dirnivel);
-      this.enviarNotificacionCorreo.update();
-    }else{/*nothing to do*/}
+     var r=confirm("¿Se enviará una notificación a los padres del estudiante "+stdname+", esta seguro de realizar esta acción?");
+     if(r==true){
+       this.enviarNotificacionCorreo.input.setValue("alumno", stdname);
+       this.enviarNotificacionCorreo.input.setValue("nombremadre", mothername);
+       this.enviarNotificacionCorreo.input.setValue("nombrepadre", fathername);
+       this.enviarNotificacionCorreo.input.setValue("correopadre", fatheremail);
+       this.enviarNotificacionCorreo.input.setValue("correomadre", motheremail);
+       this.enviarNotificacionCorreo.input.setValue("correomadre", motheremail);
+       this.enviarNotificacionCorreo.input.setValue("curso", curse);
+       this.enviarNotificacionCorreo.input.setValue("fechaCita", fechacita);
+       this.enviarNotificacionCorreo.input.setValue("horaCita", horacita);
+       this.enviarNotificacionCorreo.input.setValue("subtipoEventualidad", falta);
+       this.enviarNotificacionCorreo.input.setValue("dnipap", dnifather);
+       this.enviarNotificacionCorreo.input.setValue("dnimam", dnimother);
+       this.enviarNotificacionCorreo.input.setValue("correocoordinador", coordinador);
+       this.enviarNotificacionCorreo.input.setValue("correodirector", dirnivel);
+       this.enviarNotificacionCorreo.update();
+     }else{/*nothing to do*/}
   },
  
   graveRegistroLiveFormSuccess: function(inSender, inData) {
-     this.svEventualidadPersonas.update();
-     app.pageDialog.dismiss("CreandoFaltaGrave"); 
+      this.svEventualidadPersonas.update();
+      app.pageDialog.dismiss("CreandoFaltaGrave"); 
    
   },
   
@@ -599,8 +609,8 @@ dojo.declare("Reg_eventualidades", wm.Page, {
   tipo_eventualidad_selectChange: function(inSender, inDisplayValue, inDataValue) {
      var id= this.tipo_eventualidad_select.getDataValue();
      var sy= this.getCurSy.getItem(0).data.idsy; 
-     this.ls_subtipo_eventualidad.filter.setValue("",);
-     this.ls_subtipo_eventualidad.filter.setValue("",);
+     this.ls_subtipo_eventualidad.filter.setValue("syIdSy",sy);
+     this.ls_subtipo_eventualidad.filter.setValue("tipoEventualidad.idTipoEventualidad",id);
      this.ls_subtipo_eventualidad.update();
   },
   _end: 0

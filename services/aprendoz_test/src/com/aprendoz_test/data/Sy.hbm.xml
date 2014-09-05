@@ -110,6 +110,12 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.Coordinadores"/>
         </set>
+        <set name="costosCopies" inverse="true">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.CostosCopy"/>
+        </set>
         <set name="costoses" inverse="true">
             <key>
                 <column name="SY_Id_SY" not-null="true"/>

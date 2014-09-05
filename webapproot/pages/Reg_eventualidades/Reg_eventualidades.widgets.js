@@ -127,9 +127,12 @@ Reg_eventualidades.widgets = {
 	getCurSy: ["wm.ServiceVariable", {"service":"aprendoz_test","operation":"getSyByCurDate_"}, {}, {
 		input: ["wm.ServiceInput", {"type":"getSyByCurDate_Inputs"}, {}]
 	}],
+	getStudentGradeSV: ["wm.ServiceVariable", {"service":"studentGrade","operation":"getStudentGradeById"}, {}, {
+		input: ["wm.ServiceInput", {"type":"getStudentGradeByIdInputs"}, {}]
+	}],
 	main_layer: ["wm.Layout", {"height":"100%","width":"1038px","horizontalAlign":"left","verticalAlign":"top","padding":"10","autoScroll":false}, {}, {
 		buttons_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"61px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","padding":"1","layoutKind":"left-to-right"}, {}, {
-			setUsername: ["wm.TextEditor", {"width":"242px","showing":false,"displayValue":"m"}, {}, {
+			setUsername: ["wm.TextEditor", {"width":"242px","showing":false}, {}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"targetProperty":"dataValue","source":"getUserID.dataValue"}, {}]
 				}],
@@ -232,7 +235,7 @@ Reg_eventualidades.widgets = {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"targetProperty":"dataSet","source":"complexSearch","expression":undefined}, {}]
 										}],
-										id1: ["wm.DataGridColumn", {"caption":"+","field":"id","columnWidth":"38px"}, {}, {
+										id1: ["wm.DataGridColumn", {"caption":" ","field":"id","columnWidth":"38px"}, {}, {
 											format: ["wm.DataFormatter", {}, {}]
 										}],
 										complex1: ["wm.DataGridColumn", {"caption":"Nombre completo","field":"complex","columnWidth":"100%","index":2}, {}, {
@@ -278,7 +281,7 @@ Reg_eventualidades.widgets = {
 										subtipo1: ["wm.DataGridColumn", {"caption":"Tipo eventualidad","field":"subtipo","columnWidth":"100%","index":2}, {}, {
 											format: ["wm.DataFormatter", {}, {}]
 										}],
-										column1: ["wm.DataGridColumn", {"caption":"+","field":"id","columnWidth":"40px"}, {}, {
+										column1: ["wm.DataGridColumn", {"caption":" ","field":"id","columnWidth":"40px"}, {}, {
 											format: ["wm.DataFormatter", {}, {}]
 										}]
 									}]

@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  *  aprendoz_test.AdministracionVistaAsignaturasId
- *  08/15/2014 11:25:13
+ *  09/03/2014 16:11:01
  * 
  */
 public class AdministracionVistaAsignaturasId

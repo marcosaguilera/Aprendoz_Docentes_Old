@@ -28,4 +28,5 @@
     <import resource="classpath:s3119b.spring.xml"/>
     <import resource="classpath:securityService.spring.xml"/>
     <import resource="classpath:sp_actividad_curso.spring.xml"/>
+    <import resource="classpath:studentGrade.spring.xml"/>
 </beans>

@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Sy
- *  08/15/2014 11:25:13
+ *  09/03/2014 16:11:01
  * 
  */
 public class Sy {
@@ -33,6 +33,7 @@ public class Sy {
     private Set<com.aprendoz_test.data.Asignatura> asignaturas = new HashSet<com.aprendoz_test.data.Asignatura>();
     private Set<com.aprendoz_test.data.Educom> educoms = new HashSet<com.aprendoz_test.data.Educom>();
     private Set<com.aprendoz_test.data.Coordinadores> coordinadoreses = new HashSet<com.aprendoz_test.data.Coordinadores>();
+    private Set<com.aprendoz_test.data.CostosCopy> costosCopies = new HashSet<com.aprendoz_test.data.CostosCopy>();
     private Set<com.aprendoz_test.data.Costos> costoses = new HashSet<com.aprendoz_test.data.Costos>();
     private Set<com.aprendoz_test.data.Matricula> matriculas = new HashSet<com.aprendoz_test.data.Matricula>();
     private Set<com.aprendoz_test.data.SesionNivel> sesionNivels = new HashSet<com.aprendoz_test.data.SesionNivel>();
@@ -51,7 +52,7 @@ public class Sy {
         this.fechaHasta = fechaHasta;
     }
 
-    public Sy(Integer idSy, String schoolYear, Date fechaDesde, Date fechaHasta, Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos, Set<com.aprendoz_test.data.Promocion> promocions, Set<com.aprendoz_test.data.InscCoordinadoresCurso> inscCoordinadoresCursos, Set<com.aprendoz_test.data.CoordinacionDeGrupo> coordinacionDeGrupos, Set<com.aprendoz_test.data.InscAlumCurso> inscAlumCursos, Set<com.aprendoz_test.data.BimestreSy> bimestreSies, Set<com.aprendoz_test.data.Cronograma> cronogramas, Set<com.aprendoz_test.data.Semana> semanas, Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses, Set<com.aprendoz_test.data.Horario> horarios, Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies, Set<com.aprendoz_test.data.Periodo> periodos, Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies, Set<com.aprendoz_test.data.Asignatura> asignaturas, Set<com.aprendoz_test.data.Educom> educoms, Set<com.aprendoz_test.data.Coordinadores> coordinadoreses, Set<com.aprendoz_test.data.Costos> costoses, Set<com.aprendoz_test.data.Matricula> matriculas, Set<com.aprendoz_test.data.SesionNivel> sesionNivels, Set<com.aprendoz_test.data.SecretariaEquivalenciaNotas> secretariaEquivalenciaNotases, Set<com.aprendoz_test.data.Coordinacion> coordinacions, Set<com.aprendoz_test.data.CostosAnuales> costosAnualeses, Set<com.aprendoz_test.data.PromocionCopy> promocionCopies) {
+    public Sy(Integer idSy, String schoolYear, Date fechaDesde, Date fechaHasta, Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos, Set<com.aprendoz_test.data.Promocion> promocions, Set<com.aprendoz_test.data.InscCoordinadoresCurso> inscCoordinadoresCursos, Set<com.aprendoz_test.data.CoordinacionDeGrupo> coordinacionDeGrupos, Set<com.aprendoz_test.data.InscAlumCurso> inscAlumCursos, Set<com.aprendoz_test.data.BimestreSy> bimestreSies, Set<com.aprendoz_test.data.Cronograma> cronogramas, Set<com.aprendoz_test.data.Semana> semanas, Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses, Set<com.aprendoz_test.data.Horario> horarios, Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies, Set<com.aprendoz_test.data.Periodo> periodos, Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies, Set<com.aprendoz_test.data.Asignatura> asignaturas, Set<com.aprendoz_test.data.Educom> educoms, Set<com.aprendoz_test.data.Coordinadores> coordinadoreses, Set<com.aprendoz_test.data.CostosCopy> costosCopies, Set<com.aprendoz_test.data.Costos> costoses, Set<com.aprendoz_test.data.Matricula> matriculas, Set<com.aprendoz_test.data.SesionNivel> sesionNivels, Set<com.aprendoz_test.data.SecretariaEquivalenciaNotas> secretariaEquivalenciaNotases, Set<com.aprendoz_test.data.Coordinacion> coordinacions, Set<com.aprendoz_test.data.CostosAnuales> costosAnualeses, Set<com.aprendoz_test.data.PromocionCopy> promocionCopies) {
         this.idSy = idSy;
         this.schoolYear = schoolYear;
         this.fechaDesde = fechaDesde;
@@ -72,6 +73,7 @@ public class Sy {
         this.asignaturas = asignaturas;
         this.educoms = educoms;
         this.coordinadoreses = coordinadoreses;
+        this.costosCopies = costosCopies;
         this.costoses = costoses;
         this.matriculas = matriculas;
         this.sesionNivels = sesionNivels;
@@ -239,6 +241,14 @@ public class Sy {
 
     public void setCoordinadoreses(Set<com.aprendoz_test.data.Coordinadores> coordinadoreses) {
         this.coordinadoreses = coordinadoreses;
+    }
+
+    public Set<com.aprendoz_test.data.CostosCopy> getCostosCopies() {
+        return costosCopies;
+    }
+
+    public void setCostosCopies(Set<com.aprendoz_test.data.CostosCopy> costosCopies) {
+        this.costosCopies = costosCopies;
     }
 
     public Set<com.aprendoz_test.data.Costos> getCostoses() {
