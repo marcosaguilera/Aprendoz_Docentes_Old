@@ -48,13 +48,11 @@ public class enviarNotificacionFaltaGrave extends com.wavemaker.runtime.javaserv
                message.addRecipient(
                   Message.RecipientType.TO, new InternetAddress("jospina@rochester.edu.co"));  
                message.addRecipient(
-                  Message.RecipientType.TO, new InternetAddress("maguilera@rochester.edu.co"));
-               message.addRecipient(
                   Message.RecipientType.TO, new InternetAddress(correocoordinador));  
                message.addRecipient(
                   Message.RecipientType.TO, new InternetAddress(correodirector));                 
 
-            message.setSubject("***Prueba No Reply - Notificación de falta grave***");
+            message.setSubject("No Reply - Notificación de falta grave");
             message.setText(
               "<img src=\"http://www.rochester.edu.co/images/logomail.png\">"+"<br/><br/>"+
               "NOTIFICACIÓN - COLEGIO ROCHESTER<br/><br/>"+

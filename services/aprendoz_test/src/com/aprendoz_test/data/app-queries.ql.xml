@@ -211,7 +211,7 @@ WHERE sy.idSy=:psy AND a.idAsignatura=:pasignatura AND c.idCurso=:pcurso
         <query-param name="pfecha" type="java.util.Date"/>
         SELECT  e.fecha as fecha, e.hora as hora, e.estado as estado, e.idEventualidad as ideventualidad, e.usuarioReg as registrante, se.idSubtipoEventualidad as idsub, se.subtipoEventualidad as subtipo, e.descripcion as descripcion
 FROM EventualidadPersonas ep INNER JOIN ep.eventualidades e INNER JOIN  ep.subtipoEventualidad se
-WHERE e.fecha=:pfecha AND se.idSubtipoEventualidad&gt;= 12 AND se.idSubtipoEventualidad&lt;=22 AND e.fecha&gt;=&apos;2014-07-31&apos; AND e.fecha&lt;=&apos;2015-07-01&apos;
+WHERE e.fecha=:pfecha AND e.fecha&gt;=&apos;2014-07-31&apos; AND e.fecha&lt;=&apos;2015-07-01&apos; AND ((se.idSubtipoEventualidad&gt;= 12 AND se.idSubtipoEventualidad&lt;=22) OR (se.idSubtipoEventualidad&gt;= 41 AND se.idSubtipoEventualidad&lt;=49))
 GROUP BY e.idEventualidad
     </query>
     <query name="HQLlsCursos">
@@ -397,6 +397,7 @@ ORDER BY YEAR(log.fechaIngreso), MONTH(log.fechaIngreso)
     </query>
     <query name="involucrados">
         <query-param name="peventualidad" type="java.lang.Integer"/>
+        <query-param name="psy" type="java.lang.Integer"/>
         SELECT
 e.idEventualidad as eventualidad,
 p.idPersona as idpersona,
@@ -407,7 +408,7 @@ sy.idSy as idsy,
 sy.schoolYear as schoolyear,
 gf.idGrupoFamiliar as idgrupofamiliar
 FROM EventualidadPersonas ep INNER JOIN ep.persona p INNER JOIN ep.eventualidades e RIGHT OUTER JOIN p.inscAlumCursos c INNER JOIN c.curso curso INNER JOIN c.sy sy INNER JOIN p.grupoFamiliar gf
-WHERE e.idEventualidad=:peventualidad AND sy.idSy=5 AND curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403
+WHERE e.idEventualidad=:peventualidad AND sy.idSy=:psy AND curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403
 GROUP BY p.idPersona
     </query>
     <query name="getCurseByidGrade">
@@ -469,8 +470,8 @@ sub.subtipoEventualidad as subtipo,
 pidn.email as dir_mail,
 sycp.idSy as sycp
 FROM InscAlumCurso i LEFT JOIN i.curso c LEFT JOIN i.persona pc LEFT JOIN c.grado.nivel n LEFT JOIN i.sy sy, EventualidadPersonas ep LEFT JOIN ep.persona alumno LEFT JOIN ep.eventualidades e LEFT JOIN e.tipoLugar l LEFT JOIN ep.subtipoEventualidad as sub LEFT JOIN sub.tipoEventualidad tipo, InscCoordinadoresCurso icc LEFT JOIN icc.curso cc LEFT JOIN icc.persona cp LEFT JOIN icc.sy sycp, InscDirectorNivel idn LEFT JOIN idn.nivel nidn LEFT JOIN idn.persona pidn
-WHERE e.idEventualidad=:ide AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND sycp.idSy=:psy AND sy.idSy=:psy
-GROUP BY alumno.idPersona
+WHERE e.idEventualidad=:ide AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND sycp.idSy=:psy AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and c.idCurso=cc.idCurso AND i.sy=:psy
+ORDER BY c.idCurso desc
     </query>
     <query name="showInformationUser">
         <query-param name="user" type="java.lang.String"/>

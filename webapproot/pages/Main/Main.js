@@ -2529,7 +2529,7 @@ dojo.declare("Main", wm.Page, {
             ]);
         } 
         var options = {'title':'GRÁFICO DE INGRESOS POR DOCENTE',
-                       'titlePosition': 'out', 
+                       'titlePosition': 'out',                         
                         hAxis: {title: 'Meses del año escolar',  titleTextStyle: {color: '#000000'}},
                         vAxis: {title: 'Total ingresos' , titleTextStyle: {color: '#000000'}},
                         legend : {position: 'in', alignment: 'end'}

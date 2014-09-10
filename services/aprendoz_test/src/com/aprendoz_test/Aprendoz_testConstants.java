@@ -5,7 +5,7 @@ package com.aprendoz_test;
 
 /**
  *  Query names for service "aprendoz_test"
- *  09/04/2014 07:40:43
+ *  09/10/2014 07:40:27
  * 
  */
 public class Aprendoz_testConstants {

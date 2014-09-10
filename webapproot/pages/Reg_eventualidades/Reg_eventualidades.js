@@ -434,9 +434,12 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      this.registro_orientacion.show(); 
   },
   orientacionEventualidadesSelected: function(inSender, inIndex) {
-     var _ideventualidad= this.orientacionEventualidades.selectedItem.getData().ideventualidad; 
+     var _ideventualidad= this.orientacionEventualidades.selectedItem.getData().ideventualidad;
+     var now= this.getCurSy.getItem(0).data.idsy;
      this.involucradoSv.input.setValue("peventualidad",_ideventualidad);
+     this.involucradoSv.input.setValue("psy",now);
      this.orientacionDocentesCorreo.input.setValue("ide",_ideventualidad);
+     this.orientacionDocentesCorreo.input.setValue("psy",now);
      this.involucradoSv.update();
      this.orientacionDocentesCorreo.update(); 
   },  
@@ -499,15 +502,12 @@ dojo.declare("Reg_eventualidades", wm.Page, {
        this.enviarNotificacionCorreo.update();
      }else{/*nothing to do*/}
   },
- 
   graveRegistroLiveFormSuccess: function(inSender, inData) {
       this.svEventualidadPersonas.update();
-      app.pageDialog.dismiss("CreandoFaltaGrave"); 
-   
+      app.pageDialog.dismiss("CreandoFaltaGrave");    
   },
   
   orientacionEventualidadesSetColumns: function(inSender, inColumn, inIndex) {
-    try {
      if (inIndex == 0)// 1st column is zero   
        inColumn.formatter = function(inDatum, inRowIndex) { 
        if(! inDatum)
@@ -515,11 +515,7 @@ dojo.declare("Reg_eventualidades", wm.Page, {
        else 
            return '<center><INPUT TYPE=CHECKBOX NAME="Active" CHECKED><P></center>';
        }  
-    } catch(e) {
-      console.error('ERROR IN orientacionEventualidadesSetColumns: ' + e); 
-    } 
-  },
-  
+  }, 
   enviarNotificacionCorreoSuccess: function(inSender, inDeprecated) {
      this.responseMessageBad.hide();
      this.responseMessageWait.hide();
@@ -532,8 +528,7 @@ dojo.declare("Reg_eventualidades", wm.Page, {
   },
   enviarNotificacionCorreoBeforeUpdate: function(inSender, ioInput) {
      this.responseMessageWait.show();
-  },
-  
+  }, 
   imprimirCitaClick: function(inSender, inEvent) {
       main.a_informacionUsuario.update();
       var _json      = this.svNotificacionCorreosPadres.getItem(0);
@@ -562,7 +557,6 @@ dojo.declare("Reg_eventualidades", wm.Page, {
       var curr_month = d.getMonth() + 1;
       var curr_year = d.getFullYear();
       var curdateApr= (curr_date + "/" + curr_month + "/" + curr_year);
-      
       $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
         failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
         httpMethod: "POST",
@@ -612,6 +606,19 @@ dojo.declare("Reg_eventualidades", wm.Page, {
      this.ls_subtipo_eventualidad.filter.setValue("syIdSy",sy);
      this.ls_subtipo_eventualidad.filter.setValue("tipoEventualidad.idTipoEventualidad",id);
      this.ls_subtipo_eventualidad.update();
+  },
+  orientacionDocentesCorreoBeforeUpdate: function(inSender, ioInput) {
+     app.pageDialog.showPage("Loading_message", true, 460,130); 
+  }, 
+  orientacionDocentesCorreoSuccess: function(inSender, inDeprecated) {
+     app.pageDialog.dismiss("Loading_message");
+  },  
+  eventualidadesLiveForm1DeleteData: function(inSender) {
+     this.tipo_eventualidad_select.disable();
+     this.searchInput.disable();
+     this.subtipo_eventualidad.disable();
+     this.agregar_butt.disable();
+     this.quitar_butt.disable();
   },
   _end: 0
 });

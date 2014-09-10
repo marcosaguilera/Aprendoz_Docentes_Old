@@ -45,9 +45,7 @@ public class EnviarMail extends com.wavemaker.runtime.javaservice.JavaServiceSup
             // Construimos el mensaje
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress("eventualidades@rochester.edu.co"));
-           /*message.addRecipient(
-             Message.RecipientType.TO, b);
-             */         
+        
                message.addRecipient(
                   Message.RecipientType.TO, new InternetAddress(correocoordinador));
                message.addRecipient(
@@ -55,11 +53,9 @@ public class EnviarMail extends com.wavemaker.runtime.javaservice.JavaServiceSup
                message.addRecipient(
                   Message.RecipientType.TO, new InternetAddress("eventualidades@rochester.edu.co"));  
                message.addRecipient(
-                  Message.RecipientType.TO, new InternetAddress("jospina@rochester.edu.co"));      
-               message.addRecipient(
-                  Message.RecipientType.TO, new InternetAddress("maguilera@rochester.edu.co"));          
+                  Message.RecipientType.TO, new InternetAddress("jospina@rochester.edu.co"));                
 
-             message.setSubject("***Prueba No Reply - Aprendoz | Notificacion de eventualidad(es)***");
+             message.setSubject("No Reply - Aprendoz | Notificacion de eventualidad(es)");
              message.setText(
               "<img src=\"http://www.rochester.edu.co/images/logomail.png\">"+"<br/><br/>"+
               "***Este un mensaje automático del sistema APRENDOZ***<br/><br/>"+

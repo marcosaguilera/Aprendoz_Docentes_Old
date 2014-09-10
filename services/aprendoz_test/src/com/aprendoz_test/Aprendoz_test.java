@@ -47,7 +47,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  09/04/2014 07:40:43
+ *  09/10/2014 07:40:27
  * 
  */
 @SuppressWarnings("unchecked")
@@ -190,8 +190,8 @@ public class Aprendoz_test
         return ((List<Dash_logDocentesRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.dash_logDocentesQueryName), usuario));
     }
 
-    public List<InvolucradosRtnType> involucrados(Integer peventualidad) {
-        return ((List<InvolucradosRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.involucradosQueryName), peventualidad));
+    public List<InvolucradosRtnType> involucrados(Integer peventualidad, Integer psy) {
+        return ((List<InvolucradosRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.involucradosQueryName), peventualidad, psy));
     }
 
     public List<GetCurseByidGradeRtnType> getCurseByidGrade(Integer pgrado) {

@@ -201,6 +201,9 @@
 		"parameters": [{
 			"name": "peventualidad",
 			"type": "java.lang.Integer"
+		}, {
+			"name": "psy",
+			"type": "java.lang.Integer"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.InvolucradosRtnType]"
 	}, {
