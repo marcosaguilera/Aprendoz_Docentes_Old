@@ -2671,6 +2671,9 @@ dojo.declare("Main", wm.Page, {
      var sy= json.data.sy;
      var idsy= json.data.idsy;    
      this.actividad_lv.filter.setValue("subtopico.unidad.asignatura.idAsignatura", x);
+     this.actividad_lv.filter.setValue("requeridoAlternativo", true);
+     this.actividad_lv.filter.setValue("tipoDesempeno.idTipoDesempeno", 3);
+     //this.actividad_lv.filter.setValue("tipoActividad.idTipoActividad", 2);
      this.actividad_estudiantes.filter.setValue("curso.idCurso", idcurso);
      this.actividad_estudiantes.filter.setValue("sy.idSy", idsy);
      this.actividad_lv.update(); 
