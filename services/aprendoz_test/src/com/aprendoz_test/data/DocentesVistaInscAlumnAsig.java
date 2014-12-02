@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.DocentesVistaInscAlumnAsig
- *  09/03/2014 16:11:00
+ *  11/07/2014 13:24:51
  * 
  */
 public class DocentesVistaInscAlumnAsig {

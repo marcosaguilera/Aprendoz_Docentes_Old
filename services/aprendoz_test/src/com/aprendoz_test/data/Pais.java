@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Pais
- *  09/03/2014 16:11:01
+ *  11/07/2014 13:24:50
  * 
  */
 public class Pais {
@@ -16,7 +16,6 @@ public class Pais {
     private String pais;
     private Set<com.aprendoz_test.data.EstadoDepartamento> estadoDepartamentos = new HashSet<com.aprendoz_test.data.EstadoDepartamento>();
     private Set<com.aprendoz_test.data.Persona> personas = new HashSet<com.aprendoz_test.data.Persona>();
-    private Set<com.aprendoz_test.data.PersonaCopy> personaCopies = new HashSet<com.aprendoz_test.data.PersonaCopy>();
 
     public Pais() {
     }
@@ -26,12 +25,11 @@ public class Pais {
         this.pais = pais;
     }
 
-    public Pais(Integer idPais, String pais, Set<com.aprendoz_test.data.EstadoDepartamento> estadoDepartamentos, Set<com.aprendoz_test.data.Persona> personas, Set<com.aprendoz_test.data.PersonaCopy> personaCopies) {
+    public Pais(Integer idPais, String pais, Set<com.aprendoz_test.data.EstadoDepartamento> estadoDepartamentos, Set<com.aprendoz_test.data.Persona> personas) {
         this.idPais = idPais;
         this.pais = pais;
         this.estadoDepartamentos = estadoDepartamentos;
         this.personas = personas;
-        this.personaCopies = personaCopies;
     }
 
     public Integer getIdPais() {
@@ -64,14 +62,6 @@ public class Pais {
 
     public void setPersonas(Set<com.aprendoz_test.data.Persona> personas) {
         this.personas = personas;
-    }
-
-    public Set<com.aprendoz_test.data.PersonaCopy> getPersonaCopies() {
-        return personaCopies;
-    }
-
-    public void setPersonaCopies(Set<com.aprendoz_test.data.PersonaCopy> personaCopies) {
-        this.personaCopies = personaCopies;
     }
 
 }

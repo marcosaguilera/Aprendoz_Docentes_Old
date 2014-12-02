@@ -397,7 +397,7 @@ dojo.declare("Reg_eventualidades", wm.Page, {
     modchild= _count % 8;
     modteen= _count % 4;
     
-    if(grado>=101 && grado<=204 && _count>=8 && _tipo == 2){
+    if(grado>=103 && grado<=301 && _count>=8 && _tipo == 2){
        console.log("se crea la falta grave para el niño");
           this.faltagraveRegistroV.setValue("persona.idPersona", _persona);
           this.faltagraveRegistroV.setValue("eventualidades.idEventualidad", _eventualidad);
@@ -407,7 +407,7 @@ dojo.declare("Reg_eventualidades", wm.Page, {
           this.graveRegistroLiveForm.setDataSet(this.faltagraveRegistroV);
           this.graveRegistroLiveForm.insertData();
           this.getCurseOne.update();
-    }else if(grado>=301 && grado<=404 && _count>=4 && _tipo == 2){
+    }else if(grado>=302 && grado<=404 && _count>=4 && _tipo == 2){
        console.log("se crea la falta grave para el estudiane!");
           this.faltagraveRegistroV.setValue("persona.idPersona", _persona);
           this.faltagraveRegistroV.setValue("eventualidades.idEventualidad", _eventualidad);

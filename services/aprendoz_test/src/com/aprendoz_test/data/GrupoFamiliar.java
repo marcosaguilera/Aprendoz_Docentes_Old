@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.GrupoFamiliar
- *  09/03/2014 16:11:01
+ *  11/07/2014 13:24:50
  * 
  */
 public class GrupoFamiliar {
@@ -17,7 +17,6 @@ public class GrupoFamiliar {
     private String grupoLdap;
     private Set<com.aprendoz_test.data.TransporteRutas> transporteRutases = new HashSet<com.aprendoz_test.data.TransporteRutas>();
     private Set<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies = new HashSet<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy>();
-    private Set<com.aprendoz_test.data.PersonaCopy> personaCopies = new HashSet<com.aprendoz_test.data.PersonaCopy>();
     private Set<com.aprendoz_test.data.Persona> personas = new HashSet<com.aprendoz_test.data.Persona>();
     private Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars = new HashSet<com.aprendoz_test.data.InscPersonaGrupoFamiliar>();
     private Set<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar> gestionEncuestasGrupoFamiliars = new HashSet<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar>();
@@ -32,13 +31,12 @@ public class GrupoFamiliar {
         this.grupoLdap = grupoLdap;
     }
 
-    public GrupoFamiliar(Integer idGrupoFamiliar, String grupoFamiliar, String grupoLdap, Set<com.aprendoz_test.data.TransporteRutas> transporteRutases, Set<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies, Set<com.aprendoz_test.data.PersonaCopy> personaCopies, Set<com.aprendoz_test.data.Persona> personas, Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars, Set<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar> gestionEncuestasGrupoFamiliars, Set<com.aprendoz_test.data.ActualizacionGrupoFamiliar> actualizacionGrupoFamiliars) {
+    public GrupoFamiliar(Integer idGrupoFamiliar, String grupoFamiliar, String grupoLdap, Set<com.aprendoz_test.data.TransporteRutas> transporteRutases, Set<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies, Set<com.aprendoz_test.data.Persona> personas, Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars, Set<com.aprendoz_test.data.GestionEncuestasGrupoFamiliar> gestionEncuestasGrupoFamiliars, Set<com.aprendoz_test.data.ActualizacionGrupoFamiliar> actualizacionGrupoFamiliars) {
         this.idGrupoFamiliar = idGrupoFamiliar;
         this.grupoFamiliar = grupoFamiliar;
         this.grupoLdap = grupoLdap;
         this.transporteRutases = transporteRutases;
         this.actualizacionGrupoFamiliarCopies = actualizacionGrupoFamiliarCopies;
-        this.personaCopies = personaCopies;
         this.personas = personas;
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
         this.gestionEncuestasGrupoFamiliars = gestionEncuestasGrupoFamiliars;
@@ -83,14 +81,6 @@ public class GrupoFamiliar {
 
     public void setActualizacionGrupoFamiliarCopies(Set<com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies) {
         this.actualizacionGrupoFamiliarCopies = actualizacionGrupoFamiliarCopies;
-    }
-
-    public Set<com.aprendoz_test.data.PersonaCopy> getPersonaCopies() {
-        return personaCopies;
-    }
-
-    public void setPersonaCopies(Set<com.aprendoz_test.data.PersonaCopy> personaCopies) {
-        this.personaCopies = personaCopies;
     }
 
     public Set<com.aprendoz_test.data.Persona> getPersonas() {
