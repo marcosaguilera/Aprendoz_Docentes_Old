@@ -570,7 +570,7 @@ dojo.declare("Main", wm.Page, {
   },
   
   inscalumactividadLiveForm1BeginInsert: function(inSender) {
-      var idactividad= this.activitiesDataGrid.selectedItem.getData().idActividad;
+      var idactividad= this.activitiesDataGrid.selectedItem.getData().id.idActividad;
       var idpersona= this.activities_studentsDataGrid.selectedItem.getData().persona.idPersona;
       this.actividadLookup1.setDataValue(idactividad);
       this.personaLookup4.setDataValue(idpersona);
@@ -672,7 +672,7 @@ dojo.declare("Main", wm.Page, {
   calificaTodosClick: function(inSender, inEvent) {  
       var fecha= this.fechaEditor3.getDataValue();
       var comentario= this.comentarioEditor4.getDataValue();
-      var idactividad= this.activitiesDataGrid.selectedItem.getData().idActividad;
+      var idactividad= this.activitiesDataGrid.selectedItem.getData().id.idActividad;
       var idcurso= this.subjects_activities.getDataValue();
       var logrado= this.logradoEditor2.getDataValue();
       this.sp_insertar_actividades.input.setValue("P_Fecha", fecha);
@@ -2670,24 +2670,18 @@ dojo.declare("Main", wm.Page, {
      var json= main.a_cursy.getItem(0);
      var sy= json.data.sy;
      var idsy= json.data.idsy;    
-     this.actividad_lv.filter.setValue("subtopico.unidad.asignatura.idAsignatura", x);
-     this.actividad_lv.filter.setValue("requeridoAlternativo", true);
-     this.actividad_lv.filter.setValue("tipoDesempeno.idTipoDesempeno", 3);
-     //this.actividad_lv.filter.setValue("tipoActividad.idTipoActividad", 2);
+     this.actividad_lv.filter.setValue("id.idAsignatura", x);
      this.actividad_estudiantes.filter.setValue("curso.idCurso", idcurso);
      this.actividad_estudiantes.filter.setValue("sy.idSy", idsy);
      this.actividad_lv.update(); 
      this.actividad_estudiantes.update();
   },  
   activitiesDataGridSelected: function(inSender, inIndex) {
-     var id=  this.activitiesDataGrid.selectedItem.getData().idActividad;
+     var id=  this.activitiesDataGrid.selectedItem.getData().id.idActividad;
      this.inscalumactividadLiveVariable1.filter.setValue("actividad.idActividad",id);
      this.inscalumactividadLiveVariable1.update();
   },
 
-  activitiesDataGridSelectionChanged: function(inSender) {
-     
-  },
   
   activitiesDataGridCellClick: function(inSender, inEvent) {
     try {

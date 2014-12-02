@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.TipoPersona
- *  09/03/2014 16:11:02
+ *  11/07/2014 13:24:49
  * 
  */
 public class TipoPersona {
@@ -16,7 +16,6 @@ public class TipoPersona {
     private String tipoPersona;
     private Set<com.aprendoz_test.data.AccAuthorization> accAuthorizations = new HashSet<com.aprendoz_test.data.AccAuthorization>();
     private Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars = new HashSet<com.aprendoz_test.data.InscPersonaGrupoFamiliar>();
-    private Set<com.aprendoz_test.data.PersonaCopy> personaCopies = new HashSet<com.aprendoz_test.data.PersonaCopy>();
     private Set<com.aprendoz_test.data.Persona> personas = new HashSet<com.aprendoz_test.data.Persona>();
     private Set<com.aprendoz_test.data.ReportesTipoPersona> reportesTipoPersonas = new HashSet<com.aprendoz_test.data.ReportesTipoPersona>();
 
@@ -28,12 +27,11 @@ public class TipoPersona {
         this.tipoPersona = tipoPersona;
     }
 
-    public TipoPersona(Integer idTipoPersona, String tipoPersona, Set<com.aprendoz_test.data.AccAuthorization> accAuthorizations, Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars, Set<com.aprendoz_test.data.PersonaCopy> personaCopies, Set<com.aprendoz_test.data.Persona> personas, Set<com.aprendoz_test.data.ReportesTipoPersona> reportesTipoPersonas) {
+    public TipoPersona(Integer idTipoPersona, String tipoPersona, Set<com.aprendoz_test.data.AccAuthorization> accAuthorizations, Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars, Set<com.aprendoz_test.data.Persona> personas, Set<com.aprendoz_test.data.ReportesTipoPersona> reportesTipoPersonas) {
         this.idTipoPersona = idTipoPersona;
         this.tipoPersona = tipoPersona;
         this.accAuthorizations = accAuthorizations;
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
-        this.personaCopies = personaCopies;
         this.personas = personas;
         this.reportesTipoPersonas = reportesTipoPersonas;
     }
@@ -68,14 +66,6 @@ public class TipoPersona {
 
     public void setInscPersonaGrupoFamiliars(Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars) {
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
-    }
-
-    public Set<com.aprendoz_test.data.PersonaCopy> getPersonaCopies() {
-        return personaCopies;
-    }
-
-    public void setPersonaCopies(Set<com.aprendoz_test.data.PersonaCopy> personaCopies) {
-        this.personaCopies = personaCopies;
     }
 
     public Set<com.aprendoz_test.data.Persona> getPersonas() {

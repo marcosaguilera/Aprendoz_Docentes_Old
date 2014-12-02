@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "involucrados" on 09/10/2014 07:40:09
+ * Generated for query "involucrados" on 11/07/2014 13:25:14
  * 
  */
 public class InvolucradosRtnType {
